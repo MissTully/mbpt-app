@@ -188,6 +188,12 @@ th { color: var(--muted); font-weight: 500; }
 .need-list li { margin: 6px 0; font-size: 0.92rem; line-height: 1.45; }
 
 .module-block { margin-bottom: 20px; }
+.notice.solo { border-color: var(--ok); color: var(--muted); font-size: 0.85rem; line-height: 1.5; }
+.notice.solo strong { color: var(--ok); font-weight: 600; }
+
+/* The gauge demonstration */
+.dial-wrap { display: flex; justify-content: center; margin: 14px 0 6px; }
+.dial { width: min(78vw, 300px); height: auto; }
 
 /* Bottom tab bar: two tabs, words as well as icons */
 .tabbar {

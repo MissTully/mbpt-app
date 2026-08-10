@@ -27,6 +27,17 @@ export function Modules() {
               {moduleText.tagline} · {lessonIds.length} {lessonIds.length === 1 ? "lesson" : "lessons"} ·{" "}
               {minutes} min
             </div>
+            {moduleText.solo && (
+              <div className="notice solo">
+                <strong>Practice alone:</strong> {moduleText.solo}
+                {moduleText.solo_demo && (
+                  <>
+                    {" "}
+                    <a href="#/demo">Watch and listen: gauge demonstration →</a>
+                  </>
+                )}
+              </div>
+            )}
             {lessonIds.map((lessonId) => {
               const lessonText = lessonTextOf(lessonId);
               const lessonActivities = moduleActivities.filter((a) => a.lesson === lessonId);

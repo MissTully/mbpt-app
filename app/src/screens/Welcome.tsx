@@ -73,6 +73,24 @@ export function Welcome() {
         </ul>
       </div>
 
+      <h2>{t.solo.heading}</h2>
+      <p className="prose">{t.solo.intro}</p>
+      {t.solo.build_steps.map((step, i) => (
+        <div key={i} className="card step">
+          <div className="step-num" aria-hidden="true">
+            {i + 1}
+          </div>
+          <p className="step-body" style={{ marginTop: 2 }}>
+            {step}
+          </p>
+        </div>
+      ))}
+      <p className="prose">{t.solo.teaches}</p>
+      <p className="prose sub">{t.solo.limits}</p>
+      <button className="secondary" onClick={() => (location.hash = "#/demo")}>
+        {t.solo.demo_cta}
+      </button>
+
       <h2>{t.expectations_heading}</h2>
       {t.expectations.map((item, i) => (
         <div key={i} className="card">

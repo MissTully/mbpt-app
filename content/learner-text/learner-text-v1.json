@@ -29,9 +29,21 @@
       "An aneroid sphygmomanometer (the dial kind) and a range of cuff sizes if you have them",
       "A stethoscope",
       "Wired headphones or earbuds, so the sounds reach only you",
-      "A practice partner with a bare upper arm and ten quiet minutes",
+      "A practice partner with a bare upper arm and ten quiet minutes — or, for solo sessions, a practice arm you can build from a roll of paper towels (see below)",
       "A phone stand or a steady way to prop your phone facing the gauge"
     ],
+    "solo": {
+      "heading": "No partner? Build a practice arm",
+      "intro": "Most of this course can be practised entirely alone, and a decent practice arm costs nothing: a roll of paper towels.",
+      "build_steps": [
+        "Take a roll of paper towels and unroll it until what remains measures about 13 inches (33 cm) around — the mid-arm circumference of an average adult. Tape the loose end down.",
+        "Draw a straight line along the length of the roll with a marker. That line is your brachial artery — the anchor you align the cuff's artery marker against, every single time.",
+        "Rest the roll on a table edge, or hold it between your knees, so it cannot shift. Wrap the cuff as you would on an arm: artery marker on your line, lower edge two to three centimetres above where the elbow crease would be, snug enough that only a fingertip fits."
+      ],
+      "teaches": "This is austere practice, and deliberately so. A paper arm has no pulse, no mood, and no opinion — which makes it exactly right for the two things that need bare repetition: the order of the procedure steps, and your valve hand. Inflate, then open the valve so the needle falls slowly and steadily at two to three millimetres of mercury per second. The camera still reads your real gauge, the Korotkoff sounds still play at the pressures you actually produce, and your marks still score — the app cannot tell paper from arm, and for these skills it does not need to.",
+      "limits": "What the roll cannot teach is people: palpating a real pulse, positioning a real patient, and the feel of real arms in their real variety. Bring those lessons to a partner. Bring everything else to the roll.",
+      "demo_cta": "Watch and listen: gauge demonstration"
+    },
     "expectations_heading": "What to expect",
     "expectations": [
       {
@@ -57,31 +69,53 @@
     "cta_start": "Start at the beginning",
     "cta_browse": "Browse all modules"
   },
+  "demo": {
+    "title": "See and hear a measurement",
+    "subtitle": "An aneroid gauge falling at the correct rate, synced with Korotkoff sounds — driven by the same pressure-indexed engine that scores your practice.",
+    "instructions": "Put your headphones on and press play. The needle falls at the rate your valve hand must learn to produce — slow, steady, unhurried. Listen for the first crisp tap, the change in character, and the disappearance.",
+    "phase_holding": "Holding above systolic. On a real cuff you would inflate to 30 above your palpated estimate.",
+    "phase_above": "Silence. The cuff is above systolic — the artery is held closed, so nothing gets through to make a sound.",
+    "phase1_crisp": "Phase 1 — crisp tapping. The pressure at the first of these sounds is systolic.",
+    "phase2_swishing": "Phase 2 — softer and swishing. Keep the needle falling steadily; there is nothing to mark here, only rate to hold.",
+    "phase4_muffled": "Phase 4 — muffled. The sounds are fading; diastolic is close. Do not slow down to wait for it.",
+    "phase_below": "Silence again. The pressure where sound vanished is diastolic. The measurement is over — keep deflating smoothly to zero.",
+    "recap": "You heard sounds begin near {systolic} mmHg and vanish near {diastolic} mmHg — this case's true values. On the practice arm, your job is the needle: a fall so steady that the sounds, when they come, land on a rate you control.",
+    "rate_note": "Needle falling at {rate} mmHg per second — the correct deflation rate.",
+    "video_note": "Recorded video walkthroughs on a real gauge and arm are planned. This live demonstration uses the app's own engine and the synthetic development case, so what you hear is exactly what solo practice will sound like.",
+    "play": "Play demonstration",
+    "replay": "Play it again"
+  },
   "modules": {
     "M0": {
       "title": "Orientation, equipment and setup",
       "tagline": "Meet the app, check your kit, zero your gauge.",
-      "description": "Before anything is taught, everything is checked. You will set up the camera on your gauge, confirm the needle rests at zero, and learn how the app watches and listens. Ten minutes here saves every session that follows."
+      "description": "Before anything is taught, everything is checked. You will set up the camera on your gauge, confirm the needle rests at zero, and learn how the app watches and listens. Ten minutes here saves every session that follows.",
+      "solo": "Fully solo-friendly. Everything here — camera setup, gauge zero, audio check — works with the paper-towel practice arm on the table in front of you."
     },
     "M1": {
       "title": "Preparation and the procedure",
       "tagline": "The steps, their order, and why the order matters.",
-      "description": "A blood pressure reading is decided before the cuff is ever inflated. This module covers the whole procedure in sequence: screening the limb for reasons not to measure, positioning the patient so the number means something, and preparing them so the number is theirs — not their coffee's."
+      "description": "A blood pressure reading is decided before the cuff is ever inflated. This module covers the whole procedure in sequence: screening the limb for reasons not to measure, positioning the patient so the number means something, and preparing them so the number is theirs — not their coffee's.",
+      "solo": "Partly solo. Rehearse the steps in order on the practice arm, saying each one aloud as you go — order is exactly what bare repetition builds. Positioning and preparing a real patient still need a person in the chair; walk those steps in words until you have one."
     },
     "M2": {
       "title": "Cuff selection across body habitus",
       "tagline": "Measure the arm. Choose the cuff. Defend the choice.",
-      "description": "The wrong cuff produces a confident, precise, wrong answer. You will measure real arms, select cuffs by measurement rather than by eye, learn which direction each mis-sizing error pushes the reading, and handle the hard arms that sit between sizes."
+      "description": "The wrong cuff produces a confident, precise, wrong answer. You will measure real arms, select cuffs by measurement rather than by eye, learn which direction each mis-sizing error pushes the reading, and handle the hard arms that sit between sizes.",
+      "solo": "Partly solo. The 13-inch roll is one arm, forever average: use it to drill measuring, wrapping, alignment against your drawn artery line, and snugness. Sizing judgement needs real arms in their real variety."
     },
     "M3": {
       "title": "Auscultation",
       "tagline": "The heart of the skill: inflate, deflate, listen, mark.",
-      "description": "This is the longest module because it is the skill itself. Palpate an estimate, inflate above it, control your deflation to a steady two to three millimetres per second, hear the phases, and mark systolic and diastolic where they actually happen. The app hears what you produce and tells you the truth about it."
+      "description": "This is the longest module because it is the skill itself. Palpate an estimate, inflate above it, control your deflation to a steady two to three millimetres per second, hear the phases, and mark systolic and diastolic where they actually happen. The app hears what you produce and tells you the truth about it.",
+      "solo": "The strongest solo module. Inflation, valve control so the needle drops slowly at the correct rate, listening, and marking all work fully on the practice arm — the sounds come from the app, indexed to the pressure on your real gauge. Only the palpated estimate truly needs a real pulse.",
+      "solo_demo": true
     },
     "M4": {
       "title": "Interpretation and action",
       "tagline": "A number is not a result until you act on it correctly.",
-      "description": "Classify what you measured, document it completely, and know what to do when the value is high, implausible, or contradicts the chart. This module is about judgement: when to repeat, when to average, when to escalate, and when a reading should not be trusted — starting with your own."
+      "description": "Classify what you measured, document it completely, and know what to do when the value is high, implausible, or contradicts the chart. This module is about judgement: when to repeat, when to average, when to escalate, and when a reading should not be trusted — starting with your own.",
+      "solo": "Solo by nature. Classification, documentation, and escalation are judgement work — practise them anywhere, partner or not."
     },
     "M5": {
       "title": "Debrief and self-regulation",

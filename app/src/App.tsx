@@ -3,6 +3,7 @@ import { Welcome } from "./screens/Welcome.js";
 import { Modules } from "./screens/Modules.js";
 import { Lesson } from "./screens/Lesson.js";
 import { ActivityRunner } from "./screens/ActivityRunner.js";
+import { GaugeDemo } from "./screens/GaugeDemo.js";
 import { InstructorReport } from "./screens/InstructorReport.js";
 
 // Hash routing: no router dependency, works offline, works installed.
@@ -11,6 +12,7 @@ function parseRoute(hash: string): { screen: string; param?: string } {
   if (parts[0] === "modules") return { screen: "modules" };
   if (parts[0] === "lesson" && parts[1]) return { screen: "lesson", param: parts[1] };
   if (parts[0] === "activity" && parts[1]) return { screen: "activity", param: parts[1] };
+  if (parts[0] === "demo") return { screen: "demo" };
   if (parts[0] === "report") return { screen: "report" };
   return { screen: "home" };
 }
@@ -35,6 +37,7 @@ export function App() {
       {route.screen === "activity" && route.param && (
         <ActivityRunner key={route.param} activityId={route.param} />
       )}
+      {route.screen === "demo" && <GaugeDemo />}
       {route.screen === "report" && <InstructorReport />}
       {TABBED_SCREENS.has(route.screen) && <TabBar screen={route.screen} />}
     </div>

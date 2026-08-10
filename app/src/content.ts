@@ -33,10 +33,30 @@ export interface ModuleText {
   title: string;
   tagline: string;
   description: string;
+  /** How (and how far) this module works alone on the practice arm. */
+  solo?: string;
+  /** Link the gauge demonstration from this module's solo note. */
+  solo_demo?: boolean;
 }
 export interface LessonText {
   title: string;
   intro: string;
+}
+export interface DemoText {
+  title: string;
+  subtitle: string;
+  instructions: string;
+  phase_holding: string;
+  phase_above: string;
+  phase1_crisp: string;
+  phase2_swishing: string;
+  phase4_muffled: string;
+  phase_below: string;
+  recap: string;
+  rate_note: string;
+  video_note: string;
+  play: string;
+  replay: string;
 }
 export interface LearnerText {
   version: string;
@@ -46,6 +66,14 @@ export interface LearnerText {
     intro: string[];
     how_it_works: { title: string; body: string }[];
     what_you_need: string[];
+    solo: {
+      heading: string;
+      intro: string;
+      build_steps: string[];
+      teaches: string;
+      limits: string;
+      demo_cta: string;
+    };
     expectations_heading: string;
     expectations: { title: string; body: string }[];
     scope_note: string;
@@ -54,6 +82,7 @@ export interface LearnerText {
     cta_start: string;
     cta_browse: string;
   };
+  demo: DemoText;
   modules: Record<string, ModuleText>;
   lessons: Record<string, LessonText>;
 }
