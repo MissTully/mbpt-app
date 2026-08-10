@@ -1,10 +1,12 @@
 # Manual Blood Pressure Trainer
 
 An app for training the manual (auscultatory) blood pressure procedure. The
-learner measures a real partner with real equipment; a phone camera reads the
-real aneroid gauge, real recorded Korotkoff sounds play indexed to the
-pressure the learner is actually producing, marks are made by voice, and a
-pure deterministic scorer grades everything from immutable attempt records.
+learner rehearses the procedure with real equipment, then watches recorded
+case measurements — an aneroid gauge falling at the correct rate with its
+Korotkoff sounds — and marks systolic and diastolic as they happen. Marks
+resolve to pressures through each case's authored pressure track, and a pure
+deterministic scorer grades everything from immutable attempt records
+(ADR-007; supersedes the pressure-indexed live audio of ADR-005).
 
 The governing documents live at the repository root — start with
 `README-document-set.md`. The architecture is ports-and-adapters with a
@@ -47,9 +49,10 @@ node tools/dist/needle-lab/src/lab.js --synthetic  # estimator error distributio
 1. **The core imports nothing outward.** If the scorer cannot run from a
    command line over a JSON attempt record, the boundary has leaked. The
    build fails on violations (`npm run boundary`).
-2. **Audio is indexed by pressure, not time.** Read
-   `docs/adr/ADR-005-pressure-indexed-audio.md` before proposing to simplify
-   playback.
+2. **Measurement playback is recorded video, scored via the pressure track.**
+   Read `docs/adr/ADR-007-video-based-measurement-playback.md` — including
+   what it knowingly gave up from ADR-005 — before touching playback or
+   scoring. The video's deflation is never recorded as the learner's.
 3. **Thresholds live in configuration** (`content/config/`), versioned, with
    a changelog. A golden-set diff is a scoring change and gets reviewed line
    by line.

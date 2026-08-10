@@ -1,6 +1,6 @@
 # ADR-005: Pressure-indexed audio with scheduled beat playback
 
-**Status:** accepted · **Date:** 2026-08-10
+**Status:** superseded by ADR-007 · **Date:** 2026-08-10
 **The most important record for any future contributor.**
 
 ## Context

@@ -9,7 +9,6 @@ import {
   matchExpectedResponse,
   objectiveMastery,
   type ActivityDefinition,
-  type Calibration,
   type ScoreResult,
   type SpokenResponse,
   type TimerEvent,
@@ -24,14 +23,9 @@ import {
 import { GATE_SCENARIOS, type GateScenario } from "../runner/demoGates.js";
 import { buildAttempt, scaffoldStateOf, scoreAndStore, scoredHistory } from "../runner/attempt.js";
 import { attemptStore } from "../adapters/store.js";
-import { WebAudioOutput } from "../adapters/audioOut.js";
-import { VoiceOnsetDetector } from "../adapters/voiceOnset.js";
-import { CameraGaugeReader, defaultGeometry } from "../adapters/cameraGauge.js";
-import type { MeasurementEvidence } from "../runner/measurement.js";
-import { MeasurementStage, type PerceptionChoice } from "./MeasurementStage.js";
+import { VideoStage, type MeasurementEvidence } from "./VideoStage.js";
 import { FeedbackScreen } from "./FeedbackScreen.js";
 import { ReflectScreen } from "./ReflectScreen.js";
-import type { AudioRoute } from "@mbpt/core";
 
 type Phase = "preparing" | "performing" | "prompts" | "scoring" | "feedback";
 
@@ -97,12 +91,6 @@ function ScoredActivity({ activity }: { activity: ActivityDefinition }) {
   const needsPalpated = activity.objectives.some((o) => o === "C1" || o === "C2") && measurement;
 
   const [phase, setPhase] = useState<Phase>("preparing");
-  const [micError, setMicError] = useState<string | null>(null);
-  const [audioRoute, setAudioRoute] = useState<AudioRoute>("unknown");
-  const [perception, setPerception] = useState<PerceptionChoice>("paced");
-  const [calibration, setCalibration] = useState<Calibration | null>(null);
-  const [zeroConfirmed, setZeroConfirmed] = useState(false);
-  const [audioChecked, setAudioChecked] = useState(false);
   const [palpated, setPalpated] = useState("");
   const [circEntered, setCircEntered] = useState("");
   const [circReference, setCircReference] = useState("");
@@ -122,42 +110,7 @@ function ScoredActivity({ activity }: { activity: ActivityDefinition }) {
   const startedAtIso = useRef(new Date().toISOString());
   const startedPerf = useRef(performance.now());
 
-  const audio = useRef(new WebAudioOutput());
-  const voice = useRef(new VoiceOnsetDetector());
-  const camera = useRef<CameraGaugeReader | null>(null);
-
-  useEffect(() => {
-    return () => {
-      voice.current.stop();
-      audio.current.stop();
-      camera.current?.stop();
-    };
-  }, []);
-
-  async function begin() {
-    try {
-      await audio.current.start();
-      const route = await audio.current.detectRoute();
-      setAudioRoute(route);
-      if (measurement) await voice.current.start();
-    } catch {
-      // [DECISION-7]: voice is non-optional during a live measurement
-      // (invariant I-7). A refusal blocks marking activities with a clear
-      // explanation — there is no silent degraded path.
-      setMicError(
-        "Microphone permission is required: during a live measurement both hands are on the equipment, so marking is by voice. Allow microphone access and try again.",
-      );
-      return;
-    }
-    if (perception === "camera") {
-      try {
-        camera.current = new CameraGaugeReader(defaultGeometry(), config.needle_confidence_threshold);
-        await camera.current.startCamera();
-        camera.current.start(calibration);
-      } catch {
-        setPerception("paced"); // no camera → paced shadowing, labelled, not an error
-      }
-    }
+  function begin() {
     setPhase(gates.length > 0 || measurement ? "performing" : "prompts");
   }
 
@@ -220,10 +173,10 @@ function ScoredActivity({ activity }: { activity: ActivityDefinition }) {
       safety_gate_responses: gateResponses,
       timer_events: timerEvents,
       steps_completed: [],
-      equipment_check: { gauge_zero_confirmed: zeroConfirmed, audio_check_passed: audioChecked },
-      audio_route: audioRoute,
-      perception_mode: perception === "camera" ? "camera" : "paced_shadowing",
-      calibration,
+      equipment_check: null, // no runtime equipment loop in video mode (ADR-007)
+      audio_route: "unknown",
+      perception_mode: "video",
+      calibration: null,
       learner_selection: null,
       arm_circumference_entered_cm: circEntered === "" ? null : Number(circEntered),
       arm_circumference_reference_cm: circReference === "" ? null : Number(circReference),
@@ -238,8 +191,6 @@ function ScoredActivity({ activity }: { activity: ActivityDefinition }) {
     setStreaks(streakNow);
     setResult(scoreResult);
     setPhase("feedback");
-    voice.current.stop();
-    camera.current?.stop();
   }
 
   async function nextSeq(): Promise<number> {
@@ -316,14 +267,9 @@ function ScoredActivity({ activity }: { activity: ActivityDefinition }) {
     return (
       <div>
         <Header activity={activity} />
-        <MeasurementStage
+        <VideoStage
           scaffold={scaffold}
           countsTowardMastery={isAssess && scaffold === "unaided"}
-          perception={perception}
-          calibration={calibration}
-          cameraReader={camera.current}
-          audio={audio.current}
-          voice={voice.current}
           onDone={measurementDone}
         />
       </div>
@@ -367,10 +313,7 @@ function ScoredActivity({ activity }: { activity: ActivityDefinition }) {
   }
 
   // PREPARING
-  const canBegin =
-    (!measurement || (zeroConfirmed && audioChecked)) &&
-    (!needsPalpated || palpated !== "") &&
-    (perception === "paced" || calibration !== null);
+  const canBegin = !needsPalpated || palpated !== "";
   return (
     <div>
       <Header activity={activity} />
@@ -379,58 +322,10 @@ function ScoredActivity({ activity }: { activity: ActivityDefinition }) {
         <p className="sub">{activity.learner_action}</p>
       </div>
 
-      {micError && <div className="notice">{micError}</div>}
-      {audioRoute === "bluetooth" && (
-        <div className="notice">
-          Bluetooth audio detected: the sound will lag the needle. Use wired earphones.
-          {config.bluetooth_scoring_policy === "refuse" && " This attempt will not be scored."}
-        </div>
-      )}
-
       {measurement && (
-        <div className="card">
-          <h2 style={{ marginTop: 0 }}>Equipment check</h2>
-          <label>
-            <input
-              type="checkbox"
-              checked={zeroConfirmed}
-              onChange={(e) => setZeroConfirmed(e.target.checked)}
-            />{" "}
-            Cuff fully deflated and the needle rests at zero
-          </label>
-          <div className="row" style={{ marginTop: 8 }}>
-            <button
-              className="secondary"
-              onClick={async () => {
-                await audio.current.start();
-                audio.current.playSample();
-                setAudioChecked(true);
-              }}
-            >
-              Play a sample beat
-            </button>
-            <span className="sub" style={{ margin: 0 }}>
-              {audioChecked ? "heard" : "confirm you can hear it"}
-            </span>
-          </div>
-          <label style={{ marginTop: 12 }}>Gauge source</label>
-          <div className="row">
-            <button
-              className={perception === "paced" ? "" : "secondary"}
-              onClick={() => setPerception("paced")}
-            >
-              Paced shadowing
-            </button>
-            <button
-              className={perception === "camera" ? "" : "secondary"}
-              onClick={() => setPerception("camera")}
-            >
-              Camera on real gauge
-            </button>
-          </div>
-          {perception === "camera" && (
-            <CalibrationInline camera={camera} onCalibrated={setCalibration} calibration={calibration} />
-          )}
+        <div className="notice info">
+          This activity plays a recorded measurement (ADR-007). Headphones on; you will mark the
+          sounds as they happen.
         </div>
       )}
 
@@ -532,75 +427,3 @@ function RestTimer({
   );
 }
 
-// Calibration: zero from the resting needle, the scale from tapping the
-// printed 200 mark on screen (SDD-MBPT-001 section 4.1.2). Recoverable
-// mid-session without losing the attempt.
-function CalibrationInline({
-  camera,
-  calibration,
-  onCalibrated,
-}: {
-  camera: React.MutableRefObject<CameraGaugeReader | null>;
-  calibration: Calibration | null;
-  onCalibrated(c: Calibration): void;
-}) {
-  const [zeroAngle, setZeroAngle] = useState<number | null>(null);
-  const [status, setStatus] = useState("Start the camera, frame the dial to fill the square, then set zero.");
-  const host = useRef<HTMLDivElement | null>(null);
-
-  async function ensureCamera() {
-    if (!camera.current) {
-      camera.current = new CameraGaugeReader(defaultGeometry(), config.needle_confidence_threshold);
-      await camera.current.startCamera();
-      camera.current.start(null);
-    }
-    const video = camera.current.videoElement();
-    if (video && host.current && video.parentElement !== host.current) {
-      host.current.appendChild(video);
-    }
-  }
-
-  return (
-    <div style={{ marginTop: 10 }}>
-      <div
-        className="stage"
-        ref={host}
-        onClick={(e) => {
-          if (zeroAngle === null) return;
-          const rect = (e.currentTarget as HTMLDivElement).getBoundingClientRect();
-          const dx = e.clientX - (rect.left + rect.width / 2);
-          const dy = e.clientY - (rect.top + rect.height / 2);
-          const angle = ((Math.atan2(dy, dx) * 180) / Math.PI + 360) % 360;
-          onCalibrated({
-            zero_angle_deg: zeroAngle,
-            ref_angle_deg: angle,
-            ref_pressure_mmhg: 200,
-            method: "two_point_linear",
-          });
-          setStatus("Calibrated. Zero and the 200 mark are set.");
-        }}
-      />
-      <p className="sub">{status}</p>
-      <div className="row">
-        <button className="secondary" onClick={ensureCamera}>
-          Start camera
-        </button>
-        <button
-          className="secondary"
-          onClick={() => {
-            const raw = camera.current?.lastAngle();
-            if (!raw) {
-              setStatus("No needle reading yet — check framing and lighting.");
-              return;
-            }
-            setZeroAngle(raw.angle_deg);
-            setStatus("Zero set. Now tap the printed 200 mark on the dial, on screen.");
-          }}
-        >
-          Set zero
-        </button>
-        {calibration && <span className="badge">calibrated</span>}
-      </div>
-    </div>
-  );
-}

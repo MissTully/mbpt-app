@@ -28,7 +28,7 @@ export type Surface = z.infer<typeof Surface>;
 export const AudioRoute = z.enum(["wired", "bluetooth", "speaker", "unknown"]);
 export type AudioRoute = z.infer<typeof AudioRoute>;
 
-export const PerceptionMode = z.enum(["camera", "paced_shadowing"]);
+export const PerceptionMode = z.enum(["camera", "paced_shadowing", "video"]);
 export type PerceptionMode = z.infer<typeof PerceptionMode>;
 
 // Cuff size categories double as the body habitus categories the TO-1 mastery
