@@ -1,0 +1,792 @@
+{
+ "case_id": "C000-SYNTH",
+ "video_src": "video.webm",
+ "audio_src": "video-audio.wav",
+ "duration_ms": 39000,
+ "pressure_track": [
+  {
+   "t_ms": 0,
+   "pressure_mmhg": 160
+  },
+  {
+   "t_ms": 200,
+   "pressure_mmhg": 160
+  },
+  {
+   "t_ms": 400,
+   "pressure_mmhg": 160
+  },
+  {
+   "t_ms": 600,
+   "pressure_mmhg": 160
+  },
+  {
+   "t_ms": 800,
+   "pressure_mmhg": 160
+  },
+  {
+   "t_ms": 1000,
+   "pressure_mmhg": 160
+  },
+  {
+   "t_ms": 1200,
+   "pressure_mmhg": 160
+  },
+  {
+   "t_ms": 1400,
+   "pressure_mmhg": 160
+  },
+  {
+   "t_ms": 1600,
+   "pressure_mmhg": 160
+  },
+  {
+   "t_ms": 1800,
+   "pressure_mmhg": 160
+  },
+  {
+   "t_ms": 2000,
+   "pressure_mmhg": 160
+  },
+  {
+   "t_ms": 2200,
+   "pressure_mmhg": 160
+  },
+  {
+   "t_ms": 2400,
+   "pressure_mmhg": 160
+  },
+  {
+   "t_ms": 2600,
+   "pressure_mmhg": 160
+  },
+  {
+   "t_ms": 2800,
+   "pressure_mmhg": 160
+  },
+  {
+   "t_ms": 3000,
+   "pressure_mmhg": 160
+  },
+  {
+   "t_ms": 3200,
+   "pressure_mmhg": 159.5
+  },
+  {
+   "t_ms": 3400,
+   "pressure_mmhg": 159
+  },
+  {
+   "t_ms": 3600,
+   "pressure_mmhg": 158.5
+  },
+  {
+   "t_ms": 3800,
+   "pressure_mmhg": 158
+  },
+  {
+   "t_ms": 4000,
+   "pressure_mmhg": 157.5
+  },
+  {
+   "t_ms": 4200,
+   "pressure_mmhg": 157
+  },
+  {
+   "t_ms": 4400,
+   "pressure_mmhg": 156.5
+  },
+  {
+   "t_ms": 4600,
+   "pressure_mmhg": 156
+  },
+  {
+   "t_ms": 4800,
+   "pressure_mmhg": 155.5
+  },
+  {
+   "t_ms": 5000,
+   "pressure_mmhg": 155
+  },
+  {
+   "t_ms": 5200,
+   "pressure_mmhg": 154.5
+  },
+  {
+   "t_ms": 5400,
+   "pressure_mmhg": 154
+  },
+  {
+   "t_ms": 5600,
+   "pressure_mmhg": 153.5
+  },
+  {
+   "t_ms": 5800,
+   "pressure_mmhg": 153
+  },
+  {
+   "t_ms": 6000,
+   "pressure_mmhg": 152.5
+  },
+  {
+   "t_ms": 6200,
+   "pressure_mmhg": 152
+  },
+  {
+   "t_ms": 6400,
+   "pressure_mmhg": 151.5
+  },
+  {
+   "t_ms": 6600,
+   "pressure_mmhg": 151
+  },
+  {
+   "t_ms": 6800,
+   "pressure_mmhg": 150.5
+  },
+  {
+   "t_ms": 7000,
+   "pressure_mmhg": 150
+  },
+  {
+   "t_ms": 7200,
+   "pressure_mmhg": 149.5
+  },
+  {
+   "t_ms": 7400,
+   "pressure_mmhg": 149
+  },
+  {
+   "t_ms": 7600,
+   "pressure_mmhg": 148.5
+  },
+  {
+   "t_ms": 7800,
+   "pressure_mmhg": 148
+  },
+  {
+   "t_ms": 8000,
+   "pressure_mmhg": 147.5
+  },
+  {
+   "t_ms": 8200,
+   "pressure_mmhg": 147
+  },
+  {
+   "t_ms": 8400,
+   "pressure_mmhg": 146.5
+  },
+  {
+   "t_ms": 8600,
+   "pressure_mmhg": 146
+  },
+  {
+   "t_ms": 8800,
+   "pressure_mmhg": 145.5
+  },
+  {
+   "t_ms": 9000,
+   "pressure_mmhg": 145
+  },
+  {
+   "t_ms": 9200,
+   "pressure_mmhg": 144.5
+  },
+  {
+   "t_ms": 9400,
+   "pressure_mmhg": 144
+  },
+  {
+   "t_ms": 9600,
+   "pressure_mmhg": 143.5
+  },
+  {
+   "t_ms": 9800,
+   "pressure_mmhg": 143
+  },
+  {
+   "t_ms": 10000,
+   "pressure_mmhg": 142.5
+  },
+  {
+   "t_ms": 10200,
+   "pressure_mmhg": 142
+  },
+  {
+   "t_ms": 10400,
+   "pressure_mmhg": 141.5
+  },
+  {
+   "t_ms": 10600,
+   "pressure_mmhg": 141
+  },
+  {
+   "t_ms": 10800,
+   "pressure_mmhg": 140.5
+  },
+  {
+   "t_ms": 11000,
+   "pressure_mmhg": 140
+  },
+  {
+   "t_ms": 11200,
+   "pressure_mmhg": 139.5
+  },
+  {
+   "t_ms": 11400,
+   "pressure_mmhg": 139
+  },
+  {
+   "t_ms": 11600,
+   "pressure_mmhg": 138.5
+  },
+  {
+   "t_ms": 11800,
+   "pressure_mmhg": 138
+  },
+  {
+   "t_ms": 12000,
+   "pressure_mmhg": 137.5
+  },
+  {
+   "t_ms": 12200,
+   "pressure_mmhg": 137
+  },
+  {
+   "t_ms": 12400,
+   "pressure_mmhg": 136.5
+  },
+  {
+   "t_ms": 12600,
+   "pressure_mmhg": 136
+  },
+  {
+   "t_ms": 12800,
+   "pressure_mmhg": 135.5
+  },
+  {
+   "t_ms": 13000,
+   "pressure_mmhg": 135
+  },
+  {
+   "t_ms": 13200,
+   "pressure_mmhg": 134.5
+  },
+  {
+   "t_ms": 13400,
+   "pressure_mmhg": 134
+  },
+  {
+   "t_ms": 13600,
+   "pressure_mmhg": 133.5
+  },
+  {
+   "t_ms": 13800,
+   "pressure_mmhg": 133
+  },
+  {
+   "t_ms": 14000,
+   "pressure_mmhg": 132.5
+  },
+  {
+   "t_ms": 14200,
+   "pressure_mmhg": 132
+  },
+  {
+   "t_ms": 14400,
+   "pressure_mmhg": 131.5
+  },
+  {
+   "t_ms": 14600,
+   "pressure_mmhg": 131
+  },
+  {
+   "t_ms": 14800,
+   "pressure_mmhg": 130.5
+  },
+  {
+   "t_ms": 15000,
+   "pressure_mmhg": 130
+  },
+  {
+   "t_ms": 15200,
+   "pressure_mmhg": 129.5
+  },
+  {
+   "t_ms": 15400,
+   "pressure_mmhg": 129
+  },
+  {
+   "t_ms": 15600,
+   "pressure_mmhg": 128.5
+  },
+  {
+   "t_ms": 15800,
+   "pressure_mmhg": 128
+  },
+  {
+   "t_ms": 16000,
+   "pressure_mmhg": 127.5
+  },
+  {
+   "t_ms": 16200,
+   "pressure_mmhg": 127
+  },
+  {
+   "t_ms": 16400,
+   "pressure_mmhg": 126.5
+  },
+  {
+   "t_ms": 16600,
+   "pressure_mmhg": 126
+  },
+  {
+   "t_ms": 16800,
+   "pressure_mmhg": 125.5
+  },
+  {
+   "t_ms": 17000,
+   "pressure_mmhg": 125
+  },
+  {
+   "t_ms": 17200,
+   "pressure_mmhg": 124.5
+  },
+  {
+   "t_ms": 17400,
+   "pressure_mmhg": 124
+  },
+  {
+   "t_ms": 17600,
+   "pressure_mmhg": 123.5
+  },
+  {
+   "t_ms": 17800,
+   "pressure_mmhg": 123
+  },
+  {
+   "t_ms": 18000,
+   "pressure_mmhg": 122.5
+  },
+  {
+   "t_ms": 18200,
+   "pressure_mmhg": 122
+  },
+  {
+   "t_ms": 18400,
+   "pressure_mmhg": 121.5
+  },
+  {
+   "t_ms": 18600,
+   "pressure_mmhg": 121
+  },
+  {
+   "t_ms": 18800,
+   "pressure_mmhg": 120.5
+  },
+  {
+   "t_ms": 19000,
+   "pressure_mmhg": 120
+  },
+  {
+   "t_ms": 19200,
+   "pressure_mmhg": 119.5
+  },
+  {
+   "t_ms": 19400,
+   "pressure_mmhg": 119
+  },
+  {
+   "t_ms": 19600,
+   "pressure_mmhg": 118.5
+  },
+  {
+   "t_ms": 19800,
+   "pressure_mmhg": 118
+  },
+  {
+   "t_ms": 20000,
+   "pressure_mmhg": 117.5
+  },
+  {
+   "t_ms": 20200,
+   "pressure_mmhg": 117
+  },
+  {
+   "t_ms": 20400,
+   "pressure_mmhg": 116.5
+  },
+  {
+   "t_ms": 20600,
+   "pressure_mmhg": 116
+  },
+  {
+   "t_ms": 20800,
+   "pressure_mmhg": 115.5
+  },
+  {
+   "t_ms": 21000,
+   "pressure_mmhg": 115
+  },
+  {
+   "t_ms": 21200,
+   "pressure_mmhg": 114.5
+  },
+  {
+   "t_ms": 21400,
+   "pressure_mmhg": 114
+  },
+  {
+   "t_ms": 21600,
+   "pressure_mmhg": 113.5
+  },
+  {
+   "t_ms": 21800,
+   "pressure_mmhg": 113
+  },
+  {
+   "t_ms": 22000,
+   "pressure_mmhg": 112.5
+  },
+  {
+   "t_ms": 22200,
+   "pressure_mmhg": 112
+  },
+  {
+   "t_ms": 22400,
+   "pressure_mmhg": 111.5
+  },
+  {
+   "t_ms": 22600,
+   "pressure_mmhg": 111
+  },
+  {
+   "t_ms": 22800,
+   "pressure_mmhg": 110.5
+  },
+  {
+   "t_ms": 23000,
+   "pressure_mmhg": 110
+  },
+  {
+   "t_ms": 23200,
+   "pressure_mmhg": 109.5
+  },
+  {
+   "t_ms": 23400,
+   "pressure_mmhg": 109
+  },
+  {
+   "t_ms": 23600,
+   "pressure_mmhg": 108.5
+  },
+  {
+   "t_ms": 23800,
+   "pressure_mmhg": 108
+  },
+  {
+   "t_ms": 24000,
+   "pressure_mmhg": 107.5
+  },
+  {
+   "t_ms": 24200,
+   "pressure_mmhg": 107
+  },
+  {
+   "t_ms": 24400,
+   "pressure_mmhg": 106.5
+  },
+  {
+   "t_ms": 24600,
+   "pressure_mmhg": 106
+  },
+  {
+   "t_ms": 24800,
+   "pressure_mmhg": 105.5
+  },
+  {
+   "t_ms": 25000,
+   "pressure_mmhg": 105
+  },
+  {
+   "t_ms": 25200,
+   "pressure_mmhg": 104.5
+  },
+  {
+   "t_ms": 25400,
+   "pressure_mmhg": 104
+  },
+  {
+   "t_ms": 25600,
+   "pressure_mmhg": 103.5
+  },
+  {
+   "t_ms": 25800,
+   "pressure_mmhg": 103
+  },
+  {
+   "t_ms": 26000,
+   "pressure_mmhg": 102.5
+  },
+  {
+   "t_ms": 26200,
+   "pressure_mmhg": 102
+  },
+  {
+   "t_ms": 26400,
+   "pressure_mmhg": 101.5
+  },
+  {
+   "t_ms": 26600,
+   "pressure_mmhg": 101
+  },
+  {
+   "t_ms": 26800,
+   "pressure_mmhg": 100.5
+  },
+  {
+   "t_ms": 27000,
+   "pressure_mmhg": 100
+  },
+  {
+   "t_ms": 27200,
+   "pressure_mmhg": 99.5
+  },
+  {
+   "t_ms": 27400,
+   "pressure_mmhg": 99
+  },
+  {
+   "t_ms": 27600,
+   "pressure_mmhg": 98.5
+  },
+  {
+   "t_ms": 27800,
+   "pressure_mmhg": 98
+  },
+  {
+   "t_ms": 28000,
+   "pressure_mmhg": 97.5
+  },
+  {
+   "t_ms": 28200,
+   "pressure_mmhg": 97
+  },
+  {
+   "t_ms": 28400,
+   "pressure_mmhg": 96.5
+  },
+  {
+   "t_ms": 28600,
+   "pressure_mmhg": 96
+  },
+  {
+   "t_ms": 28800,
+   "pressure_mmhg": 95.5
+  },
+  {
+   "t_ms": 29000,
+   "pressure_mmhg": 95
+  },
+  {
+   "t_ms": 29200,
+   "pressure_mmhg": 94.5
+  },
+  {
+   "t_ms": 29400,
+   "pressure_mmhg": 94
+  },
+  {
+   "t_ms": 29600,
+   "pressure_mmhg": 93.5
+  },
+  {
+   "t_ms": 29800,
+   "pressure_mmhg": 93
+  },
+  {
+   "t_ms": 30000,
+   "pressure_mmhg": 92.5
+  },
+  {
+   "t_ms": 30200,
+   "pressure_mmhg": 92
+  },
+  {
+   "t_ms": 30400,
+   "pressure_mmhg": 91.5
+  },
+  {
+   "t_ms": 30600,
+   "pressure_mmhg": 91
+  },
+  {
+   "t_ms": 30800,
+   "pressure_mmhg": 90.5
+  },
+  {
+   "t_ms": 31000,
+   "pressure_mmhg": 90
+  },
+  {
+   "t_ms": 31200,
+   "pressure_mmhg": 89.5
+  },
+  {
+   "t_ms": 31400,
+   "pressure_mmhg": 89
+  },
+  {
+   "t_ms": 31600,
+   "pressure_mmhg": 88.5
+  },
+  {
+   "t_ms": 31800,
+   "pressure_mmhg": 88
+  },
+  {
+   "t_ms": 32000,
+   "pressure_mmhg": 87.5
+  },
+  {
+   "t_ms": 32200,
+   "pressure_mmhg": 87
+  },
+  {
+   "t_ms": 32400,
+   "pressure_mmhg": 86.5
+  },
+  {
+   "t_ms": 32600,
+   "pressure_mmhg": 86
+  },
+  {
+   "t_ms": 32800,
+   "pressure_mmhg": 85.5
+  },
+  {
+   "t_ms": 33000,
+   "pressure_mmhg": 85
+  },
+  {
+   "t_ms": 33200,
+   "pressure_mmhg": 84.5
+  },
+  {
+   "t_ms": 33400,
+   "pressure_mmhg": 84
+  },
+  {
+   "t_ms": 33600,
+   "pressure_mmhg": 83.5
+  },
+  {
+   "t_ms": 33800,
+   "pressure_mmhg": 83
+  },
+  {
+   "t_ms": 34000,
+   "pressure_mmhg": 82.5
+  },
+  {
+   "t_ms": 34200,
+   "pressure_mmhg": 82
+  },
+  {
+   "t_ms": 34400,
+   "pressure_mmhg": 81.5
+  },
+  {
+   "t_ms": 34600,
+   "pressure_mmhg": 81
+  },
+  {
+   "t_ms": 34800,
+   "pressure_mmhg": 80.5
+  },
+  {
+   "t_ms": 35000,
+   "pressure_mmhg": 80
+  },
+  {
+   "t_ms": 35200,
+   "pressure_mmhg": 79.5
+  },
+  {
+   "t_ms": 35400,
+   "pressure_mmhg": 79
+  },
+  {
+   "t_ms": 35600,
+   "pressure_mmhg": 78.5
+  },
+  {
+   "t_ms": 35800,
+   "pressure_mmhg": 78
+  },
+  {
+   "t_ms": 36000,
+   "pressure_mmhg": 77.5
+  },
+  {
+   "t_ms": 36200,
+   "pressure_mmhg": 77
+  },
+  {
+   "t_ms": 36400,
+   "pressure_mmhg": 76.5
+  },
+  {
+   "t_ms": 36600,
+   "pressure_mmhg": 76
+  },
+  {
+   "t_ms": 36800,
+   "pressure_mmhg": 75.5
+  },
+  {
+   "t_ms": 37000,
+   "pressure_mmhg": 75
+  },
+  {
+   "t_ms": 37200,
+   "pressure_mmhg": 74.5
+  },
+  {
+   "t_ms": 37400,
+   "pressure_mmhg": 74
+  },
+  {
+   "t_ms": 37600,
+   "pressure_mmhg": 73.5
+  },
+  {
+   "t_ms": 37800,
+   "pressure_mmhg": 73
+  },
+  {
+   "t_ms": 38000,
+   "pressure_mmhg": 72.5
+  },
+  {
+   "t_ms": 38200,
+   "pressure_mmhg": 72
+  },
+  {
+   "t_ms": 38400,
+   "pressure_mmhg": 71.5
+  },
+  {
+   "t_ms": 38600,
+   "pressure_mmhg": 71
+  },
+  {
+   "t_ms": 38800,
+   "pressure_mmhg": 70.5
+  },
+  {
+   "t_ms": 39000,
+   "pressure_mmhg": 70
+  }
+ ]
+}

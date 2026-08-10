@@ -20,12 +20,44 @@ import rawResponseSets from "../../content/response-sets/response-sets-v1.json";
 import rawTemplates from "../../content/feedback/templates-v1.json";
 import rawLearnerText from "../../content/learner-text/learner-text-v1.json";
 import rawSynthCase from "../../cases/C000-SYNTH/case.json";
+import rawVideoManifest from "../../cases/C000-SYNTH/video-manifest.json";
+import synthVideoUrl from "../../cases/C000-SYNTH/video.webm";
+import synthAudioUrl from "../../cases/C000-SYNTH/video-audio.wav";
 
 export const config: ThresholdConfig = loadConfig(rawConfig);
 export const activities: ActivityDefinition[] = ActivityCatalog.parse(rawActivities).activities;
 export const responseSets: ExpectedResponseSet[] = ResponseSetLibrary.parse(rawResponseSets).sets;
 export const templates: Record<string, string> = (rawTemplates as { templates: Record<string, string> }).templates;
 export const synthCase: CaseManifest = validateCaseManifest(rawSynthCase);
+
+// The case video (ADR-007): the measurement recording and its authored
+// pressure track. The generated dev asset carries audio as a sidecar WAV;
+// recorded cases mux audio into the video and leave audio_src null.
+export interface VideoCase {
+  case_id: string;
+  video_url: string;
+  audio_src: string | null;
+  audio_url: string | null;
+  duration_ms: number;
+  pressure_track: { t_ms: number; pressure_mmhg: number }[];
+}
+const manifest = rawVideoManifest as {
+  case_id: string;
+  audio_src?: string;
+  duration_ms: number;
+  pressure_track: { t_ms: number; pressure_mmhg: number }[];
+};
+if (manifest.case_id !== synthCase.case_id || manifest.pressure_track.length === 0) {
+  throw new Error("video-manifest: case mismatch or empty pressure track");
+}
+export const videoCase: VideoCase = {
+  case_id: manifest.case_id,
+  video_url: synthVideoUrl,
+  audio_src: manifest.audio_src ?? null,
+  audio_url: manifest.audio_src ? synthAudioUrl : null,
+  duration_ms: manifest.duration_ms,
+  pressure_track: manifest.pressure_track,
+};
 
 // Learner-facing curriculum copy: the opening screen, module descriptions,
 // and lesson introductions. Hand-authored draft (learning engineer to review).
