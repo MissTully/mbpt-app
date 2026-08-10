@@ -1,4 +1,4 @@
-import { activities, lessonTextOf, moduleTextOf } from "../content.js";
+import { learnerActivities as activities, lessonTextOf, moduleTextOf } from "../content.js";
 
 // The module list tab: modules in curriculum order, each opening onto its
 // lessons; a lesson card navigates to the lesson screen where activities run.

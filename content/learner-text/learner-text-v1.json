@@ -2,7 +2,7 @@
  "version": "learner-text-v1",
  "welcome": {
   "app_name": "Manual Blood Pressure Trainer",
-  "tagline": "Learn to take a real blood pressure — on a real person, with real equipment — and know for certain you got it right.",
+  "tagline": "Learn to take a real blood pressure — real cuff in your hands, real sounds in your ears — and know exactly how well you heard it.",
   "hero_image_alt": "A nurse in navy scrubs takes a manual blood pressure reading from a seated patient, holding an aneroid gauge in one hand and the stethoscope bell over the patient's inner elbow with the other.",
   "intro": [
    "Manual blood pressure is a skill of the hands and the ears. This app teaches it with real recordings: you watch a real gauge fall at the correct rate, hear the Korotkoff sounds exactly as they happened, and mark systolic and diastolic where you hear them. The app scores your marks against the recording's true values and tells you the truth about your ears.",
@@ -183,7 +183,7 @@
   },
   "L3.5": {
    "title": "Reading the dial precisely",
-   "intro": "Readings are made to the nearest two millimetres, with the eye square to the dial. Humans love round numbers — zeros and fives creep into records at rates nature cannot produce — and the app tracks your own digit habits, so you can see bias forming before it becomes your signature."
+   "intro": "Readings are made to the nearest two millimetres, with the eye square to the dial. Humans love round numbers — zeros and fives creep into records at rates nature cannot produce. Learn to read the dial exactly where the needle stands, and let your record show odd numbers whenever odd numbers are true."
   },
   "L3.6": {
    "title": "Variation and pathology",
@@ -213,5 +213,48 @@
    "title": "Planning the next practice",
    "intro": "The course ends by handing you the instructor's job. Looking at your own mastery picture — which objectives are secure, which streaks are broken, where your errors cluster — you will choose what to practise next and why. That habit, more than any single reading, is what you are here to keep."
   }
+ },
+ "activities": {
+  "A-0.1.1": {
+   "body": [
+    "Your cuff and gauge are the instruments your hands will learn on, so check them the way a clinician would. Squeeze every bit of air out of the cuff, then look at the dial straight on: the needle must rest exactly on zero.",
+    "A gauge that sits above or below zero at rest adds its own error to every reading it will ever give. Do not adjust for it in your head — set that gauge aside and use one that reads true. Thirty seconds, kept as a habit for life: this is the first competency of the course."
+   ]
+  },
+  "A-0.1.2": {
+   "body": [
+    "Put your headphones on and play the demonstration recording. Korotkoff sounds are quiet, low, and brief — set a volume where the soft, muffled beats near the end are still comfortable to hear, in a room quiet enough that they are not competing with anything else.",
+    "Then fit your stethoscope for the hands-on half of your practice: earpieces angled forward, seated until outside sound falls away. The recordings train your ears; the stethoscope is how that skill reaches a real arm."
+   ],
+   "demo_link": true
+  },
+  "A-1.1.1": {
+   "body": [
+    "The whole procedure, in order: screen the limb, position the patient, let them rest, measure the arm, select the cuff, apply it, palpate an estimate, inflate above it, deflate slowly, listen, mark, and document. Read the sequence until you can say it with your eyes closed.",
+    "The order is the point. Every step protects the ones after it: a skipped rest inflates the number before the cuff ever does, a mis-sized cuff corrupts the most careful listening, and an unpalpated estimate leaves you guessing where the sounds will start. The lessons ahead take these steps one at a time — this is the map."
+   ]
+  },
+  "A-2.1.1": {
+   "body": [
+    "Find the two landmarks on a real arm — your partner's, or your own. The acromion is the bony tip of the shoulder; the olecranon is the point of the elbow. Run a finger from one to the other along the outside of the upper arm.",
+    "The midpoint of that line is where arm circumference is measured, every time. Mark it lightly if it helps. A circumference taken anywhere else answers a different question, and the cuff chosen from it fits a different arm."
+   ]
+  },
+  "A-2.2.1": {
+   "body": [
+    "Every cuff category — small adult, adult, large adult, extra large — covers a range of mid-arm circumferences, printed on the cuff itself and in your programme's sizing chart. Selection is a lookup, not a judgement call: measure, read the chart, take the cuff whose range contains the number.",
+    "Spend a few minutes with the chart now. Notice where the ranges meet — arms landing on those boundaries are the hard cases a later lesson is devoted to."
+   ]
+  },
+  "A-3.3.1": {
+   "body": [
+    "Listen to a full recorded measurement with the phases named as they happen: silence above systolic, the first crisp taps, the softer swishing, the muffling, and the silence after. No marking yet — just learn what each phase sounds like and the order they arrive in.",
+    "Play it more than once. The first sound and the last are the two you will soon be marking, and knowing the phases between them is what keeps you oriented when the sounds are soft."
+   ],
+   "demo_link": true
+  }
+ },
+ "retired_activities": {
+  "A-0.1.3": "Spatial setup for smart glasses — not applicable in this release."
  }
 }

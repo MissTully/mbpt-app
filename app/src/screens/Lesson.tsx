@@ -1,14 +1,11 @@
-import { activities, lessonTextOf, moduleTextOf } from "../content.js";
+import { learnerActivities as activities, lessonTextOf, moduleTextOf } from "../content.js";
 import type { ActivityDefinition } from "@mbpt/core";
 
 // The lesson screen: what the learner reads before doing. Introduction text
 // from content/learner-text, then the lesson's activities in order.
 
-// Spatially-dependent objectives cannot be assessed on a phone; activities
-// whose surface is authored G are runnable in a reduced form and say so.
 function surfaceNote(activity: ActivityDefinition): string | null {
   if (activity.release === "Spring") return "release 2 — needs a clinical case not yet in the library";
-  if (activity.surface === "G") return "authored for glasses — runs reduced on phone, pending re-surfacing";
   return null;
 }
 
@@ -57,7 +54,7 @@ export function Lesson({ lessonId }: { lessonId: string }) {
             </div>
             <div className="row" style={{ marginTop: 4 }}>
               <span className="badge">{activity.minutes} min</span>
-              <span className="badge">scaffold: {activity.scaffold}</span>
+              {activity.scaffold !== "n/a" && <span className="badge">scaffold: {activity.scaffold}</span>}
               {activity.objectives.length > 0 && (
                 <span className="badge">{activity.objectives.join(" ")}</span>
               )}
