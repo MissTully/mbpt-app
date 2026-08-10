@@ -1,0 +1,34 @@
+{
+  "activity": {
+    "activity_id": "A-3.4.4",
+    "module": "M3",
+    "lesson": "L3.4",
+    "title": "Full unaided measurement",
+    "type": "Assess",
+    "minutes": 8,
+    "surface": "P",
+    "scaffold": "Unaided",
+    "objectives": [
+      "D2",
+      "D3"
+    ],
+    "entry_state": "",
+    "learner_action": "",
+    "input_modality": "Voice",
+    "system_response": "",
+    "evidence_captured": [
+      "marks",
+      "pressure_trace"
+    ],
+    "exit_condition": "",
+    "release": "Fall"
+  },
+  "groundTruth": {
+    "systolic_mmhg": 134,
+    "diastolic_mmhg": 86,
+    "phase4_mmhg": null,
+    "raters": 3,
+    "rater_agreement_mmhg": 2
+  },
+  "priorStreaks": {}
+}

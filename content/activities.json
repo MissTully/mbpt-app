@@ -1,0 +1,1391 @@
+{
+  "generated_from": "Encountive_MBPT_UX_Curriculum_Crosswalk-3.xlsx",
+  "generated_at": "workbook-3",
+  "activities": [
+    {
+      "activity_id": "A-0.1.1",
+      "module": "M0",
+      "lesson": "L0.1",
+      "title": "Equipment check and gauge zero",
+      "type": "Present",
+      "minutes": 3,
+      "surface": "P",
+      "scaffold": "n/a",
+      "objectives": [],
+      "entry_state": "Split view: live camera on the dial, and a checklist of what must be true",
+      "learner_action": "Hold the deflated cuff steady, confirm the needle rests at zero",
+      "input_modality": "Physical, tap",
+      "system_response": "Green tick when the needle is read at zero; explanatory refusal if it is not",
+      "evidence_captured": [
+        "equipment_check"
+      ],
+      "exit_condition": "Needle read at zero, or gauge rejected",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-0.1.2",
+      "module": "M0",
+      "lesson": "L0.1",
+      "title": "Audio and stethoscope fit check",
+      "type": "Present",
+      "minutes": 2,
+      "surface": "P",
+      "scaffold": "n/a",
+      "objectives": [],
+      "entry_state": "A calibration tone plus a sample Korotkoff beat",
+      "learner_action": "Fit earpieces forward-facing, confirm the beat is audible",
+      "input_modality": "Tap",
+      "system_response": "Confirms audibility; prompts refit if not confirmed",
+      "evidence_captured": [
+        "audio_check"
+      ],
+      "exit_condition": "Learner confirms audibility",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-0.1.3",
+      "module": "M0",
+      "lesson": "L0.1",
+      "title": "Spatial setup and arm anchor",
+      "type": "Present",
+      "minutes": 3,
+      "surface": "G",
+      "scaffold": "n/a",
+      "objectives": [],
+      "entry_state": "Prompt to look at the partner arm; depth mesh visualised briefly",
+      "learner_action": "Look at the arm, pinch to place the anchor",
+      "input_modality": "Gesture",
+      "system_response": "Anchor placed at the antecubital fossa; mesh visualisation fades",
+      "evidence_captured": [
+        "spatial_anchor"
+      ],
+      "exit_condition": "Anchor stable for 3 seconds",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-1.1.1",
+      "module": "M1",
+      "lesson": "L1.1",
+      "title": "Guided walkthrough, all fourteen steps",
+      "type": "Present",
+      "minutes": 8,
+      "surface": "Either",
+      "scaffold": "Guided",
+      "objectives": [
+        "A7"
+      ],
+      "entry_state": "One step at a time with a one line rationale beneath it",
+      "learner_action": "Read, advance, no performance required",
+      "input_modality": "Tap",
+      "system_response": "Next step revealed; rationale expands on request",
+      "evidence_captured": [
+        "steps_viewed"
+      ],
+      "exit_condition": "All fourteen viewed",
+      "release": "Spring"
+    },
+    {
+      "activity_id": "A-1.1.2",
+      "module": "M1",
+      "lesson": "L1.1",
+      "title": "Build the sequence",
+      "type": "Practice",
+      "minutes": 6,
+      "surface": "Either",
+      "scaffold": "Confirmatory",
+      "objectives": [],
+      "entry_state": "Fourteen shuffled step cards and an empty ordered column",
+      "learner_action": "Drag cards into a valid order",
+      "input_modality": "Drag",
+      "system_response": "On submit, names the specific precedence rule violated, not just wrong",
+      "evidence_captured": [
+        "step_order_observed"
+      ],
+      "exit_condition": "Sequence score at or above 90",
+      "release": "Spring"
+    },
+    {
+      "activity_id": "A-1.1.3",
+      "module": "M1",
+      "lesson": "L1.1",
+      "title": "Spot the unsafe step",
+      "type": "Assess",
+      "minutes": 5,
+      "surface": "Either",
+      "scaffold": "Unaided",
+      "objectives": [
+        "A1",
+        "A5"
+      ],
+      "entry_state": "A sequence with one planted out of order or unsafe step",
+      "learner_action": "Identify the fault and state why",
+      "input_modality": "Tap, voice",
+      "system_response": "Correct or incorrect, with the clinical consequence explained",
+      "evidence_captured": [
+        "safety_gate_responses"
+      ],
+      "exit_condition": "Correct on 3 of 4 scenarios",
+      "release": "Spring"
+    },
+    {
+      "activity_id": "A-1.2.1",
+      "module": "M1",
+      "lesson": "L1.2",
+      "title": "Screening six limbs",
+      "type": "Practice",
+      "minutes": 6,
+      "surface": "Either",
+      "scaffold": "Guided",
+      "objectives": [
+        "A1"
+      ],
+      "entry_state": "Six patient cards, each with a limb history",
+      "learner_action": "Decide proceed, use other arm, or escalate",
+      "input_modality": "Tap",
+      "system_response": "Immediate, with the contraindication named",
+      "evidence_captured": [
+        "safety_gate_responses"
+      ],
+      "exit_condition": "All six attempted",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-1.2.2",
+      "module": "M1",
+      "lesson": "L1.2",
+      "title": "Screening, unaided",
+      "type": "Assess",
+      "minutes": 4,
+      "surface": "Either",
+      "scaffold": "Unaided",
+      "objectives": [
+        "A1"
+      ],
+      "entry_state": "Four new limbs, no prompts, no list of contraindications visible",
+      "learner_action": "Same decision, unaided",
+      "input_modality": "Tap",
+      "system_response": "Held until the end of the set",
+      "evidence_captured": [
+        "safety_gate_responses"
+      ],
+      "exit_condition": "No error across four",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-1.3.1",
+      "module": "M1",
+      "lesson": "L1.3",
+      "title": "Positioning faults, predict the error",
+      "type": "Practice",
+      "minutes": 6,
+      "surface": "Either",
+      "scaffold": "Guided",
+      "objectives": [
+        "A3"
+      ],
+      "entry_state": "A patient shown in a faulted position, one fault at a time",
+      "learner_action": "State the direction and rough size of the resulting error",
+      "input_modality": "Voice, tap",
+      "system_response": "Reveals the published effect and compares it to the answer given",
+      "evidence_captured": [
+        "interpretation_response"
+      ],
+      "exit_condition": "Four faults attempted",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-1.3.2",
+      "module": "M1",
+      "lesson": "L1.3",
+      "title": "Position a real partner, guided",
+      "type": "Practice",
+      "minutes": 6,
+      "surface": "G",
+      "scaffold": "Guided",
+      "objectives": [
+        "A2"
+      ],
+      "entry_state": "A heart level plane rendered across the partner torso, and a checklist of four conditions",
+      "learner_action": "Seat and position the partner until all four are met",
+      "input_modality": "Physical",
+      "system_response": "Each condition ticks live as it is satisfied; arm height shown against the plane",
+      "evidence_captured": [
+        "vision_frames",
+        "depth"
+      ],
+      "exit_condition": "All four conditions met",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-1.3.3",
+      "module": "M1",
+      "lesson": "L1.3",
+      "title": "Position unaided, scored",
+      "type": "Assess",
+      "minutes": 4,
+      "surface": "G",
+      "scaffold": "Unaided",
+      "objectives": [
+        "A2",
+        "A3"
+      ],
+      "entry_state": "No plane, no checklist. Only the partner.",
+      "learner_action": "Position, then declare ready",
+      "input_modality": "Voice",
+      "system_response": "Held. Geometric check runs silently at the declaration",
+      "evidence_captured": [
+        "depth geometry"
+      ],
+      "exit_condition": "All four met on 3 consecutive",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-1.4.1",
+      "module": "M1",
+      "lesson": "L1.4",
+      "title": "Explain the procedure aloud",
+      "type": "Practice",
+      "minutes": 3,
+      "surface": "G",
+      "scaffold": "Guided",
+      "objectives": [
+        "A6"
+      ],
+      "entry_state": "A prompt card listing what a patient needs to be told",
+      "learner_action": "Explain to the partner in the learner own words",
+      "input_modality": "Voice",
+      "system_response": "Detects that an explanation occurred and its rough completeness, does not grade wording",
+      "evidence_captured": [
+        "spoken_responses"
+      ],
+      "exit_condition": "Explanation detected before limb contact",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-1.4.2",
+      "module": "M1",
+      "lesson": "L1.4",
+      "title": "Rest period and invalidating conditions",
+      "type": "Practice",
+      "minutes": 6,
+      "surface": "Either",
+      "scaffold": "Guided",
+      "objectives": [
+        "A4",
+        "A5",
+        "A7"
+      ],
+      "entry_state": "A five minute timer, plus prompts about caffeine, nicotine, exercise, bladder, pain",
+      "learner_action": "Run the rest period, ask the screening questions, log hand hygiene",
+      "input_modality": "Voice, tap",
+      "system_response": "Timer enforces the full five minutes; screening answers recorded",
+      "evidence_captured": [
+        "steps_completed",
+        "timer"
+      ],
+      "exit_condition": "Timer complete and screening answered",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-2.1.1",
+      "module": "M2",
+      "lesson": "L2.1",
+      "title": "Where to measure, demonstrated",
+      "type": "Present",
+      "minutes": 3,
+      "surface": "G",
+      "scaffold": "Guided",
+      "objectives": [
+        "B1"
+      ],
+      "entry_state": "Acromion and olecranon highlighted on the real partner arm, midpoint marked",
+      "learner_action": "Watch, then locate the two landmarks by pointing",
+      "input_modality": "Gesture",
+      "system_response": "Confirms landmark identification",
+      "evidence_captured": [
+        "landmarks_identified"
+      ],
+      "exit_condition": "Both landmarks located",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-2.1.2",
+      "module": "M2",
+      "lesson": "L2.1",
+      "title": "Measure with the overlay guide",
+      "type": "Practice",
+      "minutes": 5,
+      "surface": "G",
+      "scaffold": "Guided",
+      "objectives": [
+        "B1"
+      ],
+      "entry_state": "Midpoint plane rendered on the arm; tape guidance visible",
+      "learner_action": "Measure with a real tape and speak the value",
+      "input_modality": "Physical, voice",
+      "system_response": "Compares spoken value to the depth estimate; prompts a re-measure on discrepancy, never reveals the answer",
+      "evidence_captured": [
+        "arm_circumference_entered_cm",
+        "depth_circumference_estimate_cm"
+      ],
+      "exit_condition": "Agreement within 1.5 cm",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-2.1.3",
+      "module": "M2",
+      "lesson": "L2.1",
+      "title": "Measure unaided",
+      "type": "Assess",
+      "minutes": 4,
+      "surface": "G",
+      "scaffold": "Unaided",
+      "objectives": [
+        "B1"
+      ],
+      "entry_state": "No overlay. The arm only.",
+      "learner_action": "Locate the midpoint and measure",
+      "input_modality": "Physical, voice",
+      "system_response": "Held until the end of the attempt",
+      "evidence_captured": [
+        "circumference_discrepancy_cm"
+      ],
+      "exit_condition": "Within 1.5 cm on 3 consecutive",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-2.2.1",
+      "module": "M2",
+      "lesson": "L2.2",
+      "title": "The size chart, explored",
+      "type": "Present",
+      "minutes": 4,
+      "surface": "Either",
+      "scaffold": "Guided",
+      "objectives": [
+        "B2",
+        "B6"
+      ],
+      "entry_state": "Interactive chart of circumference ranges against cuff categories",
+      "learner_action": "Explore. Try circumferences and see which cuff results",
+      "input_modality": "Tap",
+      "system_response": "Shows the resulting category and the bladder ratio",
+      "evidence_captured": [
+        "chart_explored"
+      ],
+      "exit_condition": "Four categories explored",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-2.2.2",
+      "module": "M2",
+      "lesson": "L2.2",
+      "title": "Select with the chart visible",
+      "type": "Practice",
+      "minutes": 5,
+      "surface": "Either",
+      "scaffold": "Guided",
+      "objectives": [
+        "B2"
+      ],
+      "entry_state": "A measured circumference and the chart side by side",
+      "learner_action": "Choose the cuff",
+      "input_modality": "Tap",
+      "system_response": "Immediate correct or incorrect with the ratio shown",
+      "evidence_captured": [
+        "cuff_selected"
+      ],
+      "exit_condition": "Six trials attempted",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-2.2.3",
+      "module": "M2",
+      "lesson": "L2.2",
+      "title": "Select unaided, ten trials",
+      "type": "Assess",
+      "minutes": 7,
+      "surface": "Either",
+      "scaffold": "Unaided",
+      "objectives": [
+        "B2"
+      ],
+      "entry_state": "Circumference only. No chart.",
+      "learner_action": "Choose the cuff",
+      "input_modality": "Tap",
+      "system_response": "Held to the end of the set",
+      "evidence_captured": [
+        "cuff_selected",
+        "habitus_form_detected"
+      ],
+      "exit_condition": "No error across ten trials spanning four categories",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-2.3.1",
+      "module": "M2",
+      "lesson": "L2.3",
+      "title": "Undersized cuff, see your own error",
+      "type": "Practice",
+      "minutes": 5,
+      "surface": "Either",
+      "scaffold": "Confirmatory",
+      "objectives": [
+        "B3"
+      ],
+      "entry_state": "The learner own prior selection, deliberately one size small",
+      "learner_action": "Complete a measurement with the wrong cuff",
+      "input_modality": "Physical, voice",
+      "system_response": "Shows the erroneous value beside the true value and names the direction",
+      "evidence_captured": [
+        "marks",
+        "interpretation_response"
+      ],
+      "exit_condition": "Both values seen",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-2.3.2",
+      "module": "M2",
+      "lesson": "L2.3",
+      "title": "Oversized cuff, see your own error",
+      "type": "Practice",
+      "minutes": 5,
+      "surface": "Either",
+      "scaffold": "Confirmatory",
+      "objectives": [
+        "B3"
+      ],
+      "entry_state": "Same, one size large",
+      "learner_action": "Same",
+      "input_modality": "Physical, voice",
+      "system_response": "Same, opposite direction",
+      "evidence_captured": [
+        "marks",
+        "interpretation_response"
+      ],
+      "exit_condition": "Both values seen",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-2.3.3",
+      "module": "M2",
+      "lesson": "L2.3",
+      "title": "Predict before revealing",
+      "type": "Assess",
+      "minutes": 4,
+      "surface": "Either",
+      "scaffold": "Unaided",
+      "objectives": [
+        "B3"
+      ],
+      "entry_state": "A stated mis-size and a patient",
+      "learner_action": "State the direction and rough magnitude before any measurement",
+      "input_modality": "Voice",
+      "system_response": "Held until the prediction is given, then revealed",
+      "evidence_captured": [
+        "interpretation_response"
+      ],
+      "exit_condition": "Direction correct on 4 of 4",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-2.4.1",
+      "module": "M2",
+      "lesson": "L2.4",
+      "title": "Placement zone, guided",
+      "type": "Practice",
+      "minutes": 5,
+      "surface": "G",
+      "scaffold": "Guided",
+      "objectives": [
+        "B4"
+      ],
+      "entry_state": "Fossa marker and the 2 to 3 cm band rendered on the real arm",
+      "learner_action": "Apply the cuff inside the band, on bare skin",
+      "input_modality": "Physical",
+      "system_response": "Band turns green when the lower edge falls inside it; index line check prompted",
+      "evidence_captured": [
+        "vision_frames",
+        "anchors"
+      ],
+      "exit_condition": "Placement inside the band",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-2.4.2",
+      "module": "M2",
+      "lesson": "L2.4",
+      "title": "Place, then confirm",
+      "type": "Practice",
+      "minutes": 4,
+      "surface": "G",
+      "scaffold": "Confirmatory",
+      "objectives": [
+        "B4"
+      ],
+      "entry_state": "No overlay during placement",
+      "learner_action": "Apply the cuff, then say ready",
+      "input_modality": "Physical, voice",
+      "system_response": "Overlay appears only after the declaration, showing the result",
+      "evidence_captured": [
+        "vision_frames"
+      ],
+      "exit_condition": "Three placements attempted",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-2.4.3",
+      "module": "M2",
+      "lesson": "L2.4",
+      "title": "Place unaided",
+      "type": "Assess",
+      "minutes": 4,
+      "surface": "G",
+      "scaffold": "Unaided",
+      "objectives": [
+        "B4"
+      ],
+      "entry_state": "No overlay at any point",
+      "learner_action": "Apply the cuff and verify the index line",
+      "input_modality": "Physical, voice",
+      "system_response": "Held",
+      "evidence_captured": [
+        "vision_frames",
+        "anchors"
+      ],
+      "exit_condition": "Correct on 3 consecutive",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-2.5.1",
+      "module": "M2",
+      "lesson": "L2.5",
+      "title": "Boundary circumference, true scale comparison",
+      "type": "Practice",
+      "minutes": 6,
+      "surface": "G",
+      "scaffold": "Confirmatory",
+      "objectives": [
+        "B5"
+      ],
+      "entry_state": "Two candidate cuffs rendered at true physical scale beside the real arm",
+      "learner_action": "Compare, choose, and state the residual uncertainty",
+      "input_modality": "Gesture, voice",
+      "system_response": "Shows the bladder ratio each choice produces and the expected error band",
+      "evidence_captured": [
+        "cuff_selected",
+        "spoken_responses"
+      ],
+      "exit_condition": "Choice made with a stated uncertainty",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-2.5.2",
+      "module": "M2",
+      "lesson": "L2.5",
+      "title": "Conical arm, justify aloud",
+      "type": "Assess",
+      "minutes": 5,
+      "surface": "G",
+      "scaffold": "Unaided",
+      "objectives": [
+        "B5"
+      ],
+      "entry_state": "A markedly tapered arm, no guidance",
+      "learner_action": "Choose and justify the choice aloud",
+      "input_modality": "Physical, voice",
+      "system_response": "Held. Justification graded against the expected reasoning set",
+      "evidence_captured": [
+        "spoken_responses"
+      ],
+      "exit_condition": "Justification names taper and residual uncertainty",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-2.5.3",
+      "module": "M2",
+      "lesson": "L2.5",
+      "title": "No cuff fits",
+      "type": "Assess",
+      "minutes": 3,
+      "surface": "Either",
+      "scaffold": "Unaided",
+      "objectives": [
+        "B6"
+      ],
+      "entry_state": "A limb outside every available cuff range",
+      "learner_action": "State the action rather than proceeding",
+      "input_modality": "Voice",
+      "system_response": "Correct action named or corrected",
+      "evidence_captured": [
+        "safety_gate_responses"
+      ],
+      "exit_condition": "Correct alternative stated",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-3.1.1",
+      "module": "M3",
+      "lesson": "L3.1",
+      "title": "Palpated estimate, guided",
+      "type": "Practice",
+      "minutes": 5,
+      "surface": "P",
+      "scaffold": "Guided",
+      "objectives": [
+        "C1",
+        "E7"
+      ],
+      "entry_state": "Live pressure readout from the gauge reading pipeline",
+      "learner_action": "Palpate the radial pulse, say mark when it disappears",
+      "input_modality": "Physical, voice",
+      "system_response": "Records the pressure at the mark and compares it later to auscultated systolic",
+      "evidence_captured": [
+        "pressure_trace",
+        "timed_hold"
+      ],
+      "exit_condition": "Three estimates taken",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-3.1.2",
+      "module": "M3",
+      "lesson": "L3.1",
+      "title": "Inflate to target, live feedback",
+      "type": "Practice",
+      "minutes": 4,
+      "surface": "P",
+      "scaffold": "Guided",
+      "objectives": [
+        "C2"
+      ],
+      "entry_state": "A target band rendered above the palpated estimate",
+      "learner_action": "Inflate until inside the band",
+      "input_modality": "Physical",
+      "system_response": "Band turns green inside target; warns on gross overinflation",
+      "evidence_captured": [
+        "pressure_trace.peak_mmhg"
+      ],
+      "exit_condition": "Target reached without exceeding by 40",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-3.1.3",
+      "module": "M3",
+      "lesson": "L3.1",
+      "title": "Palpate and inflate unaided",
+      "type": "Assess",
+      "minutes": 4,
+      "surface": "P",
+      "scaffold": "Unaided",
+      "objectives": [
+        "C1",
+        "C2"
+      ],
+      "entry_state": "No readout, no target band",
+      "learner_action": "Palpate, estimate, inflate",
+      "input_modality": "Physical, voice",
+      "system_response": "Held",
+      "evidence_captured": [
+        "pressure_trace"
+      ],
+      "exit_condition": "Peak at or above estimate plus 30 on 3 consecutive",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-3.2.1",
+      "module": "M3",
+      "lesson": "L3.2",
+      "title": "Rate pacer",
+      "type": "Practice",
+      "minutes": 5,
+      "surface": "P",
+      "scaffold": "Guided",
+      "objectives": [
+        "C3",
+        "C4"
+      ],
+      "entry_state": "A moving target marker descending at 2.5 mmHg per second beside the real needle",
+      "learner_action": "Match the needle to the pacer",
+      "input_modality": "Physical",
+      "system_response": "Live deviation indicator, no words",
+      "evidence_captured": [
+        "pressure_trace.mean_rate"
+      ],
+      "exit_condition": "Within band for 80 percent of the descent",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-3.2.2",
+      "module": "M3",
+      "lesson": "L3.2",
+      "title": "Rate feedback after the fact",
+      "type": "Practice",
+      "minutes": 5,
+      "surface": "P",
+      "scaffold": "Confirmatory",
+      "objectives": [
+        "C3",
+        "C5",
+        "C6"
+      ],
+      "entry_state": "No pacer during the descent",
+      "learner_action": "Deflate at what feels correct",
+      "input_modality": "Physical",
+      "system_response": "After the attempt, the rate curve is shown with excursions marked",
+      "evidence_captured": [
+        "pressure_trace",
+        "rate_excursions"
+      ],
+      "exit_condition": "Three attempts, self corrected",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-3.2.3",
+      "module": "M3",
+      "lesson": "L3.2",
+      "title": "Rate unaided, no excursions",
+      "type": "Assess",
+      "minutes": 5,
+      "surface": "P",
+      "scaffold": "Unaided",
+      "objectives": [
+        "C3",
+        "C5"
+      ],
+      "entry_state": "Nothing rendered",
+      "learner_action": "Deflate, fully, once",
+      "input_modality": "Physical",
+      "system_response": "Held",
+      "evidence_captured": [
+        "pressure_trace",
+        "reinflation_events"
+      ],
+      "exit_condition": "In band with zero excursions on 3 consecutive",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-3.2.4",
+      "module": "M3",
+      "lesson": "L3.2",
+      "title": "Why rate matters",
+      "type": "Assess",
+      "minutes": 3,
+      "surface": "Either",
+      "scaffold": "Unaided",
+      "objectives": [
+        "C4"
+      ],
+      "entry_state": "A prompt asking about underinflation and over rapid deflation",
+      "learner_action": "Explain both consequences",
+      "input_modality": "Voice",
+      "system_response": "Graded against the expected reasoning set",
+      "evidence_captured": [
+        "interpretation_response"
+      ],
+      "exit_condition": "Both consequences and directions stated",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-3.3.1",
+      "module": "M3",
+      "lesson": "L3.3",
+      "title": "Listen only, phases labelled",
+      "type": "Present",
+      "minutes": 6,
+      "surface": "P",
+      "scaffold": "Guided",
+      "objectives": [
+        "D2",
+        "D3",
+        "D8"
+      ],
+      "entry_state": "A recorded case playing with phases labelled as they occur, no marking asked",
+      "learner_action": "Listen. No performance",
+      "input_modality": "None",
+      "system_response": "Labels appear in time with the sounds",
+      "evidence_captured": [
+        "case_listened"
+      ],
+      "exit_condition": "Two cases heard end to end",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-3.3.2",
+      "module": "M3",
+      "lesson": "L3.3",
+      "title": "Stethoscope placement, tracked",
+      "type": "Practice",
+      "minutes": 5,
+      "surface": "G",
+      "scaffold": "Guided",
+      "objectives": [
+        "D1"
+      ],
+      "entry_state": "Brachial artery position marked on the real arm",
+      "learner_action": "Place the chestpiece and hold",
+      "input_modality": "Physical",
+      "system_response": "Live proximity indicator; warns if above the cuff edge",
+      "evidence_captured": [
+        "chestpiece_track"
+      ],
+      "exit_condition": "Within tolerance for 10 seconds",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-3.3.3",
+      "module": "M3",
+      "lesson": "L3.3",
+      "title": "Placement unaided",
+      "type": "Assess",
+      "minutes": 4,
+      "surface": "G",
+      "scaffold": "Unaided",
+      "objectives": [
+        "D1"
+      ],
+      "entry_state": "No marker",
+      "learner_action": "Place and hold",
+      "input_modality": "Physical",
+      "system_response": "Held",
+      "evidence_captured": [
+        "chestpiece_track"
+      ],
+      "exit_condition": "Within tolerance on 3 consecutive",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-3.4.1",
+      "module": "M3",
+      "lesson": "L3.4",
+      "title": "Mark with numeric readout",
+      "type": "Practice",
+      "minutes": 6,
+      "surface": "P",
+      "scaffold": "Guided",
+      "objectives": [
+        "D2",
+        "D3"
+      ],
+      "entry_state": "Live numeric pressure beside the real needle",
+      "learner_action": "Say mark at first and last sound",
+      "input_modality": "Voice",
+      "system_response": "Immediate error in mmHg against ground truth",
+      "evidence_captured": [
+        "marks"
+      ],
+      "exit_condition": "Four attempts",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-3.4.2",
+      "module": "M3",
+      "lesson": "L3.4",
+      "title": "Mark from the dial",
+      "type": "Practice",
+      "minutes": 6,
+      "surface": "P",
+      "scaffold": "Confirmatory",
+      "objectives": [
+        "D2",
+        "D3"
+      ],
+      "entry_state": "Real needle only, no numbers",
+      "learner_action": "Say mark twice",
+      "input_modality": "Voice",
+      "system_response": "Error revealed after the attempt",
+      "evidence_captured": [
+        "marks"
+      ],
+      "exit_condition": "Four attempts",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-3.4.3",
+      "module": "M3",
+      "lesson": "L3.4",
+      "title": "Sound only, gauge occluded",
+      "type": "Practice",
+      "minutes": 6,
+      "surface": "G",
+      "scaffold": "Sound only",
+      "objectives": [
+        "D2",
+        "D3"
+      ],
+      "entry_state": "The gauge is occluded by dimming plus an opaque patch. Nothing to look at.",
+      "learner_action": "Say mark on hearing the change",
+      "input_modality": "Voice",
+      "system_response": "Value revealed after each mark, with the error",
+      "evidence_captured": [
+        "marks",
+        "scaffold_state"
+      ],
+      "exit_condition": "Within 6 mmHg on 3 of 4",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-3.4.4",
+      "module": "M3",
+      "lesson": "L3.4",
+      "title": "Full attempt unaided, scored",
+      "type": "Assess",
+      "minutes": 8,
+      "surface": "P",
+      "scaffold": "Unaided",
+      "objectives": [
+        "A4",
+        "A6",
+        "A7",
+        "D2",
+        "D3",
+        "D6"
+      ],
+      "entry_state": "Nothing rendered. Real patient, real equipment, no aids of any kind.",
+      "learner_action": "Perform the entire procedure end to end, from rest period to mark",
+      "input_modality": "Physical, voice",
+      "system_response": "Held until the interpretation step",
+      "evidence_captured": [
+        "marks"
+      ],
+      "exit_condition": "Within 4 mmHg on 3 consecutive, two cases",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-3.5.1",
+      "module": "M3",
+      "lesson": "L3.5",
+      "title": "Reading between graduations",
+      "type": "Practice",
+      "minutes": 4,
+      "surface": "P",
+      "scaffold": "Guided",
+      "objectives": [
+        "D6"
+      ],
+      "entry_state": "Still frames of a needle at values ending in 2, 4, 6 and 8",
+      "learner_action": "Read each to the nearest 2 mmHg",
+      "input_modality": "Tap, voice",
+      "system_response": "Immediate. Names rounding when it occurs",
+      "evidence_captured": [
+        "marks"
+      ],
+      "exit_condition": "Eight frames read",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-3.5.2",
+      "module": "M3",
+      "lesson": "L3.5",
+      "title": "Rounding trend review",
+      "type": "Reflect",
+      "minutes": 4,
+      "surface": "G",
+      "scaffold": "n/a",
+      "objectives": [
+        "D6",
+        "F1"
+      ],
+      "entry_state": "The learner own last ten values plotted by terminal digit",
+      "learner_action": "Inspect, then state a corrective strategy",
+      "input_modality": "Voice",
+      "system_response": "Shows the distribution against chance; no pass or fail",
+      "evidence_captured": [
+        "terminal_digit_bias"
+      ],
+      "exit_condition": "Strategy stated",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-3.6.1",
+      "module": "M3",
+      "lesson": "L3.6",
+      "title": "Auscultatory gap",
+      "type": "Practice",
+      "minutes": 6,
+      "surface": "P",
+      "scaffold": "Confirmatory",
+      "objectives": [
+        "D4"
+      ],
+      "entry_state": "A case containing an authored gap, no warning given",
+      "learner_action": "Measure normally",
+      "input_modality": "Physical, voice",
+      "system_response": "If systolic was read below the gap, shows what happened and why",
+      "evidence_captured": [
+        "marks",
+        "interpretation_response"
+      ],
+      "exit_condition": "Gap identified and explained",
+      "release": "Spring"
+    },
+    {
+      "activity_id": "A-3.6.2",
+      "module": "M3",
+      "lesson": "L3.6",
+      "title": "Phase four discrimination",
+      "type": "Practice",
+      "minutes": 6,
+      "surface": "P",
+      "scaffold": "Guided",
+      "objectives": [
+        "D5"
+      ],
+      "entry_state": "A case with a clear muffling point, phase four and five both labelled",
+      "learner_action": "Mark both, and state when phase four is recorded",
+      "input_modality": "Voice",
+      "system_response": "Immediate, with the populations named",
+      "evidence_captured": [
+        "marks",
+        "interpretation_response"
+      ],
+      "exit_condition": "Both marked, populations stated",
+      "release": "Spring"
+    },
+    {
+      "activity_id": "A-3.6.3",
+      "module": "M3",
+      "lesson": "L3.6",
+      "title": "Irregular rhythm",
+      "type": "Practice",
+      "minutes": 6,
+      "surface": "P",
+      "scaffold": "Confirmatory",
+      "objectives": [
+        "D7"
+      ],
+      "entry_state": "An atrial fibrillation case, no warning given",
+      "learner_action": "Measure normally",
+      "input_modality": "Physical, voice",
+      "system_response": "Asks what the learner noticed before explaining anything",
+      "evidence_captured": [
+        "marks",
+        "interpretation_response"
+      ],
+      "exit_condition": "Irregularity recognised unprompted",
+      "release": "Spring"
+    },
+    {
+      "activity_id": "A-3.6.4",
+      "module": "M3",
+      "lesson": "L3.6",
+      "title": "Inaudible sounds",
+      "type": "Assess",
+      "minutes": 4,
+      "surface": "Either",
+      "scaffold": "Unaided",
+      "objectives": [
+        "D8"
+      ],
+      "entry_state": "A case where sounds are faint and ambiguous",
+      "learner_action": "State the corrective actions available",
+      "input_modality": "Voice",
+      "system_response": "Graded against the expected action set",
+      "evidence_captured": [
+        "interpretation_response"
+      ],
+      "exit_condition": "Three corrections named",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-3.6.5",
+      "module": "M3",
+      "lesson": "L3.6",
+      "title": "Variation unaided, scored",
+      "type": "Assess",
+      "minutes": 8,
+      "surface": "P",
+      "scaffold": "Unaided",
+      "objectives": [
+        "D4",
+        "D5",
+        "D7"
+      ],
+      "entry_state": "A randomised case drawn from the pathology set, with no indication of which",
+      "learner_action": "Measure and report what was heard",
+      "input_modality": "Physical, voice",
+      "system_response": "Held. Scores the marks and whether the abnormality was named unprompted",
+      "evidence_captured": [
+        "marks",
+        "spoken_responses"
+      ],
+      "exit_condition": "Abnormality named unprompted on 3 of 4",
+      "release": "Spring"
+    },
+    {
+      "activity_id": "A-4.1.1",
+      "module": "M4",
+      "lesson": "L4.1",
+      "title": "Classify aloud",
+      "type": "Practice",
+      "minutes": 4,
+      "surface": "G",
+      "scaffold": "Guided",
+      "objectives": [
+        "E1",
+        "E4",
+        "E6"
+      ],
+      "entry_state": "The value just obtained, category thresholds visible",
+      "learner_action": "State the classification",
+      "input_modality": "Voice",
+      "system_response": "Immediate",
+      "evidence_captured": [
+        "spoken_responses"
+      ],
+      "exit_condition": "Six values classified",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-4.1.2",
+      "module": "M4",
+      "lesson": "L4.1",
+      "title": "Classify and document, unaided",
+      "type": "Assess",
+      "minutes": 4,
+      "surface": "G",
+      "scaffold": "Unaided",
+      "objectives": [
+        "E1",
+        "E2",
+        "E6"
+      ],
+      "entry_state": "No template visible",
+      "learner_action": "Dictate the documentation",
+      "input_modality": "Voice",
+      "system_response": "Held. Checks arm, position, cuff size, time",
+      "evidence_captured": [
+        "spoken_responses"
+      ],
+      "exit_condition": "All four elements, unprompted, 3 consecutive",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-4.2.1",
+      "module": "M4",
+      "lesson": "L4.2",
+      "title": "Crisis value, unprompted escalation",
+      "type": "Assess",
+      "minutes": 5,
+      "surface": "G",
+      "scaffold": "Unaided",
+      "objectives": [
+        "E4"
+      ],
+      "entry_state": "A measurement resolving into the crisis range. No prompt of any kind.",
+      "learner_action": "State the action, the recipient, and the urgency",
+      "input_modality": "Voice",
+      "system_response": "Held. The prompted flag records whether the learner needed asking",
+      "evidence_captured": [
+        "spoken_responses.prompted"
+      ],
+      "exit_condition": "Escalation stated unprompted, in scope",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-4.2.2",
+      "module": "M4",
+      "lesson": "L4.2",
+      "title": "Hypotension and presentation",
+      "type": "Assess",
+      "minutes": 5,
+      "surface": "G",
+      "scaffold": "Unaided",
+      "objectives": [
+        "E5"
+      ],
+      "entry_state": "A hypotensive case with a brief patient presentation",
+      "learner_action": "Relate value to presentation and state the action",
+      "input_modality": "Voice",
+      "system_response": "Held",
+      "evidence_captured": [
+        "spoken_responses"
+      ],
+      "exit_condition": "Action correct and linked to presentation",
+      "release": "Spring"
+    },
+    {
+      "activity_id": "A-4.3.1",
+      "module": "M4",
+      "lesson": "L4.3",
+      "title": "One reading is not a diagnosis",
+      "type": "Practice",
+      "minutes": 3,
+      "surface": "G",
+      "scaffold": "Guided",
+      "objectives": [
+        "E2",
+        "E8"
+      ],
+      "entry_state": "A single elevated value and an invitation to conclude",
+      "learner_action": "State what can and cannot be concluded",
+      "input_modality": "Voice",
+      "system_response": "Immediate",
+      "evidence_captured": [
+        "spoken_responses"
+      ],
+      "exit_condition": "Repeat requirement stated",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-4.3.2",
+      "module": "M4",
+      "lesson": "L4.3",
+      "title": "Repeat and average in irregular rhythm",
+      "type": "Assess",
+      "minutes": 6,
+      "surface": "G",
+      "scaffold": "Unaided",
+      "objectives": [
+        "E3"
+      ],
+      "entry_state": "The arrhythmia case, after measurement",
+      "learner_action": "Take further readings, average, justify",
+      "input_modality": "Physical, voice",
+      "system_response": "Held",
+      "evidence_captured": [
+        "marks",
+        "spoken_responses"
+      ],
+      "exit_condition": "Averaging performed and justified",
+      "release": "Spring"
+    },
+    {
+      "activity_id": "A-4.3.3",
+      "module": "M4",
+      "lesson": "L4.3",
+      "title": "Implausible reading",
+      "type": "Assess",
+      "minutes": 4,
+      "surface": "Both",
+      "scaffold": "Unaided",
+      "objectives": [
+        "E7"
+      ],
+      "entry_state": "A measurement inconsistent with the palpated estimate",
+      "learner_action": "Recognise and repeat rather than record",
+      "input_modality": "Voice",
+      "system_response": "Held",
+      "evidence_captured": [
+        "marks",
+        "pressure_trace",
+        "spoken_responses"
+      ],
+      "exit_condition": "Repeat chosen unprompted",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-4.3.4",
+      "module": "M4",
+      "lesson": "L4.3",
+      "title": "Difference from a prior value",
+      "type": "Assess",
+      "minutes": 4,
+      "surface": "G",
+      "scaffold": "Unaided",
+      "objectives": [
+        "E8"
+      ],
+      "entry_state": "A documented prior reading materially different from todays",
+      "learner_action": "State the action",
+      "input_modality": "Voice",
+      "system_response": "Held",
+      "evidence_captured": [
+        "spoken_responses"
+      ],
+      "exit_condition": "Correct action stated",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-5.1.1",
+      "module": "M5",
+      "lesson": "L5.1",
+      "title": "Spatial replay",
+      "type": "Reflect",
+      "minutes": 6,
+      "surface": "G",
+      "scaffold": "n/a",
+      "objectives": [
+        "F2",
+        "F4"
+      ],
+      "entry_state": "The attempt replayed anchored in place: pressure curve beside the cuff, marks against truth, chestpiece path on the arm",
+      "learner_action": "Walk around it. Inspect.",
+      "input_modality": "Gesture",
+      "system_response": "No grading. Presentation only",
+      "evidence_captured": [
+        "replay_viewed"
+      ],
+      "exit_condition": "Replay viewed end to end",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-5.1.2",
+      "module": "M5",
+      "lesson": "L5.1",
+      "title": "Attribute the error",
+      "type": "Assess",
+      "minutes": 5,
+      "surface": "G",
+      "scaffold": "Unaided",
+      "objectives": [
+        "C6",
+        "F2"
+      ],
+      "entry_state": "The same replay, with the discrepancy highlighted but unexplained",
+      "learner_action": "Name the step that produced it",
+      "input_modality": "Voice",
+      "system_response": "Confirms or corrects, with the causal chain shown",
+      "evidence_captured": [
+        "spoken_responses"
+      ],
+      "exit_condition": "Correct attribution on 3 of 4",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-5.2.1",
+      "module": "M5",
+      "lesson": "L5.2",
+      "title": "Technique or perception",
+      "type": "Assess",
+      "minutes": 4,
+      "surface": "G",
+      "scaffold": "Unaided",
+      "objectives": [
+        "F4"
+      ],
+      "entry_state": "Two failed attempts, one technique driven and one perceptual",
+      "learner_action": "Classify each",
+      "input_modality": "Voice",
+      "system_response": "Confirms or corrects",
+      "evidence_captured": [
+        "spoken_responses"
+      ],
+      "exit_condition": "Both classified correctly",
+      "release": "Fall"
+    },
+    {
+      "activity_id": "A-5.3.1",
+      "module": "M5",
+      "lesson": "L5.3",
+      "title": "Choose the next practice",
+      "type": "Reflect",
+      "minutes": 4,
+      "surface": "G",
+      "scaffold": "n/a",
+      "objectives": [
+        "F3"
+      ],
+      "entry_state": "The learner own mastery flags across all six domains",
+      "learner_action": "Choose the next activity and justify",
+      "input_modality": "Voice",
+      "system_response": "Records the choice. Does not override it",
+      "evidence_captured": [
+        "learner_selection"
+      ],
+      "exit_condition": "Choice made with a justification",
+      "release": "Fall"
+    }
+  ]
+}

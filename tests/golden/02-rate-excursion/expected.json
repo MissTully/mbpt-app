@@ -1,0 +1,42 @@
+{
+  "attempt_id": "golden-2",
+  "config_version": "cfg-1.0.0",
+  "scorer_version": "0.1.0",
+  "total": 50,
+  "nothing_assessable": false,
+  "findings": [
+    {
+      "objective_id": "C3",
+      "outcome": "not_met",
+      "measured": 4.8,
+      "threshold": 3,
+      "finding_code": "RATE_EXCURSION_PRESENT",
+      "evidence_refs": [
+        "pressure_trace.mean_rate_mmhg_per_s",
+        "rate_excursions"
+      ]
+    },
+    {
+      "objective_id": "D2",
+      "outcome": "met",
+      "measured": 2,
+      "threshold": 4,
+      "finding_code": "MARK_WITHIN_TOLERANCE",
+      "evidence_refs": [
+        "marks:systolic"
+      ]
+    }
+  ],
+  "mastery_updates": [
+    {
+      "objective_id": "C3",
+      "counts_toward_mastery": false,
+      "streak_after": 0
+    },
+    {
+      "objective_id": "D2",
+      "counts_toward_mastery": true,
+      "streak_after": 1
+    }
+  ]
+}

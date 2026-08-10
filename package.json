@@ -1,0 +1,28 @@
+{
+  "name": "mbpt",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Encountive Manual Blood Pressure Trainer",
+  "type": "module",
+  "workspaces": [
+    "core",
+    "perception",
+    "app",
+    "tools"
+  ],
+  "scripts": {
+    "test": "npm run test -w core -w perception && npm run boundary && npm run golden && npm run crosswalk",
+    "test:core": "npm run test -w core",
+    "typecheck": "tsc -b core perception tools && npm run typecheck -w app",
+    "boundary": "node tools/boundary-check/check.mjs",
+    "golden": "npm run build:node && node tools/dist/golden-runner/src/run.js",
+    "crosswalk": "npm run build:node && node tools/dist/crosswalk-check/src/check.js",
+    "export:activities": "node tools/crosswalk-export/export.mjs",
+    "build:node": "tsc -b core perception tools",
+    "build:app": "npm run build:node && npm run build -w app",
+    "dev": "npm run dev -w app"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  }
+}

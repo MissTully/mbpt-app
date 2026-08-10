@@ -1,0 +1,14 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": ".",
+    "types": ["node"]
+  },
+  "include": [
+    "crosswalk-check/src/**/*.ts",
+    "golden-runner/src/**/*.ts",
+    "needle-lab/src/**/*.ts"
+  ],
+  "references": [{ "path": "../core" }, { "path": "../perception" }]
+}

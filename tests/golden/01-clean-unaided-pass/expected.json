@@ -1,0 +1,41 @@
+{
+  "attempt_id": "golden-1",
+  "config_version": "cfg-1.0.0",
+  "scorer_version": "0.1.0",
+  "total": 100,
+  "nothing_assessable": false,
+  "findings": [
+    {
+      "objective_id": "D2",
+      "outcome": "met",
+      "measured": 2,
+      "threshold": 4,
+      "finding_code": "MARK_WITHIN_TOLERANCE",
+      "evidence_refs": [
+        "marks:systolic"
+      ]
+    },
+    {
+      "objective_id": "D3",
+      "outcome": "met",
+      "measured": 0,
+      "threshold": 4,
+      "finding_code": "MARK_WITHIN_TOLERANCE",
+      "evidence_refs": [
+        "marks:diastolic"
+      ]
+    }
+  ],
+  "mastery_updates": [
+    {
+      "objective_id": "D2",
+      "counts_toward_mastery": true,
+      "streak_after": 1
+    },
+    {
+      "objective_id": "D3",
+      "counts_toward_mastery": true,
+      "streak_after": 1
+    }
+  ]
+}

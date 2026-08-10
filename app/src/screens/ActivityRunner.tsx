@@ -1,0 +1,606 @@
+// The activity runner: one state machine for all 61 activities (SDD-MBPT-001
+// section 5.1). Feedback timing is enforced here, in code, once: an activity
+// screen has no mechanism to show feedback during PERFORMING when the type is
+// Assess (invariant I-5). And there is no code path that renders the correct
+// value in response to a discrepancy (invariant I-6).
+
+import { useEffect, useMemo, useRef, useState } from "react";
+import {
+  matchExpectedResponse,
+  objectiveMastery,
+  type ActivityDefinition,
+  type Calibration,
+  type ScoreResult,
+  type SpokenResponse,
+  type TimerEvent,
+} from "@mbpt/core";
+import {
+  activityById,
+  config,
+  promptsForActivity,
+  PROMPT_TEXT,
+  synthCase,
+} from "../content.js";
+import { GATE_SCENARIOS, type GateScenario } from "../runner/demoGates.js";
+import { buildAttempt, scaffoldStateOf, scoreAndStore, scoredHistory } from "../runner/attempt.js";
+import { attemptStore } from "../adapters/store.js";
+import { WebAudioOutput } from "../adapters/audioOut.js";
+import { VoiceOnsetDetector } from "../adapters/voiceOnset.js";
+import { CameraGaugeReader, defaultGeometry } from "../adapters/cameraGauge.js";
+import type { MeasurementEvidence } from "../runner/measurement.js";
+import { MeasurementStage, type PerceptionChoice } from "./MeasurementStage.js";
+import { FeedbackScreen } from "./FeedbackScreen.js";
+import { ReflectScreen } from "./ReflectScreen.js";
+import type { AudioRoute } from "@mbpt/core";
+
+type Phase = "preparing" | "performing" | "prompts" | "scoring" | "feedback";
+
+function needsMeasurement(activity: ActivityDefinition): boolean {
+  return activity.evidence_captured.some((e) => e === "marks" || e.startsWith("pressure_trace"));
+}
+
+export function ActivityRunner({ activityId }: { activityId: string }) {
+  const activity = activityById(activityId);
+  if (!activity) return <div className="card">Unknown activity.</div>;
+  if (activity.type === "Present") return <PresentActivity activity={activity} />;
+  if (activity.type === "Reflect") return <ReflectScreen activity={activity} />;
+  return <ScoredActivity activity={activity} />;
+}
+
+function PresentActivity({ activity }: { activity: ActivityDefinition }) {
+  // Teaches. No performance demanded, no scoring, no timer, no failure state.
+  return (
+    <div>
+      <Header activity={activity} />
+      <div className="card">
+        <p>{activity.entry_state}</p>
+        <p>{activity.learner_action}</p>
+        <p className="sub">{activity.system_response}</p>
+      </div>
+      <button onClick={() => (location.hash = "#/")}>Done</button>
+    </div>
+  );
+}
+
+function Header({ activity }: { activity: ActivityDefinition }) {
+  return (
+    <div>
+      <div className="topbar">
+        <a href="#/">← Activities</a>
+        <span className={`badge ${activity.type.toLowerCase()}`}>{activity.type}</span>
+      </div>
+      <h1>
+        {activity.activity_id} · {activity.title}
+      </h1>
+      <div className="sub">
+        Objectives {activity.objectives.join(", ") || "—"} · case {synthCase.case_id} (synthetic)
+      </div>
+    </div>
+  );
+}
+
+function ScoredActivity({ activity }: { activity: ActivityDefinition }) {
+  const isAssess = activity.type === "Assess";
+  const scaffold = scaffoldStateOf(activity);
+  const measurement = needsMeasurement(activity);
+  const prompts = useMemo(() => promptsForActivity(activity), [activity]);
+  const gates: GateScenario[] = useMemo(
+    () =>
+      activity.evidence_captured.includes("safety_gate_responses")
+        ? activity.objectives.flatMap((o) => GATE_SCENARIOS[o] ?? [])
+        : [],
+    [activity],
+  );
+  const needsCircumference = activity.evidence_captured.includes("arm_circumference_entered_cm");
+  const needsCuff = activity.evidence_captured.includes("cuff_selected");
+  const needsRestTimer = activity.objectives.includes("A4");
+  const needsPalpated = activity.objectives.some((o) => o === "C1" || o === "C2") && measurement;
+
+  const [phase, setPhase] = useState<Phase>("preparing");
+  const [micError, setMicError] = useState<string | null>(null);
+  const [audioRoute, setAudioRoute] = useState<AudioRoute>("unknown");
+  const [perception, setPerception] = useState<PerceptionChoice>("paced");
+  const [calibration, setCalibration] = useState<Calibration | null>(null);
+  const [zeroConfirmed, setZeroConfirmed] = useState(false);
+  const [audioChecked, setAudioChecked] = useState(false);
+  const [palpated, setPalpated] = useState("");
+  const [circEntered, setCircEntered] = useState("");
+  const [circReference, setCircReference] = useState("");
+  const [cuffSelected, setCuffSelected] = useState("");
+  const [restTimer, setRestTimer] = useState<{ started: number } | null>(null);
+  const [timerEvents, setTimerEvents] = useState<TimerEvent[]>([]);
+  const [gateIndex, setGateIndex] = useState(0);
+  const [gateResponses, setGateResponses] = useState<{ gate_id: string; response: string; correct: boolean }[]>([]);
+  const [promptIndex, setPromptIndex] = useState(0);
+  const [promptDraft, setPromptDraft] = useState("");
+  const [promptHinted, setPromptHinted] = useState(false);
+  const [promptEcho, setPromptEcho] = useState<string | null>(null);
+  const [responses, setResponses] = useState<SpokenResponse[]>([]);
+  const [evidence, setEvidence] = useState<MeasurementEvidence | null>(null);
+  const [result, setResult] = useState<ScoreResult | null>(null);
+  const [streaks, setStreaks] = useState<Record<string, number>>({});
+  const startedAtIso = useRef(new Date().toISOString());
+  const startedPerf = useRef(performance.now());
+
+  const audio = useRef(new WebAudioOutput());
+  const voice = useRef(new VoiceOnsetDetector());
+  const camera = useRef<CameraGaugeReader | null>(null);
+
+  useEffect(() => {
+    return () => {
+      voice.current.stop();
+      audio.current.stop();
+      camera.current?.stop();
+    };
+  }, []);
+
+  async function begin() {
+    try {
+      await audio.current.start();
+      const route = await audio.current.detectRoute();
+      setAudioRoute(route);
+      if (measurement) await voice.current.start();
+    } catch {
+      // [DECISION-7]: voice is non-optional during a live measurement
+      // (invariant I-7). A refusal blocks marking activities with a clear
+      // explanation — there is no silent degraded path.
+      setMicError(
+        "Microphone permission is required: during a live measurement both hands are on the equipment, so marking is by voice. Allow microphone access and try again.",
+      );
+      return;
+    }
+    if (perception === "camera") {
+      try {
+        camera.current = new CameraGaugeReader(defaultGeometry(), config.needle_confidence_threshold);
+        await camera.current.startCamera();
+        camera.current.start(calibration);
+      } catch {
+        setPerception("paced"); // no camera → paced shadowing, labelled, not an error
+      }
+    }
+    setPhase(gates.length > 0 || measurement ? "performing" : "prompts");
+  }
+
+  function measurementDone(measured: MeasurementEvidence) {
+    setEvidence(measured);
+    if (prompts.length > 0) setPhase("prompts");
+    else void finish(measured, responses);
+  }
+
+  function submitPrompt() {
+    const set = prompts[promptIndex]!;
+    const response: SpokenResponse = {
+      prompt_id: set.prompt_id,
+      transcript: promptDraft,
+      t_ms: Math.round(performance.now() - startedPerf.current),
+      prompted: promptHinted,
+      input_mode: "typed", // [DECISION-3]: structured input fallback, offline
+    };
+    const next = [...responses, response];
+    setResponses(next);
+    setPromptDraft("");
+    setPromptHinted(false);
+    // Practice gives immediate feedback; Assess buffers everything. This is
+    // the runner's rule, not the screen's choice (invariant I-5).
+    if (!isAssess) {
+      const match = matchExpectedResponse(response.transcript, response.prompted, set);
+      setPromptEcho(
+        match.matched
+          ? "That names what it needed to name."
+          : "That answer did not name everything required. It is recorded; try phrasing what you would actually do.",
+      );
+    }
+    if (promptIndex + 1 < prompts.length) setPromptIndex(promptIndex + 1);
+    else void finish(evidence, next);
+  }
+
+  async function finish(measured: MeasurementEvidence | null, finalResponses: SpokenResponse[]) {
+    setPhase("scoring");
+    const withPalpated: SpokenResponse[] =
+      needsPalpated && palpated !== ""
+        ? [
+            {
+              prompt_id: "C1_palpated_estimate",
+              transcript: palpated,
+              t_ms: 0,
+              prompted: false,
+              input_mode: "structured",
+            },
+            ...finalResponses,
+          ]
+        : finalResponses;
+    const record = buildAttempt({
+      activity,
+      startedAtIso: startedAtIso.current,
+      seq: await nextSeq(),
+      samples: measured?.samples ?? [],
+      marks: measured?.marks ?? [],
+      tracking_gaps: measured?.tracking_gaps ?? [],
+      spoken_responses: withPalpated,
+      safety_gate_responses: gateResponses,
+      timer_events: timerEvents,
+      steps_completed: [],
+      equipment_check: { gauge_zero_confirmed: zeroConfirmed, audio_check_passed: audioChecked },
+      audio_route: audioRoute,
+      perception_mode: perception === "camera" ? "camera" : "paced_shadowing",
+      calibration,
+      learner_selection: null,
+      arm_circumference_entered_cm: circEntered === "" ? null : Number(circEntered),
+      arm_circumference_reference_cm: circReference === "" ? null : Number(circReference),
+      cuff_selected: cuffSelected === "" ? null : cuffSelected,
+    });
+    const scoreResult = await scoreAndStore(record);
+    const history = await scoredHistory();
+    const streakNow: Record<string, number> = {};
+    for (const objective of record.objectives) {
+      streakNow[objective] = objectiveMastery(objective, history, config).streak;
+    }
+    setStreaks(streakNow);
+    setResult(scoreResult);
+    setPhase("feedback");
+    voice.current.stop();
+    camera.current?.stop();
+  }
+
+  async function nextSeq(): Promise<number> {
+    return attemptStore.nextSeq();
+  }
+
+  if (phase === "feedback" && result) {
+    return (
+      <div>
+        <Header activity={activity} />
+        <FeedbackScreen
+          activity={activity}
+          result={result}
+          streaks={streaks}
+          marks={evidence?.marks ?? []}
+          groundTruth={synthCase.ground_truth}
+        />
+      </div>
+    );
+  }
+
+  if (phase === "scoring") {
+    return (
+      <div>
+        <Header activity={activity} />
+        <div className="card">Sealing the attempt record and scoring…</div>
+      </div>
+    );
+  }
+
+  if (phase === "performing" && gates.length > 0 && gateIndex < gates.length) {
+    const gate = gates[gateIndex]!;
+    return (
+      <div>
+        <Header activity={activity} />
+        <div className="card">
+          <p>{gate.prompt}</p>
+          {gate.options.map((option) => (
+            <button
+              key={option.value}
+              className="secondary"
+              style={{ display: "block", width: "100%", marginTop: 8 }}
+              onClick={() => {
+                setGateResponses([
+                  ...gateResponses,
+                  { gate_id: gate.gate_id, response: option.value, correct: option.correct },
+                ]);
+                if (gateIndex + 1 < gates.length) setGateIndex(gateIndex + 1);
+                else if (measurement) setGateIndex(gates.length);
+                else if (prompts.length > 0) setPhase("prompts");
+                else
+                  void finish(null, responses); // gates were the whole activity
+              }}
+            >
+              {option.label}
+            </button>
+          ))}
+          {!isAssess && gateIndex > 0 && (
+            <p className="sub" style={{ marginTop: 10 }}>
+              {gateResponses[gateResponses.length - 1]?.correct
+                ? "Correct."
+                : "That decision was not correct. A contraindicated limb is never used carefully."}
+            </p>
+          )}
+        </div>
+        <div className="sub">
+          Scenario {gateIndex + 1} of {gates.length} · demo scenarios pending the authored library
+        </div>
+      </div>
+    );
+  }
+
+  if (phase === "performing" && measurement) {
+    return (
+      <div>
+        <Header activity={activity} />
+        <MeasurementStage
+          scaffold={scaffold}
+          countsTowardMastery={isAssess && scaffold === "unaided"}
+          perception={perception}
+          calibration={calibration}
+          cameraReader={camera.current}
+          audio={audio.current}
+          voice={voice.current}
+          onDone={measurementDone}
+        />
+      </div>
+    );
+  }
+
+  if (phase === "prompts") {
+    const set = prompts[promptIndex];
+    if (!set) {
+      void finish(evidence, responses);
+      return null;
+    }
+    return (
+      <div>
+        <Header activity={activity} />
+        {promptEcho && !isAssess && <div className="notice info">{promptEcho}</div>}
+        <div className="card">
+          <p>{PROMPT_TEXT[set.prompt_id] ?? set.prompt_id}</p>
+          <label htmlFor="prompt-input">Your answer — say it as you would at the bedside, then type it</label>
+          <textarea
+            id="prompt-input"
+            rows={3}
+            value={promptDraft}
+            onChange={(e) => setPromptDraft(e.target.value)}
+          />
+          <div className="row spread" style={{ marginTop: 10 }}>
+            <button className="quiet" onClick={() => setPromptHinted(true)} disabled={promptHinted}>
+              {promptHinted ? "Prompted — recorded as such" : "I need a prompt"}
+            </button>
+            <button onClick={submitPrompt} disabled={promptDraft.trim() === ""}>
+              Commit answer
+            </button>
+          </div>
+        </div>
+        <div className="sub">
+          Question {promptIndex + 1} of {prompts.length}
+          {isAssess ? " · feedback is held until the attempt ends" : ""}
+        </div>
+      </div>
+    );
+  }
+
+  // PREPARING
+  const canBegin =
+    (!measurement || (zeroConfirmed && audioChecked)) &&
+    (!needsPalpated || palpated !== "") &&
+    (perception === "paced" || calibration !== null);
+  return (
+    <div>
+      <Header activity={activity} />
+      <div className="card">
+        <p>{activity.entry_state}</p>
+        <p className="sub">{activity.learner_action}</p>
+      </div>
+
+      {micError && <div className="notice">{micError}</div>}
+      {audioRoute === "bluetooth" && (
+        <div className="notice">
+          Bluetooth audio detected: the sound will lag the needle. Use wired earphones.
+          {config.bluetooth_scoring_policy === "refuse" && " This attempt will not be scored."}
+        </div>
+      )}
+
+      {measurement && (
+        <div className="card">
+          <h2 style={{ marginTop: 0 }}>Equipment check</h2>
+          <label>
+            <input
+              type="checkbox"
+              checked={zeroConfirmed}
+              onChange={(e) => setZeroConfirmed(e.target.checked)}
+            />{" "}
+            Cuff fully deflated and the needle rests at zero
+          </label>
+          <div className="row" style={{ marginTop: 8 }}>
+            <button
+              className="secondary"
+              onClick={async () => {
+                await audio.current.start();
+                audio.current.playSample();
+                setAudioChecked(true);
+              }}
+            >
+              Play a sample beat
+            </button>
+            <span className="sub" style={{ margin: 0 }}>
+              {audioChecked ? "heard" : "confirm you can hear it"}
+            </span>
+          </div>
+          <label style={{ marginTop: 12 }}>Gauge source</label>
+          <div className="row">
+            <button
+              className={perception === "paced" ? "" : "secondary"}
+              onClick={() => setPerception("paced")}
+            >
+              Paced shadowing
+            </button>
+            <button
+              className={perception === "camera" ? "" : "secondary"}
+              onClick={() => setPerception("camera")}
+            >
+              Camera on real gauge
+            </button>
+          </div>
+          {perception === "camera" && (
+            <CalibrationInline camera={camera} onCalibrated={setCalibration} calibration={calibration} />
+          )}
+        </div>
+      )}
+
+      {needsPalpated && (
+        <div className="card">
+          <label htmlFor="palpated">{PROMPT_TEXT["C1_palpated_estimate"]}</label>
+          <input
+            id="palpated"
+            type="number"
+            inputMode="numeric"
+            value={palpated}
+            onChange={(e) => setPalpated(e.target.value)}
+          />
+        </div>
+      )}
+
+      {needsCircumference && (
+        <div className="card">
+          <label htmlFor="circ-entered">Arm circumference you measured (cm)</label>
+          <input id="circ-entered" type="number" value={circEntered} onChange={(e) => setCircEntered(e.target.value)} />
+          <label htmlFor="circ-ref">Reference circumference from your partner (cm)</label>
+          <input id="circ-ref" type="number" value={circReference} onChange={(e) => setCircReference(e.target.value)} />
+        </div>
+      )}
+
+      {needsCuff && (
+        <div className="card">
+          <label htmlFor="cuff">Cuff selected</label>
+          <select id="cuff" value={cuffSelected} onChange={(e) => setCuffSelected(e.target.value)}>
+            <option value="">choose…</option>
+            <option value="small_adult">small adult</option>
+            <option value="adult">adult</option>
+            <option value="large_adult">large adult</option>
+            <option value="extra_large">extra large</option>
+          </select>
+          {config.cuff_bladder_fit_standard === null && (
+            <p className="sub">
+              Cuff selection is recorded but cannot be scored until the bladder fit standard is
+              confirmed in writing (open decision, INSTR 11.2).
+            </p>
+          )}
+        </div>
+      )}
+
+      {needsRestTimer && (
+        <div className="card">
+          <h2 style={{ marginTop: 0 }}>Quiet rest</h2>
+          {restTimer === null ? (
+            <button className="secondary" onClick={() => setRestTimer({ started: performance.now() })}>
+              Start rest timer
+            </button>
+          ) : (
+            <RestTimer
+              startedAt={restTimer.started}
+              required_s={config.rest_duration_s}
+              onStop={(started_ms, ended_ms) => {
+                setTimerEvents([...timerEvents, { timer_id: "rest", started_ms, ended_ms }]);
+                setRestTimer(null);
+              }}
+            />
+          )}
+          {timerEvents.length > 0 && (
+            <p className="sub">rest recorded: {Math.round((timerEvents[0]!.ended_ms - timerEvents[0]!.started_ms) / 1000)} s</p>
+          )}
+        </div>
+      )}
+
+      <button onClick={begin} disabled={!canBegin} style={{ width: "100%", marginTop: 8 }}>
+        {isAssess ? "Begin — this one counts" : "Begin practice"}
+      </button>
+    </div>
+  );
+}
+
+function RestTimer({
+  startedAt,
+  required_s,
+  onStop,
+}: {
+  startedAt: number;
+  required_s: number;
+  onStop(started_ms: number, ended_ms: number): void;
+}) {
+  const [now, setNow] = useState(performance.now());
+  useEffect(() => {
+    const interval = setInterval(() => setNow(performance.now()), 1000);
+    return () => clearInterval(interval);
+  }, []);
+  const elapsed = Math.round((now - startedAt) / 1000);
+  return (
+    <div className="row spread">
+      <span className="pressure-readout" style={{ fontSize: "1.4rem" }}>
+        {Math.floor(elapsed / 60)}:{String(elapsed % 60).padStart(2, "0")} / {Math.floor(required_s / 60)}:00
+      </span>
+      <button className="secondary" onClick={() => onStop(0, elapsed * 1000)}>
+        End rest
+      </button>
+    </div>
+  );
+}
+
+// Calibration: zero from the resting needle, the scale from tapping the
+// printed 200 mark on screen (SDD-MBPT-001 section 4.1.2). Recoverable
+// mid-session without losing the attempt.
+function CalibrationInline({
+  camera,
+  calibration,
+  onCalibrated,
+}: {
+  camera: React.MutableRefObject<CameraGaugeReader | null>;
+  calibration: Calibration | null;
+  onCalibrated(c: Calibration): void;
+}) {
+  const [zeroAngle, setZeroAngle] = useState<number | null>(null);
+  const [status, setStatus] = useState("Start the camera, frame the dial to fill the square, then set zero.");
+  const host = useRef<HTMLDivElement | null>(null);
+
+  async function ensureCamera() {
+    if (!camera.current) {
+      camera.current = new CameraGaugeReader(defaultGeometry(), config.needle_confidence_threshold);
+      await camera.current.startCamera();
+      camera.current.start(null);
+    }
+    const video = camera.current.videoElement();
+    if (video && host.current && video.parentElement !== host.current) {
+      host.current.appendChild(video);
+    }
+  }
+
+  return (
+    <div style={{ marginTop: 10 }}>
+      <div
+        className="stage"
+        ref={host}
+        onClick={(e) => {
+          if (zeroAngle === null) return;
+          const rect = (e.currentTarget as HTMLDivElement).getBoundingClientRect();
+          const dx = e.clientX - (rect.left + rect.width / 2);
+          const dy = e.clientY - (rect.top + rect.height / 2);
+          const angle = ((Math.atan2(dy, dx) * 180) / Math.PI + 360) % 360;
+          onCalibrated({
+            zero_angle_deg: zeroAngle,
+            ref_angle_deg: angle,
+            ref_pressure_mmhg: 200,
+            method: "two_point_linear",
+          });
+          setStatus("Calibrated. Zero and the 200 mark are set.");
+        }}
+      />
+      <p className="sub">{status}</p>
+      <div className="row">
+        <button className="secondary" onClick={ensureCamera}>
+          Start camera
+        </button>
+        <button
+          className="secondary"
+          onClick={() => {
+            const raw = camera.current?.lastAngle();
+            if (!raw) {
+              setStatus("No needle reading yet — check framing and lighting.");
+              return;
+            }
+            setZeroAngle(raw.angle_deg);
+            setStatus("Zero set. Now tap the printed 200 mark on the dial, on screen.");
+          }}
+        >
+          Set zero
+        </button>
+        {calibration && <span className="badge">calibrated</span>}
+      </div>
+    </div>
+  );
+}

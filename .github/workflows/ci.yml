@@ -1,0 +1,33 @@
+name: ci
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      # The order mirrors what each gate protects: the boundary first (the
+      # architecture), then the core (the scores), then the contracts.
+      - name: Dependency boundary check
+        run: npm run boundary
+      - name: Core tests (must stay near one second)
+        run: npm run test -w core
+      - name: Build core, perception, tools
+        run: npm run build:node
+      - name: Perception tests
+        run: npm run test -w perception
+      - name: Golden set (every commit; a diff here is a scoring change)
+        run: node tools/dist/golden-runner/src/run.js
+      - name: Crosswalk check (coverage + evidence contract)
+        run: node tools/dist/crosswalk-check/src/check.js
+      - name: App typecheck and build
+        run: npm run typecheck -w app && npm run build -w app
