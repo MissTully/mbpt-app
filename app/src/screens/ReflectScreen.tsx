@@ -1,17 +1,17 @@
 // Reflect activities: the learner's own data, shown honestly, never pass or
-// fail. The window rule is a user experience requirement: below the window a
-// trend is not drawn as though it meant something (UXS-MBPT-001 section 3).
+// fail. Honesty cuts both ways under ADR-007: marks are taps resolved
+// through the case's pressure track, so digit-preference and deflation-rate
+// panels would show the recording's behaviour, not the learner's — they are
+// stated as unmeasurable rather than drawn as though they meant something
+// (UXS-MBPT-001 section 3 posture).
 
 import { useEffect, useState } from "react";
-import {
-  rateStabilityTrend,
-  terminalDigitTrend,
-  type ActivityDefinition,
-  type AttemptRecord,
-} from "@mbpt/core";
-import { config } from "../content.js";
+import type { ActivityDefinition, AttemptRecord } from "@mbpt/core";
+import { groundTruthFor } from "../content.js";
 import { attemptStore } from "../adapters/store.js";
 import { learnerId } from "../runner/attempt.js";
+
+const RECENT_WINDOW = 8;
 
 export function ReflectScreen({ activity }: { activity: ActivityDefinition }) {
   const [attempts, setAttempts] = useState<AttemptRecord[] | null>(null);
@@ -24,8 +24,7 @@ export function ReflectScreen({ activity }: { activity: ActivityDefinition }) {
 
   if (!attempts) return <div className="card">Loading your attempts…</div>;
 
-  const digits = terminalDigitTrend(attempts, config);
-  const rates = rateStabilityTrend(attempts, config);
+  const marked = attempts.filter((a) => a.marks.length > 0).slice(-RECENT_WINDOW);
 
   return (
     <div>
@@ -39,62 +38,52 @@ export function ReflectScreen({ activity }: { activity: ActivityDefinition }) {
       <div className="sub">Your own data. Never pass or fail.</div>
 
       <div className="card">
-        <h2 style={{ marginTop: 0 }}>Terminal digits of your marks</h2>
-        {digits.ready ? (
+        <h2 style={{ marginTop: 0 }}>Your recent marks against the reference</h2>
+        {marked.length > 0 ? (
           <>
-            <div className="chartbar">
-              {["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"].map((digit) => {
-                const count = digits.value.distribution[digit] ?? 0;
-                const max = Math.max(1, ...Object.values(digits.value.distribution));
-                return (
-                  <div key={digit} style={{ flex: 1 }}>
-                    <div
-                      className={`bar ${(digit === "0" || digit === "5") && digits.value.biased ? "hot" : ""}`}
-                      style={{ height: `${(count / max) * 80}px` }}
-                    />
-                    <div className="bar-label">{digit}</div>
-                  </div>
-                );
-              })}
-            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Attempt</th>
+                  <th>Systolic</th>
+                  <th>Diastolic</th>
+                </tr>
+              </thead>
+              <tbody>
+                {marked.map((attempt) => {
+                  const truth = groundTruthFor(attempt.case_id, attempt.case_version);
+                  return (
+                    <tr key={attempt.attempt_id}>
+                      <td>{attempt.activity_id}</td>
+                      <td>{markCell(attempt, "systolic", truth?.systolic_mmhg ?? null)}</td>
+                      <td>{markCell(attempt, "diastolic", truth?.diastolic_mmhg ?? null)}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
             <p className="sub">
-              {digits.value.biased
-                ? "Your marks cluster on 0 and 5. What would you change about how you read the dial?"
-                : "No rounding pattern is visible across this window."}
+              Oldest to newest. A steady drift in one direction is a habit; scatter in both
+              directions is attention. Which is yours?
             </p>
           </>
         ) : (
           <p className="sub">
-            {digits.attempts_needed} more marked {digits.attempts_needed === 1 ? "attempt" : "attempts"} and
-            your rounding pattern becomes readable.
+            No marked attempts on this device yet. Your marks, and how far each landed from the
+            case's reference values, will appear here.
           </p>
         )}
       </div>
 
       <div className="card">
-        <h2 style={{ marginTop: 0 }}>Deflation control across attempts</h2>
-        {rates.ready ? (
-          <>
-            <div className="chartbar">
-              {rates.value.excursion_counts.map((count, i) => (
-                <div key={i} style={{ flex: 1 }}>
-                  <div className={`bar ${count > 0 ? "hot" : ""}`} style={{ height: `${count * 20 + 2}px` }} />
-                </div>
-              ))}
-            </div>
-            <p className="sub">
-              Rate excursions per attempt, oldest to newest.{" "}
-              {rates.value.excursions_falling
-                ? "The count is falling — control is developing."
-                : "The count is not falling yet."}
-            </p>
-          </>
-        ) : (
-          <p className="sub">
-            {rates.attempts_needed} more measured {rates.attempts_needed === 1 ? "attempt" : "attempts"} before
-            this trend means anything.
-          </p>
-        )}
+        <h2 style={{ marginTop: 0 }}>What this release cannot yet measure</h2>
+        <p className="sub">
+          Two habits matter here that the app cannot observe yet: your rounding pattern when
+          reading the dial (marks are made by tap, so the app never sees the number you read),
+          and your own deflation-rate control (no pressure trace is captured from your cuff).
+          Practise both on the practice arm alongside the recordings — and judge them honestly
+          yourself, because for now you are the only one who can.
+        </p>
       </div>
 
       <div className="card">
@@ -120,4 +109,13 @@ export function ReflectScreen({ activity }: { activity: ActivityDefinition }) {
       </div>
     </div>
   );
+}
+
+function markCell(attempt: AttemptRecord, type: "systolic" | "diastolic", reference: number | null): string {
+  const mark = attempt.marks.find((m) => m.type === type);
+  if (!mark) return "—";
+  const value = Math.round(mark.pressure_mmhg);
+  if (reference === null) return `${value}`;
+  const delta = value - reference;
+  return `${value} (${delta >= 0 ? "+" : ""}${delta})`;
 }
