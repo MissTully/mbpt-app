@@ -13,5 +13,7 @@ export * from "./scoring/score.js";
 export * from "./scoring/mastery.js";
 export * from "./trends/trends.js";
 export * from "./engine/auscultation.js";
+export * from "./engine/caseSelection.js";
+export * from "./model/videoManifest.js";
 export * from "./feedback/numberGuard.js";
 export * from "./reporting/competency.js";

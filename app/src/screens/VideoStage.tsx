@@ -5,8 +5,8 @@
 // recorded — the video's deflation is never written down as the learner's.
 
 import { useEffect, useRef, useState } from "react";
-import type { Mark, PressureSample, TrackingGap } from "@mbpt/core";
-import { videoCase } from "../content.js";
+import { pressureAtTrackTime, type Mark, type PressureSample, type TrackingGap } from "@mbpt/core";
+import type { CasePackage } from "../content.js";
 
 export interface MeasurementEvidence {
   samples: PressureSample[];
@@ -14,25 +14,13 @@ export interface MeasurementEvidence {
   tracking_gaps: TrackingGap[];
 }
 
-export function pressureAtVideoTime(t_ms: number): number {
-  const track = videoCase.pressure_track;
-  let previous = track[0]!;
-  for (const sample of track) {
-    if (sample.t_ms > t_ms) {
-      const span = sample.t_ms - previous.t_ms;
-      const fraction = span === 0 ? 0 : (t_ms - previous.t_ms) / span;
-      return previous.pressure_mmhg + (sample.pressure_mmhg - previous.pressure_mmhg) * fraction;
-    }
-    previous = sample;
-  }
-  return previous.pressure_mmhg;
-}
-
 export function VideoStage({
+  casePkg,
   scaffold,
   countsTowardMastery,
   onDone,
 }: {
+  casePkg: CasePackage;
   scaffold: string;
   countsTowardMastery: boolean;
   onDone(evidence: MeasurementEvidence): void;
@@ -50,14 +38,14 @@ export function VideoStage({
     if (!guided) return;
     const interval = setInterval(() => {
       const video = videoRef.current;
-      if (video && !video.paused) setPressureNow(pressureAtVideoTime(video.currentTime * 1000));
+      if (video && !video.paused) setPressureNow(pressureAtTrackTime(casePkg.video.pressure_track, video.currentTime * 1000));
     }, 100);
     return () => clearInterval(interval);
   }, [guided]);
 
   function start() {
     void videoRef.current?.play();
-    if (videoCase.audio_src) {
+    if (casePkg.audio_url) {
       // The generated dev asset carries its sound in a sidecar; a recorded
       // case muxes audio into the video and this element is absent.
       if (audioRef.current) audioRef.current.currentTime = videoRef.current?.currentTime ?? 0;
@@ -73,7 +61,7 @@ export function VideoStage({
     const recorded: Mark = {
       type: marks.length === 0 ? "systolic" : "diastolic",
       t_ms,
-      pressure_mmhg: Math.round(pressureAtVideoTime(t_ms) * 10) / 10,
+      pressure_mmhg: Math.round(pressureAtTrackTime(casePkg.video.pressure_track, t_ms) * 10) / 10,
       source: "tap",
     };
     setMarks([...marks, recorded]);
@@ -95,16 +83,16 @@ export function VideoStage({
       <div className="stage">
         <video
           ref={videoRef}
-          src={videoCase.video_url}
+          src={casePkg.video_url}
           playsInline
-          muted={Boolean(videoCase.audio_src)}
+          muted={Boolean(casePkg.audio_url)}
           onEnded={() => {
             setEnded(true);
             audioRef.current?.pause();
           }}
           style={soundOnly ? { visibility: "hidden" } : undefined}
         />
-        {videoCase.audio_url && <audio ref={audioRef} src={videoCase.audio_url} />}
+        {casePkg.audio_url && <audio ref={audioRef} src={casePkg.audio_url} />}
         {soundOnly && playing && (
           <div className="occluder">Sound only — the gauge is hidden. Mark from your ears.</div>
         )}

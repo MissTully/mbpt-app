@@ -8,8 +8,10 @@ import {
   ResponseSetLibrary,
   loadConfig,
   validateCaseManifest,
+  validateVideoManifest,
   type ActivityDefinition,
   type CaseManifest,
+  type VideoManifest,
   type ExpectedResponseSet,
   type ThresholdConfig,
 } from "@mbpt/core";
@@ -20,9 +22,6 @@ import rawResponseSets from "../../content/response-sets/response-sets-v1.json";
 import rawTemplates from "../../content/feedback/templates-v1.json";
 import rawLearnerText from "../../content/learner-text/learner-text-v1.json";
 import rawSynthCase from "../../cases/C000-SYNTH/case.json";
-import rawVideoManifest from "../../cases/C000-SYNTH/video-manifest.json";
-import synthVideoUrl from "../../cases/C000-SYNTH/video.webm";
-import synthAudioUrl from "../../cases/C000-SYNTH/video-audio.wav";
 
 export const config: ThresholdConfig = loadConfig(rawConfig);
 export const activities: ActivityDefinition[] = ActivityCatalog.parse(rawActivities).activities;
@@ -30,34 +29,67 @@ export const responseSets: ExpectedResponseSet[] = ResponseSetLibrary.parse(rawR
 export const templates: Record<string, string> = (rawTemplates as { templates: Record<string, string> }).templates;
 export const synthCase: CaseManifest = validateCaseManifest(rawSynthCase);
 
-// The case video (ADR-007): the measurement recording and its authored
-// pressure track. The generated dev asset carries audio as a sidecar WAV;
-// recorded cases mux audio into the video and leave audio_src null.
-export interface VideoCase {
-  case_id: string;
+// The case library (ADR-007). A case package is a directory under cases/
+// holding case.json (ground truth), video-manifest.json (the pressure track
+// that bridges video time to mmHg), and the media the manifest names. Drop a
+// complete package in and it registers here; an incomplete or inconsistent
+// one refuses to load rather than playing wrong.
+export interface CasePackage {
+  manifest: CaseManifest;
+  video: VideoManifest;
   video_url: string;
-  audio_src: string | null;
   audio_url: string | null;
-  duration_ms: number;
-  pressure_track: { t_ms: number; pressure_mmhg: number }[];
 }
-const manifest = rawVideoManifest as {
-  case_id: string;
-  audio_src?: string;
-  duration_ms: number;
-  pressure_track: { t_ms: number; pressure_mmhg: number }[];
-};
-if (manifest.case_id !== synthCase.case_id || manifest.pressure_track.length === 0) {
-  throw new Error("video-manifest: case mismatch or empty pressure track");
+
+const caseFiles = import.meta.glob("../../cases/*/case.json", { eager: true, import: "default" });
+const videoManifestFiles = import.meta.glob("../../cases/*/video-manifest.json", {
+  eager: true,
+  import: "default",
+});
+const mediaFiles = import.meta.glob("../../cases/*/*.{webm,mp4,wav}", {
+  eager: true,
+  query: "?url",
+  import: "default",
+}) as Record<string, string>;
+
+function buildCaseLibrary(): CasePackage[] {
+  const packages: CasePackage[] = [];
+  for (const [path, rawVideo] of Object.entries(videoManifestFiles)) {
+    const dir = path.slice(0, path.lastIndexOf("/") + 1);
+    const rawCase = caseFiles[`${dir}case.json`];
+    if (!rawCase) throw new Error(`case library: ${dir} has a video manifest but no case.json`);
+    const manifest = validateCaseManifest(rawCase);
+    const video = validateVideoManifest(rawVideo);
+    if (video.case_id !== manifest.case_id) {
+      throw new Error(`case library: ${dir} video manifest names ${video.case_id}, case is ${manifest.case_id}`);
+    }
+    const video_url = mediaFiles[`${dir}${video.video_src}`];
+    if (!video_url) throw new Error(`case library: ${dir} is missing media file ${video.video_src}`);
+    const audio_url = video.audio_src ? (mediaFiles[`${dir}${video.audio_src}`] ?? null) : null;
+    if (video.audio_src && !audio_url) {
+      throw new Error(`case library: ${dir} is missing media file ${video.audio_src}`);
+    }
+    packages.push({ manifest, video, video_url, audio_url });
+  }
+  if (packages.length === 0) throw new Error("case library: no playable cases");
+  return packages.sort((a, b) => (a.manifest.case_id < b.manifest.case_id ? -1 : 1));
 }
-export const videoCase: VideoCase = {
-  case_id: manifest.case_id,
-  video_url: synthVideoUrl,
-  audio_src: manifest.audio_src ?? null,
-  audio_url: manifest.audio_src ? synthAudioUrl : null,
-  duration_ms: manifest.duration_ms,
-  pressure_track: manifest.pressure_track,
-};
+
+export const caseLibrary: CasePackage[] = buildCaseLibrary();
+
+export function caseById(case_id: string): CasePackage | null {
+  return caseLibrary.find((c) => c.manifest.case_id === case_id) ?? null;
+}
+
+/** Ground truth for scoring an attempt — only if the exact case version the
+ * attempt was made against is still in the library. Anything else scores
+ * not_assessable rather than against the wrong answer. */
+export function groundTruthFor(case_id: string | null, case_version: string | null) {
+  if (case_id === null) return null;
+  const pkg = caseById(case_id);
+  if (!pkg || pkg.manifest.case_version !== case_version) return null;
+  return pkg.manifest.ground_truth;
+}
 
 // Learner-facing curriculum copy: the opening screen, module descriptions,
 // and lesson introductions. Hand-authored draft (learning engineer to review).

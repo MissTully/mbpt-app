@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import { audibilityAt } from "@mbpt/core";
-import { learnerText, synthCase, videoCase } from "../content.js";
-import { pressureAtVideoTime } from "./VideoStage.js";
+import { audibilityAt, pressureAtTrackTime } from "@mbpt/core";
+import { caseLibrary, learnerText } from "../content.js";
+
+const demoCase = caseLibrary[0]!;
 
 // The measurement demonstration (ADR-007): plays the case video with phase
 // captions tracked from the pressure track — the same recording, player and
@@ -18,7 +19,7 @@ export function GaugeDemo() {
   useEffect(() => {
     const interval = setInterval(() => {
       const video = videoRef.current;
-      if (video && !video.paused) setPressure(pressureAtVideoTime(video.currentTime * 1000));
+      if (video && !video.paused) setPressure(pressureAtTrackTime(demoCase.video.pressure_track, video.currentTime * 1000));
     }, 100);
     return () => clearInterval(interval);
   }, []);
@@ -38,7 +39,7 @@ export function GaugeDemo() {
   }
 
   const caption = playing && !ended && pressure !== null ? captionFor(pressure) : "";
-  const groundTruth = synthCase.ground_truth;
+  const groundTruth = demoCase.manifest.ground_truth;
   const recap = t.recap
     .replace("{systolic}", String(groundTruth.systolic_mmhg))
     .replace("{diastolic}", String(groundTruth.diastolic_mmhg));
@@ -55,15 +56,15 @@ export function GaugeDemo() {
       <div className="stage">
         <video
           ref={videoRef}
-          src={videoCase.video_url}
+          src={demoCase.video_url}
           playsInline
-          muted={Boolean(videoCase.audio_src)}
+          muted={Boolean(demoCase.audio_url)}
           onEnded={() => {
             setEnded(true);
             audioRef.current?.pause();
           }}
         />
-        {videoCase.audio_url && <audio ref={audioRef} src={videoCase.audio_url} />}
+        {demoCase.audio_url && <audio ref={audioRef} src={demoCase.audio_url} />}
       </div>
 
       {caption && <div className="notice info">{caption}</div>}
@@ -94,10 +95,10 @@ export function GaugeDemo() {
 
 function captionFor(pressure: number): string {
   const t = learnerText.demo;
-  const character = audibilityAt(pressure, synthCase.audibility_profile);
+  const character = audibilityAt(pressure, demoCase.manifest.audibility_profile);
   if (character === "phase1_crisp") return t.phase1_crisp;
   if (character === "phase2_swishing") return t.phase2_swishing;
   if (character === "phase4_muffled") return t.phase4_muffled;
-  const topOfSound = Math.max(...synthCase.audibility_profile.bands.map((b) => b.upper_mmhg));
+  const topOfSound = Math.max(...demoCase.manifest.audibility_profile.bands.map((b) => b.upper_mmhg));
   return pressure > topOfSound ? t.phase_above : t.phase_below;
 }
