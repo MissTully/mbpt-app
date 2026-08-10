@@ -16,9 +16,11 @@ import {
 } from "@mbpt/core";
 import {
   activityById,
+  activityTextOf,
   caseById,
   caseLibrary,
   config,
+  learnerText,
   promptsForActivity,
   PROMPT_TEXT,
   type CasePackage,
@@ -46,14 +48,42 @@ export function ActivityRunner({ activityId }: { activityId: string }) {
 
 function PresentActivity({ activity }: { activity: ActivityDefinition }) {
   // Teaches. No performance demanded, no scoring, no timer, no failure state.
+  // Learner-facing copy from content/learner-text when authored; the
+  // generated UX-spec fields remain the fallback until each is written.
+  const text = activityTextOf(activity.activity_id);
+  const retiredNote = learnerText.retired_activities?.[activity.activity_id];
+  if (retiredNote) {
+    return (
+      <div>
+        <Header activity={activity} />
+        <div className="notice info">{retiredNote}</div>
+        <button onClick={() => (location.hash = `#/lesson/${activity.lesson}`)}>Back</button>
+      </div>
+    );
+  }
   return (
     <div>
       <Header activity={activity} />
-      <div className="card">
-        <p>{activity.entry_state}</p>
-        <p>{activity.learner_action}</p>
-        <p className="sub">{activity.system_response}</p>
-      </div>
+      {text ? (
+        <div className="card">
+          {text.body.map((paragraph, i) => (
+            <p key={i} className="prose" style={{ marginTop: i === 0 ? 0 : undefined }}>
+              {paragraph}
+            </p>
+          ))}
+          {text.demo_link && (
+            <button className="secondary" onClick={() => (location.hash = "#/demo")}>
+              Play the demonstration
+            </button>
+          )}
+        </div>
+      ) : (
+        <div className="card">
+          <p>{activity.entry_state}</p>
+          <p>{activity.learner_action}</p>
+          <p className="sub">{activity.system_response}</p>
+        </div>
+      )}
       <button onClick={() => (location.hash = `#/lesson/${activity.lesson}`)}>Done</button>
     </div>
   );
@@ -337,19 +367,43 @@ function ScoredActivity({ activity }: { activity: ActivityDefinition }) {
     );
   }
 
-  // PREPARING
+  // PREPARING. What the learner reads is authored copy when it exists, and
+  // otherwise an instruction derived from what the activity actually does —
+  // never the generated UX-spec fields, which describe surfaces that may
+  // not be this one (ADR-007).
+  const authored = activityTextOf(activity.activity_id);
+  const willDo = [
+    gates.length > 0 && "decide what to do in short bedside scenarios",
+    measurement && "watch and listen to a recorded measurement, marking systolic and diastolic as you hear them",
+    prompts.length > 0 && "answer, in your own words, the questions you would answer at the bedside",
+  ].filter(Boolean);
   const canBegin = !needsPalpated || palpated !== "";
   return (
     <div>
       <Header activity={activity} />
       <div className="card">
-        <p>{activity.entry_state}</p>
-        <p className="sub">{activity.learner_action}</p>
+        {authored ? (
+          authored.body.map((paragraph, i) => (
+            <p key={i} className="prose" style={{ marginTop: i === 0 ? 0 : undefined }}>
+              {paragraph}
+            </p>
+          ))
+        ) : willDo.length > 0 ? (
+          <p>In this activity you will {willDo.join(", then ")}.</p>
+        ) : (
+          // Hands-on evidence the phone cannot observe in this release: the
+          // learner still performs the step for real; the record says so.
+          <p>
+            Perform this step for real, with your own equipment, taking your time. The app records
+            the attempt but cannot observe your hands in this release, so its findings are marked
+            not assessable rather than guessed.
+          </p>
+        )}
       </div>
 
       {measurement && (
         <div className="notice info">
-          This activity plays a recorded measurement (ADR-007). Headphones on; you will mark the
+          This activity plays a recorded measurement. Headphones on; you will mark the
           sounds as they happen.
         </div>
       )}

@@ -1,4 +1,4 @@
-import { activities, learnerText, lessonTextOf, moduleTextOf } from "../content.js";
+import { caseLibrary, learnerActivities as activities, learnerText, moduleTextOf } from "../content.js";
 import heroImage from "../assets/welcome-hero.jpg";
 
 // The opening screen. Everything it says is data from
@@ -132,8 +132,10 @@ export function Welcome() {
       </div>
 
       <div className="sub" style={{ marginTop: 20 }}>
-        Development build · synthetic case C000-SYNTH · release 1 is phone-only ·{" "}
-        <a href="#/report">instructor report</a>
+        Development build · {caseLibrary.length}{" "}
+        {caseLibrary.length === 1 ? "case" : "cases"} in the library
+        {caseLibrary.every((c) => c.manifest.synthetic) ? " (synthetic)" : ""} · release 1 is
+        phone-only · <a href="#/report">instructor report</a>
       </div>
     </div>
   );

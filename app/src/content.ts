@@ -106,6 +106,12 @@ export interface LessonText {
   title: string;
   intro: string;
 }
+/** Learner-facing copy for a Present activity, rendered instead of the
+ * generated UX-spec fields when present. */
+export interface ActivityText {
+  body: string[];
+  demo_link?: boolean;
+}
 export interface DemoText {
   title: string;
   subtitle: string;
@@ -150,6 +156,11 @@ export interface LearnerText {
   demo: DemoText;
   modules: Record<string, ModuleText>;
   lessons: Record<string, LessonText>;
+  activities?: Record<string, ActivityText>;
+  /** Activities with no role in this release (e.g. glasses-only spatial
+   * setup). Kept in the generated catalog — the workbook is its source of
+   * truth — but never shown to the learner. */
+  retired_activities?: Record<string, string>;
 }
 
 function loadLearnerText(raw: LearnerText): LearnerText {
@@ -180,6 +191,18 @@ export function lessonTextOf(lessonId: string): LessonText {
   if (!text) throw new Error(`learner-text: no lesson text for ${lessonId}`);
   return text;
 }
+export function activityTextOf(activityId: string): ActivityText | null {
+  return learnerText.activities?.[activityId] ?? null;
+}
+
+const retired = new Set(Object.keys(learnerText.retired_activities ?? {}));
+
+/** The catalog as the learner sees it: retired activities excluded from
+ * every list and count. Direct navigation to a retired activity still
+ * resolves through activityById, honestly labelled. */
+export const learnerActivities: ActivityDefinition[] = activities.filter(
+  (a) => !retired.has(a.activity_id),
+);
 
 export const APP_VERSION = "0.1.0";
 
