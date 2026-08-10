@@ -3,6 +3,7 @@
   "welcome": {
     "app_name": "Manual Blood Pressure Trainer",
     "tagline": "Learn to take a real blood pressure — on a real person, with real equipment — and know for certain you got it right.",
+    "hero_image_alt": "A nurse in navy scrubs takes a manual blood pressure reading from a seated patient, holding an aneroid gauge in one hand and the stethoscope bell over the patient's inner elbow with the other.",
     "intro": [
       "Manual blood pressure is a skill of the hands and the ears. You cannot learn it from a video, and a simulator that fakes the arm teaches you a fake procedure. So this app does something different: you practise on a real partner, with a real cuff, a real stethoscope, and a real gauge — and your phone quietly watches, listens, and coaches.",
       "Every session is short, focused, and honest. You will always know what is being practised, what support you are getting, and what counts toward mastery."

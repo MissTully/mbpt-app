@@ -160,6 +160,16 @@ th { color: var(--muted); font-weight: 500; }
 .hero h1 { font-size: 1.5rem; margin: 0 0 6px; }
 .hero-tagline { color: var(--muted); font-size: 1rem; margin: 0 auto 8px; max-width: 34ch; line-height: 1.5; }
 .prose { color: var(--text); font-size: 0.95rem; line-height: 1.55; margin: 10px 0; }
+.hero-photo {
+  width: 100%;
+  aspect-ratio: 4 / 3; /* portrait source cropped to a calm banner */
+  object-fit: cover;
+  object-position: center 42%; /* keep the gauge and cuff in frame */
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  margin: 4px 0 12px;
+  display: block;
+}
 
 .stat-row { display: flex; gap: 8px; margin: 16px 0 6px; }
 .stat {

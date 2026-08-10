@@ -63,6 +63,7 @@ export interface LearnerText {
   welcome: {
     app_name: string;
     tagline: string;
+    hero_image_alt: string;
     intro: string[];
     how_it_works: { title: string; body: string }[];
     what_you_need: string[];

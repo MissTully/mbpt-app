@@ -1,4 +1,5 @@
 import { activities, learnerText, lessonTextOf, moduleTextOf } from "../content.js";
+import heroImage from "../assets/welcome-hero.jpg";
 
 // The opening screen. Everything it says is data from
 // content/learner-text (draft copy, learning engineer to review); the only
@@ -25,6 +26,8 @@ export function Welcome() {
         <h1>{t.app_name}</h1>
         <p className="hero-tagline">{t.tagline}</p>
       </div>
+
+      <img className="hero-photo" src={heroImage} alt={t.hero_image_alt} />
 
       {t.intro.map((paragraph, i) => (
         <p key={i} className="prose">
