@@ -1,0 +1,26 @@
+{
+  "attempt_id": "golden-4",
+  "config_version": "cfg-1.0.0",
+  "scorer_version": "0.1.0",
+  "total": 0,
+  "nothing_assessable": false,
+  "findings": [
+    {
+      "objective_id": "E4",
+      "outcome": "not_met",
+      "measured": null,
+      "threshold": null,
+      "finding_code": "RESPONSE_PROMPTED",
+      "evidence_refs": [
+        "spoken_responses:E4_crisis_escalation"
+      ]
+    }
+  ],
+  "mastery_updates": [
+    {
+      "objective_id": "E4",
+      "counts_toward_mastery": false,
+      "streak_after": 0
+    }
+  ]
+}

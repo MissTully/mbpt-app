@@ -1,0 +1,152 @@
+{
+  "version": "ers-1.0.0",
+  "sets": [
+    {
+      "prompt_id": "A3_positioning_faults",
+      "version": "1",
+      "required_concepts": [
+        { "id": "arm_below_heart_raises", "any_of": ["arm below heart reads high", "below heart raises", "below the heart reads high", "arm low reads high"] },
+        { "id": "legs_crossed_raises", "any_of": ["crossed legs raise", "legs crossed raises", "crossing legs raises"] }
+      ],
+      "disqualifying_concepts": [],
+      "rule": "all_required_no_disqualifying"
+    },
+    {
+      "prompt_id": "B3_undersized_direction",
+      "version": "1",
+      "required_concepts": [
+        { "id": "undersized_reads_high", "any_of": ["too small reads high", "undersized reads high", "small cuff reads high", "reads falsely high"] }
+      ],
+      "disqualifying_concepts": [
+        { "id": "undersized_reads_low", "any_of": ["too small reads low", "undersized reads low"] }
+      ],
+      "rule": "all_required_no_disqualifying"
+    },
+    {
+      "prompt_id": "B3_oversized_direction",
+      "version": "1",
+      "required_concepts": [
+        { "id": "oversized_reads_low", "any_of": ["too large reads low", "oversized reads low", "large cuff reads low"] }
+      ],
+      "disqualifying_concepts": [
+        { "id": "oversized_reads_high", "any_of": ["too large reads high", "oversized reads high"] }
+      ],
+      "rule": "all_required_no_disqualifying"
+    },
+    {
+      "prompt_id": "B5_boundary_justification",
+      "version": "1",
+      "required_concepts": [
+        { "id": "names_choice", "any_of": ["chose the", "i would use", "selected the", "pick the"] },
+        { "id": "residual_uncertainty", "any_of": ["uncertain", "may read", "might read", "could be off", "residual"] }
+      ],
+      "disqualifying_concepts": [],
+      "rule": "all_required_no_disqualifying"
+    },
+    {
+      "prompt_id": "C4_underinflation_consequence",
+      "version": "1",
+      "required_concepts": [
+        { "id": "gap_falsifies_systolic", "any_of": ["start below the gap", "miss the gap", "below the gap", "systolic falsely low", "systolic too low"] },
+        { "id": "fast_deflation_bias", "any_of": ["fast deflation", "deflating too fast", "too quickly biases", "read late"] }
+      ],
+      "disqualifying_concepts": [],
+      "rule": "all_required_no_disqualifying"
+    },
+    {
+      "prompt_id": "D8_corrective_actions",
+      "version": "1",
+      "required_concepts": [
+        { "id": "reposition", "any_of": ["reposition", "re-position", "move the stethoscope", "check placement"] },
+        { "id": "reinflate_after_deflation", "any_of": ["deflate fully and retry", "start again", "repeat the measurement", "fully deflate then"] },
+        { "id": "check_equipment", "any_of": ["check the earpieces", "check the tubing", "check equipment", "check the stethoscope"] }
+      ],
+      "disqualifying_concepts": [],
+      "rule": "all_required_no_disqualifying"
+    },
+    {
+      "prompt_id": "E1_classification",
+      "version": "1",
+      "required_concepts": [
+        { "id": "names_category", "any_of": ["normal", "elevated", "stage one", "stage 1", "stage two", "stage 2", "crisis", "hypotension", "hypotensive"] }
+      ],
+      "disqualifying_concepts": [],
+      "rule": "all_required_no_disqualifying"
+    },
+    {
+      "prompt_id": "E2_repeat_requirement",
+      "version": "1",
+      "required_concepts": [
+        { "id": "single_reading_insufficient", "any_of": ["single reading", "one reading is not", "does not establish", "not a diagnosis"] },
+        { "id": "repeat", "any_of": ["repeat", "second reading", "confirm", "another reading", "follow up"] }
+      ],
+      "disqualifying_concepts": [],
+      "rule": "all_required_no_disqualifying"
+    },
+    {
+      "prompt_id": "E4_crisis_escalation",
+      "version": "1",
+      "required_concepts": [
+        { "id": "recognises_crisis", "any_of": ["hypertensive crisis", "crisis", "emergency", "above 180", "over 180"] },
+        { "id": "names_action", "any_of": ["escalate", "notify", "tell the nurse", "report to", "call"] },
+        { "id": "names_recipient", "any_of": ["nurse", "supervisor", "registered nurse", "charge nurse", "provider"] }
+      ],
+      "disqualifying_concepts": [
+        { "id": "proceeds_without_escalating", "any_of": ["record it and move on", "just document it", "carry on"] }
+      ],
+      "rule": "all_required_no_disqualifying_unprompted"
+    },
+    {
+      "prompt_id": "E6_documentation",
+      "version": "1",
+      "required_concepts": [
+        { "id": "arm_used", "any_of": ["left arm", "right arm", "arm used"] },
+        { "id": "position", "any_of": ["seated", "sitting", "supine", "standing", "position"] },
+        { "id": "cuff_size", "any_of": ["adult cuff", "large cuff", "small cuff", "cuff size"] },
+        { "id": "time", "any_of": ["time", "at 0", "o'clock", "am", "pm"] }
+      ],
+      "disqualifying_concepts": [],
+      "rule": "all_required_no_disqualifying_unprompted"
+    },
+    {
+      "prompt_id": "E7_implausible_repeat",
+      "version": "1",
+      "required_concepts": [
+        { "id": "recognises_implausible", "any_of": ["implausible", "does not match", "doesn't match", "inconsistent", "unexpected"] },
+        { "id": "repeats", "any_of": ["repeat", "measure again", "retake", "take it again"] }
+      ],
+      "disqualifying_concepts": [
+        { "id": "records_anyway", "any_of": ["record it anyway", "document it and move on"] }
+      ],
+      "rule": "all_required_no_disqualifying_unprompted"
+    },
+    {
+      "prompt_id": "E8_prior_discrepancy",
+      "version": "1",
+      "required_concepts": [
+        { "id": "compares_prior", "any_of": ["prior value", "previous reading", "documented value", "last reading"] },
+        { "id": "action", "any_of": ["repeat", "verify", "notify", "escalate", "report"] }
+      ],
+      "disqualifying_concepts": [],
+      "rule": "all_required_no_disqualifying"
+    },
+    {
+      "prompt_id": "F2_error_attribution",
+      "version": "1",
+      "required_concepts": [
+        { "id": "names_step", "any_of": ["deflation", "inflation", "cuff", "placement", "positioning", "rest", "stethoscope", "reading the dial"] }
+      ],
+      "disqualifying_concepts": [],
+      "rule": "all_required_no_disqualifying"
+    },
+    {
+      "prompt_id": "F4_error_kind",
+      "version": "1",
+      "required_concepts": [
+        { "id": "classifies", "any_of": ["technique", "perceptual", "hearing", "listening", "hand"] }
+      ],
+      "disqualifying_concepts": [],
+      "rule": "all_required_no_disqualifying"
+    }
+  ]
+}

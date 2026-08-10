@@ -1,0 +1,21 @@
+{
+  "name": "@mbpt/perception",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "exports": {
+    ".": "./dist/src/index.js",
+    "./*": "./dist/src/*.js"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "build": "tsc -b"
+  },
+  "dependencies": {
+    "@mbpt/core": "0.1.0"
+  },
+  "devDependencies": {
+    "vitest": "^2.0.5"
+  }
+}

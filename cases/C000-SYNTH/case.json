@@ -1,0 +1,45 @@
+{
+  "case_id": "C000-SYNTH",
+  "case_version": "1",
+  "title": "Synthetic development case",
+  "condition": "Normotensive-range synthetic profile, 134/86",
+  "synthetic": true,
+  "capture_protocol": {
+    "device": "SYNTHETIC — no stethoscope; beats are software-rendered",
+    "mode": "bell",
+    "gain": "n/a",
+    "sample_rate_hz": 44100,
+    "camera": "SYNTHETIC — no camera; pressures from the paced ramp or live gauge",
+    "frame_rate": 60,
+    "exposure_locked": true,
+    "reference_sensor_id": "SYNTH-00",
+    "sync_method": "n/a_synthetic",
+    "consent_record": "n/a_synthetic_no_subject",
+    "captured_on": "2026-08-10",
+    "operator": "dev"
+  },
+  "ground_truth": {
+    "systolic_mmhg": 134,
+    "diastolic_mmhg": 86,
+    "phase4_mmhg": 94,
+    "raters": 1,
+    "rater_agreement_mmhg": 0
+  },
+  "audibility_profile": {
+    "bands": [
+      { "upper_mmhg": 134, "lower_mmhg": 120, "character": "phase1_crisp" },
+      { "upper_mmhg": 120, "lower_mmhg": 94, "character": "phase2_swishing" },
+      { "upper_mmhg": 94, "lower_mmhg": 86, "character": "phase4_muffled" }
+    ]
+  },
+  "beat_index": [
+    { "beat_id": "s1-132", "pressure_mmhg": 132, "character": "phase1_crisp", "source": "synth:crisp" },
+    { "beat_id": "s1-126", "pressure_mmhg": 126, "character": "phase1_crisp", "source": "synth:crisp" },
+    { "beat_id": "s2-116", "pressure_mmhg": 116, "character": "phase2_swishing", "source": "synth:swish" },
+    { "beat_id": "s2-104", "pressure_mmhg": 104, "character": "phase2_swishing", "source": "synth:swish" },
+    { "beat_id": "s4-92", "pressure_mmhg": 92, "character": "phase4_muffled", "source": "synth:muffled" },
+    { "beat_id": "s4-88", "pressure_mmhg": 88, "character": "phase4_muffled", "source": "synth:muffled" }
+  ],
+  "rhythm_intervals_ms": [790, 810, 800, 780, 820, 800, 795, 805],
+  "escalation_scope": null
+}

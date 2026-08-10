@@ -1,0 +1,49 @@
+{
+  "attempt_id": "golden-4",
+  "seq": 4,
+  "learner_id": "learner-golden",
+  "activity_id": "A-4.2.1",
+  "objectives": [
+    "E4"
+  ],
+  "scaffold_state": "unaided",
+  "surface": "phone",
+  "case_id": "C001",
+  "case_version": "1",
+  "started_at": "2026-08-10T10:00:00.000Z",
+  "ended_at": "2026-08-10T10:05:00.000Z",
+  "config_version": "cfg-1.0.0",
+  "app_version": "0.1.0",
+  "perception_mode": "camera",
+  "calibration": null,
+  "habitus_category": "adult",
+  "pressure_trace": null,
+  "rate_excursions": [],
+  "reinflation_events": [],
+  "tracking_gaps": [],
+  "marks": [],
+  "spoken_responses": [
+    {
+      "prompt_id": "E4_crisis_escalation",
+      "transcript": "That is a hypertensive crisis, I would notify the charge nurse",
+      "t_ms": 4000,
+      "prompted": true,
+      "input_mode": "structured"
+    }
+  ],
+  "safety_gate_responses": [],
+  "arm_circumference_entered_cm": null,
+  "arm_circumference_reference_cm": null,
+  "cuff_selected": null,
+  "timer_events": [],
+  "steps_completed": [],
+  "equipment_check": {
+    "gauge_zero_confirmed": true,
+    "audio_check_passed": true
+  },
+  "audio_route": "wired",
+  "expected_response_set_versions": {
+    "E4_crisis_escalation": "1"
+  },
+  "learner_selection": null
+}

@@ -1,0 +1,21 @@
+{
+  "version": "cfg-1.0.0",
+  "marking_tolerance_mmhg": 4,
+  "deflation_rate_band_mmhg_per_s": { "min": 2, "max": 3 },
+  "inflation_margin_mmhg": 30,
+  "cuff_edge_placement_cm": { "min": 2, "max": 3 },
+  "cuff_bladder_fit_standard": null,
+  "sequence_mastery_score": 90,
+  "sequence_mastery_consecutive": 3,
+  "terminal_digit_window": 10,
+  "palpation_agreement_mmhg": 10,
+  "circumference_agreement_cm": 1.5,
+  "tracking_loss_extrapolate_ms": 500,
+  "tracking_loss_hold_ms": 3000,
+  "needle_confidence_threshold": 0.6,
+  "needle_confidence_threshold_provisional": true,
+  "sync_budget_ms": 120,
+  "bluetooth_scoring_policy": "warn",
+  "terminal_digit_bias_threshold": 0.5,
+  "rest_duration_s": 300
+}

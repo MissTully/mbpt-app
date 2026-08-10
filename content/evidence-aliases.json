@@ -1,0 +1,44 @@
+{
+  "note": "Maps evidence_captured tokens as authored in the Crosswalk workbook to attempt record fields (INSTR-MBPT-001 section 4.2). Three classes: 'field' aliases resolve to a real attempt record field; 'spatial' tokens are glasses evidence awaiting the INSTR 11.1 re-surfacing pass (release 1 is phone-only, decision of 2026-08-10); 'presentational' tokens are Present/Reflect interaction traces that are deliberately not attempt-record evidence. The crosswalk checker consults this file; an unmapped token on a phone-runnable release 1 activity fails the build.",
+  "field": {
+    "marks": "marks",
+    "pressure_trace": "pressure_trace",
+    "pressure_trace.mean_rate": "pressure_trace.mean_rate_mmhg_per_s",
+    "pressure_trace.peak_mmhg": "pressure_trace.peak_mmhg",
+    "rate_excursions": "rate_excursions",
+    "reinflation_events": "reinflation_events",
+    "spoken_responses": "spoken_responses",
+    "spoken_responses.prompted": "spoken_responses",
+    "safety_gate_responses": "safety_gate_responses",
+    "arm_circumference_entered_cm": "arm_circumference_entered_cm",
+    "cuff_selected": "cuff_selected",
+    "scaffold_state": "scaffold_state",
+    "steps_completed": "steps_completed",
+    "equipment_check": "equipment_check",
+    "audio_check": "equipment_check",
+    "timer": "timer_events",
+    "timed_hold": "timer_events",
+    "learner_selection": "learner_selection",
+    "interpretation_response": "spoken_responses",
+    "circumference_discrepancy_cm": "arm_circumference_entered_cm",
+    "terminal_digit_bias": "marks"
+  },
+  "spatial": [
+    "anchors",
+    "spatial_anchor",
+    "depth",
+    "depth geometry",
+    "depth_circumference_estimate_cm",
+    "chestpiece_track",
+    "vision_frames",
+    "habitus_form_detected",
+    "landmarks_identified"
+  ],
+  "presentational": [
+    "case_listened",
+    "chart_explored",
+    "replay_viewed",
+    "steps_viewed",
+    "step_order_observed"
+  ]
+}

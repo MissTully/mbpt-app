@@ -1,0 +1,26 @@
+{
+  "activity": {
+    "activity_id": "A-4.2.1",
+    "module": "M4",
+    "lesson": "L4.2",
+    "title": "Crisis escalation",
+    "type": "Assess",
+    "minutes": 8,
+    "surface": "P",
+    "scaffold": "Unaided",
+    "objectives": [
+      "E4"
+    ],
+    "entry_state": "",
+    "learner_action": "",
+    "input_modality": "Voice",
+    "system_response": "",
+    "evidence_captured": [
+      "spoken_responses"
+    ],
+    "exit_condition": "",
+    "release": "Fall"
+  },
+  "groundTruth": null,
+  "priorStreaks": {}
+}
