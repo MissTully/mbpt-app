@@ -18,6 +18,7 @@ import rawConfig from "../../content/config/config-v1.json";
 import rawActivities from "../../content/activities.json";
 import rawResponseSets from "../../content/response-sets/response-sets-v1.json";
 import rawTemplates from "../../content/feedback/templates-v1.json";
+import rawLearnerText from "../../content/learner-text/learner-text-v1.json";
 import rawSynthCase from "../../cases/C000-SYNTH/case.json";
 
 export const config: ThresholdConfig = loadConfig(rawConfig);
@@ -25,6 +26,95 @@ export const activities: ActivityDefinition[] = ActivityCatalog.parse(rawActivit
 export const responseSets: ExpectedResponseSet[] = ResponseSetLibrary.parse(rawResponseSets).sets;
 export const templates: Record<string, string> = (rawTemplates as { templates: Record<string, string> }).templates;
 export const synthCase: CaseManifest = validateCaseManifest(rawSynthCase);
+
+// Learner-facing curriculum copy: the opening screen, module descriptions,
+// and lesson introductions. Hand-authored draft (learning engineer to review).
+export interface ModuleText {
+  title: string;
+  tagline: string;
+  description: string;
+  /** How (and how far) this module works alone on the practice arm. */
+  solo?: string;
+  /** Link the gauge demonstration from this module's solo note. */
+  solo_demo?: boolean;
+}
+export interface LessonText {
+  title: string;
+  intro: string;
+}
+export interface DemoText {
+  title: string;
+  subtitle: string;
+  instructions: string;
+  phase_holding: string;
+  phase_above: string;
+  phase1_crisp: string;
+  phase2_swishing: string;
+  phase4_muffled: string;
+  phase_below: string;
+  recap: string;
+  rate_note: string;
+  video_note: string;
+  play: string;
+  replay: string;
+}
+export interface LearnerText {
+  version: string;
+  welcome: {
+    app_name: string;
+    tagline: string;
+    intro: string[];
+    how_it_works: { title: string; body: string }[];
+    what_you_need: string[];
+    solo: {
+      heading: string;
+      intro: string;
+      build_steps: string[];
+      teaches: string;
+      limits: string;
+      demo_cta: string;
+    };
+    expectations_heading: string;
+    expectations: { title: string; body: string }[];
+    scope_note: string;
+    journey_heading: string;
+    journey_intro: string;
+    cta_start: string;
+    cta_browse: string;
+  };
+  demo: DemoText;
+  modules: Record<string, ModuleText>;
+  lessons: Record<string, LessonText>;
+}
+
+function loadLearnerText(raw: LearnerText): LearnerText {
+  // Every module and lesson the activity catalog references must have copy;
+  // refuse to load rather than render a blank card (same posture as the
+  // schema-parsed content above).
+  for (const activity of activities) {
+    if (!raw.modules[activity.module]) {
+      throw new Error(`learner-text: no module text for ${activity.module} (referenced by ${activity.activity_id})`);
+    }
+    if (!raw.lessons[activity.lesson]) {
+      throw new Error(`learner-text: no lesson text for ${activity.lesson} (referenced by ${activity.activity_id})`);
+    }
+  }
+  return raw;
+}
+
+export const learnerText: LearnerText = loadLearnerText(rawLearnerText as LearnerText);
+
+// Presence is guaranteed by loadLearnerText for everything in the catalog.
+export function moduleTextOf(moduleId: string): ModuleText {
+  const text = learnerText.modules[moduleId];
+  if (!text) throw new Error(`learner-text: no module text for ${moduleId}`);
+  return text;
+}
+export function lessonTextOf(lessonId: string): LessonText {
+  const text = learnerText.lessons[lessonId];
+  if (!text) throw new Error(`learner-text: no lesson text for ${lessonId}`);
+  return text;
+}
 
 export const APP_VERSION = "0.1.0";
 

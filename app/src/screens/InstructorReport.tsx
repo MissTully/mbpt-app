@@ -51,7 +51,7 @@ export function InstructorReport() {
   return (
     <div>
       <div className="topbar">
-        <a href="#/">← Activities</a>
+        <a href="#/">← Home</a>
         <button className="quiet" onClick={exportAttempts}>
           Export attempt records
         </button>

@@ -30,7 +30,7 @@ export function ReflectScreen({ activity }: { activity: ActivityDefinition }) {
   return (
     <div>
       <div className="topbar">
-        <a href="#/">← Activities</a>
+        <a href={`#/lesson/${activity.lesson}`}>← Lesson</a>
         <span className="badge reflect">Reflect</span>
       </div>
       <h1>
