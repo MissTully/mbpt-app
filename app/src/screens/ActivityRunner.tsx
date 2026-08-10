@@ -57,7 +57,7 @@ function PresentActivity({ activity }: { activity: ActivityDefinition }) {
         <p>{activity.learner_action}</p>
         <p className="sub">{activity.system_response}</p>
       </div>
-      <button onClick={() => (location.hash = "#/")}>Done</button>
+      <button onClick={() => (location.hash = `#/lesson/${activity.lesson}`)}>Done</button>
     </div>
   );
 }
@@ -66,7 +66,7 @@ function Header({ activity }: { activity: ActivityDefinition }) {
   return (
     <div>
       <div className="topbar">
-        <a href="#/">← Activities</a>
+        <a href={`#/lesson/${activity.lesson}`}>← Lesson</a>
         <span className={`badge ${activity.type.toLowerCase()}`}>{activity.type}</span>
       </div>
       <h1>

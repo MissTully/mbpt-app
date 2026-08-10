@@ -82,8 +82,8 @@ export function FeedbackScreen({ activity, result, streaks, marks, groundTruth }
 
       <div className="row">
         <button onClick={() => location.reload()}>Try again</button>
-        <button className="secondary" onClick={() => (location.hash = "#/")}>
-          Back to activities
+        <button className="secondary" onClick={() => (location.hash = `#/lesson/${activity.lesson}`)}>
+          Back to lesson
         </button>
       </div>
     </div>

@@ -1,0 +1,182 @@
+{
+  "version": "learner-text-v1",
+  "welcome": {
+    "app_name": "Manual Blood Pressure Trainer",
+    "tagline": "Learn to take a real blood pressure — on a real person, with real equipment — and know for certain you got it right.",
+    "intro": [
+      "Manual blood pressure is a skill of the hands and the ears. You cannot learn it from a video, and a simulator that fakes the arm teaches you a fake procedure. So this app does something different: you practise on a real partner, with a real cuff, a real stethoscope, and a real gauge — and your phone quietly watches, listens, and coaches.",
+      "Every session is short, focused, and honest. You will always know what is being practised, what support you are getting, and what counts toward mastery."
+    ],
+    "how_it_works": [
+      {
+        "title": "Real equipment, real partner",
+        "body": "You bring an aneroid cuff, a stethoscope, and a willing arm. Nothing is simulated on your side of the procedure — you pump, you deflate, you listen, you decide."
+      },
+      {
+        "title": "Your camera reads the gauge",
+        "body": "Point the phone camera at the dial and the app reads the needle in real time. It knows the pressure you are actually producing, so it can pace you, check you, and score you against what really happened."
+      },
+      {
+        "title": "You hear real sounds at the right pressure",
+        "body": "Recorded Korotkoff sounds from real measurements play through your headphones, indexed to the pressure in your cuff. Deflate too fast and the sounds rush past you — exactly as they would on a ward."
+      },
+      {
+        "title": "You speak your marks, then get honest feedback",
+        "body": "Say your systolic and diastolic marks out loud, the way you would report them. After the attempt — never during — the app shows you exactly what it observed, finding by finding."
+      }
+    ],
+    "what_you_need": [
+      "An aneroid sphygmomanometer (the dial kind) and a range of cuff sizes if you have them",
+      "A stethoscope",
+      "Wired headphones or earbuds, so the sounds reach only you",
+      "A practice partner with a bare upper arm and ten quiet minutes",
+      "A phone stand or a steady way to prop your phone facing the gauge"
+    ],
+    "expectations_heading": "What to expect",
+    "expectations": [
+      {
+        "title": "Four kinds of activity",
+        "body": "Present activities teach — no timer, no score, no failure. Practice activities let you rehearse with feedback and support. Assess activities are the real thing: unaided, scored, and counting toward mastery. Reflect activities show you your own data — never a pass or fail."
+      },
+      {
+        "title": "Support that fades",
+        "body": "Early on, the app paces your deflation and shows the live pressure. As you improve, those aids are withdrawn on a schedule you can always see. A banner at the top of every activity states, in words, exactly what help is on."
+      },
+      {
+        "title": "Mastery is earned unaided",
+        "body": "Only unaided, assessed attempts count toward mastery, and each objective needs a consecutive streak — not a lucky day. If a reading is wrong, the app tells you what it observed, but it will never simply hand you the correct value: finding it again is your job, because that is the job."
+      },
+      {
+        "title": "Short, frequent sessions win",
+        "body": "Most activities take three to eight minutes. Two focused sessions a week beat one long one; the skill lives in your hands and ears, and they learn by returning."
+      }
+    ],
+    "scope_note": "This release covers preparation, cuff selection, inflation and deflation control, core auscultation, interpretation of ordinary values, and self-regulation. Pathology recognition — auscultatory gaps, irregular rhythms — arrives in a later release with real clinical recordings, and those lessons are visible now so you can see what is coming.",
+    "journey_heading": "Your path",
+    "journey_intro": "Six modules, from checking your equipment to running an unaided measurement and reading your own error patterns. Work through them in order — each one stands on the last.",
+    "cta_start": "Start at the beginning",
+    "cta_browse": "Browse all modules"
+  },
+  "modules": {
+    "M0": {
+      "title": "Orientation, equipment and setup",
+      "tagline": "Meet the app, check your kit, zero your gauge.",
+      "description": "Before anything is taught, everything is checked. You will set up the camera on your gauge, confirm the needle rests at zero, and learn how the app watches and listens. Ten minutes here saves every session that follows."
+    },
+    "M1": {
+      "title": "Preparation and the procedure",
+      "tagline": "The steps, their order, and why the order matters.",
+      "description": "A blood pressure reading is decided before the cuff is ever inflated. This module covers the whole procedure in sequence: screening the limb for reasons not to measure, positioning the patient so the number means something, and preparing them so the number is theirs — not their coffee's."
+    },
+    "M2": {
+      "title": "Cuff selection across body habitus",
+      "tagline": "Measure the arm. Choose the cuff. Defend the choice.",
+      "description": "The wrong cuff produces a confident, precise, wrong answer. You will measure real arms, select cuffs by measurement rather than by eye, learn which direction each mis-sizing error pushes the reading, and handle the hard arms that sit between sizes."
+    },
+    "M3": {
+      "title": "Auscultation",
+      "tagline": "The heart of the skill: inflate, deflate, listen, mark.",
+      "description": "This is the longest module because it is the skill itself. Palpate an estimate, inflate above it, control your deflation to a steady two to three millimetres per second, hear the phases, and mark systolic and diastolic where they actually happen. The app hears what you produce and tells you the truth about it."
+    },
+    "M4": {
+      "title": "Interpretation and action",
+      "tagline": "A number is not a result until you act on it correctly.",
+      "description": "Classify what you measured, document it completely, and know what to do when the value is high, implausible, or contradicts the chart. This module is about judgement: when to repeat, when to average, when to escalate, and when a reading should not be trusted — starting with your own."
+    },
+    "M5": {
+      "title": "Debrief and self-regulation",
+      "tagline": "Read your own data. Plan your own practice.",
+      "description": "Experts are not people who make no errors; they are people who catch their own. Replay your attempts, attribute each error to the step that produced it, learn to tell a technique problem from a perception problem, and leave with a concrete plan for your next session."
+    }
+  },
+  "lessons": {
+    "L0.1": {
+      "title": "Orientation, equipment and setup",
+      "intro": "Gather your kit and let the app meet it. You will point the camera at your gauge, confirm the needle rests exactly at zero when the cuff is deflated, and check your audio. A gauge that does not read zero at rest cannot be trusted at 120 — and the app will refuse it, with an explanation, rather than pretend."
+    },
+    "L1.1": {
+      "title": "The procedure and why order matters",
+      "intro": "The full procedure, start to finish, as a sequence — because it is one. Each step exists to protect the ones after it: a mis-positioned arm corrupts every number that follows, no matter how well you listen. This lesson gives you the map you will spend the rest of the course walking."
+    },
+    "L1.2": {
+      "title": "Screening the limb",
+      "intro": "Some arms must not be measured. Before any cuff touches skin, you check for the conditions that make measurement unsafe or meaningless — and you learn what to do when one arm is ruled out. This is a safety habit, and it is practised until it is automatic."
+    },
+    "L1.3": {
+      "title": "Positioning the patient",
+      "intro": "Back supported, feet flat, legs uncrossed, arm supported at heart level. Each departure from this position shifts the reading in a known direction by a known amount. You will learn not just the rules but the physics behind them, so you can state what a positioning fault does to a number — and correct it before it does."
+    },
+    "L1.4": {
+      "title": "Preparing the patient",
+      "intro": "Five minutes of rest, an empty bladder, no caffeine or exercise beforehand, a bare arm, and no talking during the measurement. These sound like courtesies; they are controls. This lesson covers what each one is protecting the reading from, and how to hold the conditions politely with a real person in the chair."
+    },
+    "L2.1": {
+      "title": "Measuring the arm",
+      "intro": "Cuff selection starts with a tape measure, not a guess. You will find the midpoint of the upper arm and measure its circumference correctly, because every rule in the next lesson keys off this one number. Measured on a real arm — yours will vary, and that is the point."
+    },
+    "L2.2": {
+      "title": "Selecting by measurement",
+      "intro": "With a circumference in hand, cuff selection becomes a lookup, not an opinion. You will practise matching arms to cuffs using the bladder-width and bladder-length rules, until the right cuff is a fact you state rather than a choice you agonise over."
+    },
+    "L2.3": {
+      "title": "The consequence of mis-sizing",
+      "intro": "A cuff that is too small reads falsely high. A cuff that is too large reads falsely low. This lesson makes you fluent in the direction and rough size of these errors — so that when you inherit someone else's reading, you can ask the first competent question: what cuff did they use?"
+    },
+    "L2.4": {
+      "title": "Applying the cuff",
+      "intro": "Placement is precise: the artery marker over the brachial artery, the lower edge two to three centimetres above the elbow crease, snug enough that a fingertip fits and no more. You will apply the cuff to a real arm and learn the feel of right."
+    },
+    "L2.5": {
+      "title": "Hard cases and boundaries",
+      "intro": "Real arms do not read the sizing chart. Some fall on the boundary between cuffs; some are shaped so that no cuff fits perfectly. Here you make a defensible choice, state your reasoning, and — this matters — state the residual uncertainty your choice leaves in the reading."
+    },
+    "L3.1": {
+      "title": "Palpated estimate and inflation",
+      "intro": "Before you listen, you feel. Palpating the radial pulse while inflating gives you an estimate of systolic, and inflating thirty above it guarantees you start above the sounds — protecting you from the trap of an auscultatory gap. Underinflate and you can miss the true systolic entirely without ever knowing."
+    },
+    "L3.2": {
+      "title": "Deflation rate control",
+      "intro": "Two to three millimetres of mercury per second. Faster, and the sounds blur past your marks, biasing both numbers. Slower, and the arm aches and the reading drifts. This lesson trains your valve hand with a live pacer until a steady rate is something your fingers do, not something you think about."
+    },
+    "L3.3": {
+      "title": "Hearing the phases and placing the bell",
+      "intro": "Korotkoff sounds move through phases — sharp taps, murmurs, softening, silence — and each transition means something. You will learn where the stethoscope belongs, what each phase sounds like on real recordings, and how to keep your ears on the sound while your eyes stay on the dial."
+    },
+    "L3.4": {
+      "title": "Marking systolic and diastolic",
+      "intro": "The first clear sound is systolic. The point where sound disappears is diastolic. Simple to say, and the entire skill in the doing: you will mark them by voice, at speed, on real sounds indexed to the pressure you are actually producing. This is the lesson the whole course exists for."
+    },
+    "L3.5": {
+      "title": "Reading the dial precisely",
+      "intro": "Readings are made to the nearest two millimetres, with the eye square to the dial. Humans love round numbers — zeros and fives creep into records at rates nature cannot produce — and the app tracks your own digit habits, so you can see bias forming before it becomes your signature."
+    },
+    "L3.6": {
+      "title": "Variation and pathology",
+      "intro": "Not every arm behaves like the textbook. Auscultatory gaps swallow sounds mid-descent, some patients never go silent at all, and irregular rhythms make every beat a different pressure. These lessons need real clinical recordings and arrive in the next release — they are shown here so you know the skill does not end at the ordinary case."
+    },
+    "L4.1": {
+      "title": "Classify and document",
+      "intro": "A measurement is not finished until it is classified and written down completely: values, arm, position, cuff size, and anything unusual. This lesson drills classification of ordinary values and documentation with nothing missing — because a reading no one can interpret later was never really taken."
+    },
+    "L4.2": {
+      "title": "Escalation and scope of practice",
+      "intro": "Some values are messages that must be delivered. You will learn which numbers demand action, what that action is at your scope of practice, and how to escalate without either alarm or delay. One reading is never a diagnosis — and knowing what it is instead is the competence this lesson builds."
+    },
+    "L4.3": {
+      "title": "Reliability, repeat and averaging",
+      "intro": "When should you not believe your own reading? When it contradicts your palpated estimate, when it differs sharply from the chart, when the first measurement of the day stands alone. This lesson covers repeating, averaging, and the discipline of treating a surprising number as a question rather than an answer."
+    },
+    "L5.1": {
+      "title": "Attempt replay and error attribution",
+      "intro": "Your attempts leave a trace: your deflation curve, your marks, the moments you hesitated. Here you replay them and attribute each error to the step that caused it. Not 'I got it wrong' but 'my deflation was fast through the systolic region' — because only named errors can be fixed."
+    },
+    "L5.2": {
+      "title": "Technique or perception",
+      "intro": "Two very different failures produce the same wrong number: a hand problem, or an ear problem. Deflating too fast is technique; missing a soft phase-one tap is perception. They need different remedies, and this lesson teaches you to tell them apart in your own data."
+    },
+    "L5.3": {
+      "title": "Planning the next practice",
+      "intro": "The course ends by handing you the instructor's job. Looking at your own mastery picture — which objectives are secure, which streaks are broken, where your errors cluster — you will choose what to practise next and why. That habit, more than any single reading, is what you are here to keep."
+    }
+  }
+}

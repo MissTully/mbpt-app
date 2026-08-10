@@ -18,6 +18,7 @@ import rawConfig from "../../content/config/config-v1.json";
 import rawActivities from "../../content/activities.json";
 import rawResponseSets from "../../content/response-sets/response-sets-v1.json";
 import rawTemplates from "../../content/feedback/templates-v1.json";
+import rawLearnerText from "../../content/learner-text/learner-text-v1.json";
 import rawSynthCase from "../../cases/C000-SYNTH/case.json";
 
 export const config: ThresholdConfig = loadConfig(rawConfig);
@@ -25,6 +26,66 @@ export const activities: ActivityDefinition[] = ActivityCatalog.parse(rawActivit
 export const responseSets: ExpectedResponseSet[] = ResponseSetLibrary.parse(rawResponseSets).sets;
 export const templates: Record<string, string> = (rawTemplates as { templates: Record<string, string> }).templates;
 export const synthCase: CaseManifest = validateCaseManifest(rawSynthCase);
+
+// Learner-facing curriculum copy: the opening screen, module descriptions,
+// and lesson introductions. Hand-authored draft (learning engineer to review).
+export interface ModuleText {
+  title: string;
+  tagline: string;
+  description: string;
+}
+export interface LessonText {
+  title: string;
+  intro: string;
+}
+export interface LearnerText {
+  version: string;
+  welcome: {
+    app_name: string;
+    tagline: string;
+    intro: string[];
+    how_it_works: { title: string; body: string }[];
+    what_you_need: string[];
+    expectations_heading: string;
+    expectations: { title: string; body: string }[];
+    scope_note: string;
+    journey_heading: string;
+    journey_intro: string;
+    cta_start: string;
+    cta_browse: string;
+  };
+  modules: Record<string, ModuleText>;
+  lessons: Record<string, LessonText>;
+}
+
+function loadLearnerText(raw: LearnerText): LearnerText {
+  // Every module and lesson the activity catalog references must have copy;
+  // refuse to load rather than render a blank card (same posture as the
+  // schema-parsed content above).
+  for (const activity of activities) {
+    if (!raw.modules[activity.module]) {
+      throw new Error(`learner-text: no module text for ${activity.module} (referenced by ${activity.activity_id})`);
+    }
+    if (!raw.lessons[activity.lesson]) {
+      throw new Error(`learner-text: no lesson text for ${activity.lesson} (referenced by ${activity.activity_id})`);
+    }
+  }
+  return raw;
+}
+
+export const learnerText: LearnerText = loadLearnerText(rawLearnerText as LearnerText);
+
+// Presence is guaranteed by loadLearnerText for everything in the catalog.
+export function moduleTextOf(moduleId: string): ModuleText {
+  const text = learnerText.modules[moduleId];
+  if (!text) throw new Error(`learner-text: no module text for ${moduleId}`);
+  return text;
+}
+export function lessonTextOf(lessonId: string): LessonText {
+  const text = learnerText.lessons[lessonId];
+  if (!text) throw new Error(`learner-text: no lesson text for ${lessonId}`);
+  return text;
+}
 
 export const APP_VERSION = "0.1.0";
 
