@@ -23,10 +23,12 @@ import {
   type SpokenResponse,
   type TrackingGap,
 } from "@mbpt/core";
-import { activityById, APP_VERSION, config, responseSets, synthCase } from "../content.js";
+import { activityById, APP_VERSION, caseLibrary, config, groundTruthFor, responseSets } from "../content.js";
 import { attemptStore } from "../adapters/store.js";
 
-export const SYNTHETIC_CASE_IDS = new Set([synthCase.case_id]);
+export const SYNTHETIC_CASE_IDS = new Set(
+  caseLibrary.filter((c) => c.manifest.synthetic).map((c) => c.manifest.case_id),
+);
 
 export function learnerId(): string {
   const key = "mbpt.learner_id";
@@ -72,6 +74,8 @@ export interface AttemptInputs {
   arm_circumference_entered_cm: number | null;
   arm_circumference_reference_cm: number | null;
   cuff_selected: string | null;
+  case_id: string;
+  case_version: string;
 }
 
 export function buildAttempt(inputs: AttemptInputs): AttemptRecord {
@@ -92,8 +96,8 @@ export function buildAttempt(inputs: AttemptInputs): AttemptRecord {
     objectives: [...inputs.activity.objectives],
     scaffold_state: scaffoldStateOf(inputs.activity),
     surface: "phone",
-    case_id: synthCase.case_id,
-    case_version: synthCase.case_version,
+    case_id: inputs.case_id,
+    case_version: inputs.case_version,
     started_at: inputs.startedAtIso,
     ended_at: new Date().toISOString(),
     config_version: config.version,
@@ -137,7 +141,7 @@ export async function scoredHistory(): Promise<ScoredAttempt[]> {
       activity,
       score: score(attempt, config, {
         activity,
-        groundTruth: attempt.case_id === synthCase.case_id ? synthCase.ground_truth : null,
+        groundTruth: groundTruthFor(attempt.case_id, attempt.case_version),
         responseSets,
         priorStreaks: {},
       }),
@@ -155,7 +159,7 @@ export async function scoreAndStore(record: AttemptRecord): Promise<ScoreResult>
   const activity = activityById(record.activity_id);
   const result = score(record, config, {
     activity,
-    groundTruth: record.case_id === synthCase.case_id ? synthCase.ground_truth : null,
+    groundTruth: groundTruthFor(record.case_id, record.case_version),
     responseSets,
     priorStreaks,
   });

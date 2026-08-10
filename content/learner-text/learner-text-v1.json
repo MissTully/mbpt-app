@@ -203,11 +203,11 @@
   },
   "L5.1": {
    "title": "Attempt replay and error attribution",
-   "intro": "Your attempts leave a trace: your deflation curve, your marks, the moments you hesitated. Here you replay them and attribute each error to the step that caused it. Not 'I got it wrong' but 'my deflation was fast through the systolic region' — because only named errors can be fixed."
+   "intro": "Your attempts leave a record: every mark you made, the pressure it landed on, and how it compares with the case's true values. Here you replay them and attribute each error to what caused it. Not 'I got it wrong' but 'I marked systolic late, after the first sound had passed' — because only named errors can be fixed."
   },
   "L5.2": {
    "title": "Technique or perception",
-   "intro": "Two very different failures produce the same wrong number: a hand problem, or an ear problem. Deflating too fast is technique; missing a soft phase-one tap is perception. They need different remedies, and this lesson teaches you to tell them apart in your own data."
+   "intro": "Two very different failures produce the same wrong number: a hand problem, or an ear problem. Deflating your practice cuff too fast is technique; missing a soft phase-one tap in a recording is perception. They need different remedies, and this lesson teaches you to tell them apart — starting with your own marking record."
   },
   "L5.3": {
    "title": "Planning the next practice",

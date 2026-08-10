@@ -8,6 +8,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import {
   matchExpectedResponse,
   objectiveMastery,
+  selectCase,
   type ActivityDefinition,
   type ScoreResult,
   type SpokenResponse,
@@ -15,13 +16,15 @@ import {
 } from "@mbpt/core";
 import {
   activityById,
+  caseById,
+  caseLibrary,
   config,
   promptsForActivity,
   PROMPT_TEXT,
-  synthCase,
+  type CasePackage,
 } from "../content.js";
 import { GATE_SCENARIOS, type GateScenario } from "../runner/demoGates.js";
-import { buildAttempt, scaffoldStateOf, scoreAndStore, scoredHistory } from "../runner/attempt.js";
+import { buildAttempt, learnerId, scaffoldStateOf, scoreAndStore, scoredHistory } from "../runner/attempt.js";
 import { attemptStore } from "../adapters/store.js";
 import { VideoStage, type MeasurementEvidence } from "./VideoStage.js";
 import { FeedbackScreen } from "./FeedbackScreen.js";
@@ -56,7 +59,14 @@ function PresentActivity({ activity }: { activity: ActivityDefinition }) {
   );
 }
 
-function Header({ activity }: { activity: ActivityDefinition }) {
+function caseLabel(casePkg: CasePackage | null): string {
+  if (!casePkg) {
+    return `${caseLibrary.length} ${caseLibrary.length === 1 ? "case" : "cases"} in the library`;
+  }
+  return `case ${casePkg.manifest.case_id}${casePkg.manifest.synthetic ? " (synthetic)" : ""}`;
+}
+
+function Header({ activity, casePkg = null }: { activity: ActivityDefinition; casePkg?: CasePackage | null }) {
   return (
     <div>
       <div className="topbar">
@@ -67,7 +77,7 @@ function Header({ activity }: { activity: ActivityDefinition }) {
         {activity.activity_id} · {activity.title}
       </h1>
       <div className="sub">
-        Objectives {activity.objectives.join(", ") || "—"} · case {synthCase.case_id} (synthetic)
+        Objectives {activity.objectives.join(", ") || "—"} · {caseLabel(casePkg)}
       </div>
     </div>
   );
@@ -105,12 +115,24 @@ function ScoredActivity({ activity }: { activity: ActivityDefinition }) {
   const [promptEcho, setPromptEcho] = useState<string | null>(null);
   const [responses, setResponses] = useState<SpokenResponse[]>([]);
   const [evidence, setEvidence] = useState<MeasurementEvidence | null>(null);
+  const [casePkg, setCasePkg] = useState<CasePackage | null>(null);
   const [result, setResult] = useState<ScoreResult | null>(null);
   const [streaks, setStreaks] = useState<Record<string, number>>({});
   const startedAtIso = useRef(new Date().toISOString());
   const startedPerf = useRef(performance.now());
 
-  function begin() {
+  async function begin() {
+    // Rotation: the case least recently used for this activity (pure over
+    // stored history), chosen at the moment the attempt starts.
+    const history = await attemptStore.query({ learner_id: learnerId() });
+    const chosen = selectCase(
+      caseLibrary.map((c) => c.manifest.case_id),
+      history
+        .filter((h) => h.case_id !== null)
+        .map((h) => ({ activity_id: h.activity_id, case_id: h.case_id!, seq: h.seq })),
+      activity.activity_id,
+    );
+    setCasePkg(caseById(chosen));
     setPhase(gates.length > 0 || measurement ? "performing" : "prompts");
   }
 
@@ -181,6 +203,8 @@ function ScoredActivity({ activity }: { activity: ActivityDefinition }) {
       arm_circumference_entered_cm: circEntered === "" ? null : Number(circEntered),
       arm_circumference_reference_cm: circReference === "" ? null : Number(circReference),
       cuff_selected: cuffSelected === "" ? null : cuffSelected,
+      case_id: (casePkg ?? caseLibrary[0]!).manifest.case_id,
+      case_version: (casePkg ?? caseLibrary[0]!).manifest.case_version,
     });
     const scoreResult = await scoreAndStore(record);
     const history = await scoredHistory();
@@ -200,13 +224,13 @@ function ScoredActivity({ activity }: { activity: ActivityDefinition }) {
   if (phase === "feedback" && result) {
     return (
       <div>
-        <Header activity={activity} />
+        <Header activity={activity} casePkg={casePkg} />
         <FeedbackScreen
           activity={activity}
           result={result}
           streaks={streaks}
           marks={evidence?.marks ?? []}
-          groundTruth={synthCase.ground_truth}
+          groundTruth={(casePkg ?? caseLibrary[0]!).manifest.ground_truth}
         />
       </div>
     );
@@ -266,8 +290,9 @@ function ScoredActivity({ activity }: { activity: ActivityDefinition }) {
   if (phase === "performing" && measurement) {
     return (
       <div>
-        <Header activity={activity} />
+        <Header activity={activity} casePkg={casePkg} />
         <VideoStage
+          casePkg={casePkg ?? caseLibrary[0]!}
           scaffold={scaffold}
           countsTowardMastery={isAssess && scaffold === "unaided"}
           onDone={measurementDone}
