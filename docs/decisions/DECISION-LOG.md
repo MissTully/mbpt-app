@@ -24,6 +24,12 @@ close — a stale open-decisions list is worse than none.
 | New config params | `rest_duration_s` (300), `terminal_digit_bias_threshold` (0.5), `needle_confidence_threshold_provisional` flag | Thresholds the scorer/trends need; invariant I-2 forbids holding them in code. INSTR section 9 needs a matching update. |
 | Prompt/gate id conventions | `spoken_responses.prompt_id` starts `<objective>_`; `safety_gate_responses.gate_id` starts `<objective>:` | Lets the scorer associate evidence with objectives without a lookup table |
 
+## Adopted 2026-08-12
+
+| Tag | Decision | Resolution |
+| --- | --- | --- |
+| `[DECISION-8]` | LRS statement export posture — Encountive LRS integration (decision D4 in Encountive/encountive-lrssql `docs/LRS_INTEGRATION_PLAN.md`) | **Two stages.** Stage 1 — export enrichment only: a pure mapper (attempts → xAPI statements) that runs outside `core/` and adds a `statements` array beside `attempts` in the existing manual JSON export; zero network calls from the learner device; ships without further approval. Stage 2 — opt-in background sync to the LRS: requires its own entry in this log before implementation, plus inclusion in the pre-pilot network-traffic audit (build plan task 5.7); not scheduled. Reaffirmed: the default-to-no-network invariant; the `core/` boundary check (no network in core — the mapper lives in `app/` or `tools/`); pseudonymous learner ids only (`learner-<8hex>` as the xAPI account name under homePage `https://mbpt.encountive.com/local`, never a person's name); no prose in statements (finding codes, scores, ids — never transcripts or free text). Vocabulary source of truth: `docs/xapi-glossary.md` in Encountive/encountive-lrssql (glossary v0.1). Numbering follows this log: DECISION-8 is the next free tag after the open DECISION-6/DECISION-7. |
+
 ## Still open, unchanged owners
 
 | Tag | Decision | Owner | Blocks |
