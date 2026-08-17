@@ -1,0 +1,421 @@
+{
+  "version": "instruction-glossary-v1",
+  "terms": [
+    {
+      "term_id": "vital_signs",
+      "term": "Vital signs",
+      "say_it": "VY-tuhl sines",
+      "plain": "The basic body measurements that show how a person is doing right now. They are temperature, pulse, breathing rate, blood pressure, and often pain and oxygen level.",
+      "also_called": "Vitals",
+      "matters": "Vital signs are how a care team spots trouble early. You take them, so you are often the first to see a change."
+    },
+    {
+      "term_id": "blood_pressure",
+      "term": "Blood pressure",
+      "say_it": null,
+      "plain": "The force of blood pushing against the walls of the arteries. It is written as two numbers, like 122/78.",
+      "also_called": "BP",
+      "matters": "The two numbers tell the care team how hard the heart is working and how open the blood vessels are."
+    },
+    {
+      "term_id": "systolic",
+      "term": "Systolic",
+      "say_it": "sis-TOL-ik",
+      "plain": "The top number. It is the pressure in the arteries at the moment the heart squeezes and pushes blood out.",
+      "also_called": "The first sound you hear",
+      "matters": "You find it by listening for the very first clear tapping sound as the cuff lets go."
+    },
+    {
+      "term_id": "diastolic",
+      "term": "Diastolic",
+      "say_it": "dye-uh-STOL-ik",
+      "plain": "The bottom number. It is the pressure in the arteries while the heart rests between beats.",
+      "also_called": "The last sound you hear",
+      "matters": "You find it at the point where the tapping sounds stop and silence returns."
+    },
+    {
+      "term_id": "mmhg",
+      "term": "mmHg",
+      "say_it": "millimeters of mercury",
+      "plain": "The unit blood pressure is measured in. It stands for millimeters of mercury. A reading of 122 means 122 mmHg.",
+      "also_called": "Millimeters of mercury",
+      "matters": "Old gauges used a tube of mercury. The unit stayed even though the mercury did not."
+    },
+    {
+      "term_id": "artery",
+      "term": "Artery",
+      "say_it": "AR-tur-ee",
+      "plain": "A blood vessel that carries blood away from the heart to the rest of the body.",
+      "also_called": null,
+      "matters": null
+    },
+    {
+      "term_id": "brachial_artery",
+      "term": "Brachial artery",
+      "say_it": "BRAY-kee-ul AR-tur-ee",
+      "plain": "The main artery of the upper arm. You can feel it on the inner side of the elbow, closer to the body than the center.",
+      "also_called": "The artery you listen to",
+      "matters": "The cuff squeezes this artery and the stethoscope listens to it. Miss the spot and you miss the sounds."
+    },
+    {
+      "term_id": "radial_pulse",
+      "term": "Radial pulse",
+      "say_it": "RAY-dee-ul",
+      "plain": "The pulse you feel at the thumb side of the wrist.",
+      "also_called": "Wrist pulse",
+      "matters": "Feeling this pulse while you inflate gives you a rough guess of the top number before you listen."
+    },
+    {
+      "term_id": "palpate",
+      "term": "Palpate",
+      "say_it": "PAL-pate",
+      "plain": "To feel something with your fingertips on purpose, such as finding a pulse or a landmark on the body.",
+      "also_called": "Feel for",
+      "matters": null
+    },
+    {
+      "term_id": "auscultation",
+      "term": "Auscultation",
+      "say_it": "aws-kul-TAY-shun",
+      "plain": "Listening to sounds inside the body with a stethoscope.",
+      "also_called": "Listening method",
+      "matters": "A manual blood pressure is an auscultatory measurement. Your ears are the instrument."
+    },
+    {
+      "term_id": "korotkoff_sounds",
+      "term": "Korotkoff sounds",
+      "say_it": "kuh-ROT-kof",
+      "plain": "The tapping and whooshing sounds you hear through the stethoscope while the cuff lets go. They are made by blood pushing through an artery that is still partly squeezed.",
+      "also_called": "The blood pressure sounds",
+      "matters": "The first sound marks the top number. The last sound marks the bottom number. Everything else is the road between them."
+    },
+    {
+      "term_id": "sphygmomanometer",
+      "term": "Sphygmomanometer",
+      "say_it": "sfig-moh-muh-NOM-uh-tur",
+      "plain": "The full name for a blood pressure cuff set: the cuff, the tubing, the bulb with its valve, and the gauge.",
+      "also_called": "BP cuff, blood pressure set",
+      "matters": null
+    },
+    {
+      "term_id": "aneroid_gauge",
+      "term": "Aneroid gauge",
+      "say_it": "AN-uh-royd",
+      "plain": "The round dial with a needle that shows the pressure in the cuff. It has no liquid inside.",
+      "also_called": "The dial",
+      "matters": "Your eyes stay on this dial while your ears follow the sounds. Reading it is half the skill."
+    },
+    {
+      "term_id": "gauge_zero",
+      "term": "Zeroing the gauge",
+      "say_it": null,
+      "plain": "Checking that the needle rests exactly on zero when no air is in the cuff.",
+      "also_called": "Zero check",
+      "matters": "A gauge that sits 4 mmHg high at rest is 4 mmHg wrong at every reading you take with it. Check it before you trust it."
+    },
+    {
+      "term_id": "cuff",
+      "term": "Cuff",
+      "say_it": null,
+      "plain": "The wide band that wraps around the arm and squeezes it when you pump air in.",
+      "also_called": null,
+      "matters": null
+    },
+    {
+      "term_id": "bladder",
+      "term": "Bladder",
+      "say_it": "BLAD-ur",
+      "plain": "The balloon inside the cuff that fills with air. It is smaller than the cloth cover around it.",
+      "also_called": "Air bladder",
+      "matters": "Cuff size rules are really bladder rules. The cloth may reach around an arm the bladder is far too small for."
+    },
+    {
+      "term_id": "valve",
+      "term": "Valve",
+      "say_it": null,
+      "plain": "The small screw on the bulb that lets air out. Turning it clockwise closes it. Turning it counterclockwise opens it a little at a time.",
+      "also_called": "Thumb valve, release valve",
+      "matters": "The valve is where the whole skill lives. A steady hand here is what makes a reading trustworthy."
+    },
+    {
+      "term_id": "stethoscope",
+      "term": "Stethoscope",
+      "say_it": "STETH-uh-scope",
+      "plain": "The listening tool. Earpieces go in your ears, and the flat round end goes on the skin over the artery.",
+      "also_called": null,
+      "matters": null
+    },
+    {
+      "term_id": "diaphragm",
+      "term": "Diaphragm",
+      "say_it": "DYE-uh-fram",
+      "plain": "The flat, round side of the stethoscope head. It picks up higher sounds, which is what blood pressure sounds are.",
+      "also_called": "The flat side",
+      "matters": "The cup-shaped side, called the bell, is for lower sounds. Use the flat side for blood pressure unless your program says otherwise."
+    },
+    {
+      "term_id": "occlude",
+      "term": "Occlude",
+      "say_it": "uh-KLOOD",
+      "plain": "To close something off so nothing can pass through.",
+      "also_called": "Block, close off",
+      "matters": "When the cuff is above the top number, it occludes the artery. No blood passes, so there is no sound."
+    },
+    {
+      "term_id": "inflate",
+      "term": "Inflate",
+      "say_it": null,
+      "plain": "To pump air into the cuff so it tightens around the arm.",
+      "also_called": "Pump up",
+      "matters": null
+    },
+    {
+      "term_id": "deflation_rate",
+      "term": "Deflation rate",
+      "say_it": null,
+      "plain": "How fast you let air out of the cuff, measured in mmHg per second. Aim for 2 to 3 mmHg per second. Written standards usually allow 2 to 4.",
+      "also_called": "How fast the needle falls",
+      "matters": "Let air out too fast and the sounds fly past your ears, so both numbers come out low. Too slow and the arm aches and the numbers drift."
+    },
+    {
+      "term_id": "antecubital_space",
+      "term": "Antecubital space",
+      "say_it": "an-tee-KYOO-bit-ul",
+      "plain": "The bend on the inner side of the elbow.",
+      "also_called": "Elbow crease, inner elbow",
+      "matters": "The bottom edge of the cuff goes about 1 inch above this crease, so the cuff does not sit on top of your stethoscope."
+    },
+    {
+      "term_id": "arm_circumference",
+      "term": "Arm circumference",
+      "say_it": "sur-KUM-fur-ents",
+      "plain": "The distance all the way around the upper arm, measured at the middle, between the shoulder and the elbow.",
+      "also_called": "Arm size, mid-arm measurement",
+      "matters": "This one number decides your cuff. Measure it instead of guessing by eye."
+    },
+    {
+      "term_id": "heart_level",
+      "term": "Heart level",
+      "say_it": null,
+      "plain": "The height of the middle of the chest, about the fourth rib. The cuffed arm should be supported at this height.",
+      "also_called": "Level with the heart",
+      "matters": "An arm held below heart level reads high. An arm held above it reads low. Gravity does not care how well you listen."
+    },
+    {
+      "term_id": "body_habitus",
+      "term": "Body habitus",
+      "say_it": "HAB-it-us",
+      "plain": "A person's overall body build and size.",
+      "also_called": "Body build, physical size",
+      "matters": "Body build changes which cuff fits, and cuff fit changes the reading."
+    },
+    {
+      "term_id": "bariatric",
+      "term": "Bariatric",
+      "say_it": "bar-ee-AT-rik",
+      "plain": "Relating to the care of people with obesity. A bariatric cuff is an extra-large cuff.",
+      "also_called": "Extra-large",
+      "matters": null
+    },
+    {
+      "term_id": "pediatric",
+      "term": "Pediatric",
+      "say_it": "pee-dee-AT-rik",
+      "plain": "Relating to the care of children.",
+      "also_called": "Child",
+      "matters": "Children need child-sized cuffs, and normal values for children are not the adult 120/80."
+    },
+    {
+      "term_id": "neonate",
+      "term": "Neonate",
+      "say_it": "NEE-oh-nate",
+      "plain": "A newborn baby in the first month of life.",
+      "also_called": "Newborn",
+      "matters": null
+    },
+    {
+      "term_id": "percentile",
+      "term": "Percentile",
+      "say_it": "pur-SEN-tile",
+      "plain": "A way of comparing one child to other children of the same age, sex, and height. A blood pressure at the 90th percentile is higher than 90 out of 100 similar children.",
+      "also_called": null,
+      "matters": "Child blood pressure is judged against percentiles, not against one fixed number."
+    },
+    {
+      "term_id": "hypertension",
+      "term": "Hypertension",
+      "say_it": "hy-pur-TEN-shun",
+      "plain": "Blood pressure that stays higher than normal over time.",
+      "also_called": "High blood pressure",
+      "matters": "One high reading is not hypertension. It takes repeated readings, and a licensed provider makes the call."
+    },
+    {
+      "term_id": "hypotension",
+      "term": "Hypotension",
+      "say_it": "hy-poh-TEN-shun",
+      "plain": "Blood pressure that is lower than normal.",
+      "also_called": "Low blood pressure",
+      "matters": "A low reading in a person who looks unwell is urgent. Report it right away."
+    },
+    {
+      "term_id": "hypertensive_crisis",
+      "term": "Hypertensive crisis",
+      "say_it": "hy-pur-TEN-siv",
+      "plain": "A blood pressure high enough to need attention right now, usually 180 or higher on top, or 120 or higher on the bottom.",
+      "also_called": "Severe high blood pressure",
+      "matters": "This is a stop-what-you-are-doing number. Stay with the person and get the nurse."
+    },
+    {
+      "term_id": "baseline",
+      "term": "Baseline",
+      "say_it": "BASE-line",
+      "plain": "What is usual for one person. It is found by looking at their past readings in the chart.",
+      "also_called": "Their normal",
+      "matters": "A reading of 148 may be routine for one resident and an emergency for another. Compare to the person, not just the textbook."
+    },
+    {
+      "term_id": "white_coat_syndrome",
+      "term": "White coat syndrome",
+      "say_it": null,
+      "plain": "A rise in blood pressure caused by nerves around medical staff and medical places.",
+      "also_called": "White coat effect",
+      "matters": "A calm greeting and a few quiet minutes are not just good manners. They protect the number."
+    },
+    {
+      "term_id": "auscultatory_gap",
+      "term": "Auscultatory gap",
+      "say_it": "AWS-kul-tuh-tor-ee",
+      "plain": "A stretch of silence in the middle of the sounds. The tapping starts, disappears for a while, then comes back.",
+      "also_called": "The silent gap",
+      "matters": "If you start listening inside the gap, you will record a top number that is far too low. Pumping up 30 above your felt guess protects you from this."
+    },
+    {
+      "term_id": "arrhythmia",
+      "term": "Arrhythmia",
+      "say_it": "uh-RITH-mee-uh",
+      "plain": "A heartbeat that is uneven or irregular.",
+      "also_called": "Irregular heartbeat",
+      "matters": "When beats are uneven, each beat gives a slightly different pressure. Take the reading, note what you heard, and tell the nurse."
+    },
+    {
+      "term_id": "contraindication",
+      "term": "Contraindication",
+      "say_it": "kon-truh-in-dih-KAY-shun",
+      "plain": "A reason not to do something to a certain person or a certain body part.",
+      "also_called": "A reason to stop",
+      "matters": "Some arms must never be used for a blood pressure. Checking first takes seconds and prevents real harm."
+    },
+    {
+      "term_id": "av_fistula",
+      "term": "AV fistula",
+      "say_it": "AY-VEE FIST-yoo-luh",
+      "plain": "A surgically made connection between an artery and a vein in the arm, used for dialysis.",
+      "also_called": "Dialysis access, shunt",
+      "matters": "Never put a cuff on this arm. Squeezing it can damage the access the person depends on."
+    },
+    {
+      "term_id": "mastectomy",
+      "term": "Mastectomy",
+      "say_it": "mass-TEK-tuh-mee",
+      "plain": "Surgery to remove a breast. It sometimes includes removing lymph nodes in the armpit.",
+      "also_called": null,
+      "matters": "Use the other arm when nodes were removed on that side, unless the care plan says otherwise."
+    },
+    {
+      "term_id": "edema",
+      "term": "Edema",
+      "say_it": "uh-DEE-muh",
+      "plain": "Swelling caused by extra fluid in the tissue. Pressing it may leave a dent.",
+      "also_called": "Swelling",
+      "matters": "A swollen arm gives an unreliable reading and can be painful under a cuff. Use the other arm and report it."
+    },
+    {
+      "term_id": "iv_line",
+      "term": "IV line",
+      "say_it": "EYE-VEE",
+      "plain": "A thin tube placed in a vein to give fluids or medicine.",
+      "also_called": "Intravenous line, drip",
+      "matters": "A cuff over an IV can stop the flow or push fluid into the tissue. Use the other arm."
+    },
+    {
+      "term_id": "hand_hygiene",
+      "term": "Hand hygiene",
+      "say_it": "HY-jeen",
+      "plain": "Cleaning your hands with soap and water or with hand sanitizer.",
+      "also_called": "Handwashing",
+      "matters": "It is the single strongest step you take to keep infection from moving between residents."
+    },
+    {
+      "term_id": "two_identifiers",
+      "term": "Two identifiers",
+      "say_it": null,
+      "plain": "Two separate ways of confirming who a person is, such as their full name and their date of birth.",
+      "also_called": "ID check",
+      "matters": "A perfect reading recorded in the wrong chart is worse than no reading at all."
+    },
+    {
+      "term_id": "false_high",
+      "term": "False high",
+      "say_it": null,
+      "plain": "A reading that comes out higher than the person's real blood pressure because of a mistake in how it was taken.",
+      "also_called": "Falsely high",
+      "matters": "A cuff that is too small, an unsupported arm, or no rest period all push the number up."
+    },
+    {
+      "term_id": "false_low",
+      "term": "False low",
+      "say_it": null,
+      "plain": "A reading that comes out lower than the person's real blood pressure because of a mistake in how it was taken.",
+      "also_called": "Falsely low",
+      "matters": "A cuff that is too large, letting air out too fast, or starting below a silent gap all pull the number down."
+    },
+    {
+      "term_id": "digit_preference",
+      "term": "Digit preference",
+      "say_it": "DIJ-it",
+      "plain": "The habit of rounding readings to numbers that end in 0 or 5 without meaning to.",
+      "also_called": "Number rounding habit",
+      "matters": "Real blood pressures do not favor zeros. If most of your readings end in 0, your eyes are rounding for you."
+    },
+    {
+      "term_id": "scope_of_practice",
+      "term": "Scope of practice",
+      "say_it": null,
+      "plain": "The set of tasks you are trained, allowed, and expected to do in your role.",
+      "also_called": "What is yours to do",
+      "matters": "Measuring and reporting are yours. Diagnosing and changing medicine are not. Knowing the line keeps everyone safe."
+    },
+    {
+      "term_id": "licensed_nurse",
+      "term": "Licensed nurse",
+      "say_it": null,
+      "plain": "A registered nurse (RN) or licensed practical nurse (LPN). They are the supervisor you report your readings to.",
+      "also_called": "RN or LPN, the charge nurse",
+      "matters": null
+    },
+    {
+      "term_id": "escalate",
+      "term": "Escalate",
+      "say_it": "ES-kuh-late",
+      "plain": "To pass information up to someone with more authority, right away, so they can act on it.",
+      "also_called": "Report up the chain",
+      "matters": "Escalating is not admitting you failed. It is the step the whole system depends on you taking."
+    },
+    {
+      "term_id": "documentation",
+      "term": "Documentation",
+      "say_it": null,
+      "plain": "The written record of what you did and what you found, entered in the chart.",
+      "also_called": "Charting",
+      "matters": "If you did not document it, then legally it did not happen."
+    },
+    {
+      "term_id": "resident",
+      "term": "Resident",
+      "say_it": null,
+      "plain": "A person who lives in a long-term care home. In a hospital the same person would be called a patient.",
+      "also_called": "Patient, client",
+      "matters": null
+    }
+  ]
+}

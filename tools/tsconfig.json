@@ -8,6 +8,7 @@
   "include": [
     "case-check/src/**/*.ts",
     "crosswalk-check/src/**/*.ts",
+    "readability-check/src/**/*.ts",
     "golden-runner/src/**/*.ts",
     "needle-lab/src/**/*.ts"
   ],

@@ -20,11 +20,13 @@ perception/   ports, the needle estimator, trace analysis, the paced ramp
 app/          the progressive web application (React + Vite)
 shell/        (later) thin native wrapper
 content/      versioned data: thresholds, activities, response sets, templates
+content/instruction/  the teaching layer: lesson pages, glossary, video register
 cases/        case packages; C000-SYNTH is the labelled synthetic dev case
 tools/        never shipped: boundary check, crosswalk export/check,
-              golden runner, needle laboratory
+              golden runner, needle laboratory, reading-level check
 tests/golden/ hand-derived attempt records with expected scores
 docs/adr/     architecture decision records
+docs/video/   production briefs for the films the lessons call for
 docs/decisions/ the living open-decisions log
 ```
 
@@ -56,3 +58,10 @@ node tools/dist/needle-lab/src/lab.js --synthetic  # estimator error distributio
 3. **Thresholds live in configuration** (`content/config/`), versioned, with
    a changelog. A golden-set diff is a scoring change and gets reviewed line
    by line.
+4. **Teaching content is data, and its reading level is a build gate.**
+   Lesson pages, the glossary and the video register live in
+   `content/instruction/` and are written for an eighth-grade reader; `npm run
+   readability` fails the build when that drifts. Every clinical word is
+   written as `[[markup]]` and must have a glossary entry, or the application
+   refuses to load rather than render a highlighted word with nothing behind
+   it. See `content/instruction/README.md`.

@@ -6,6 +6,7 @@ export * from "./model/case.js";
 export * from "./model/activity.js";
 export * from "./model/score.js";
 export * from "./model/responseSet.js";
+export * from "./model/instruction.js";
 export * from "./config/load.js";
 export * from "./scoring/shapes.js";
 export * from "./scoring/expectedResponse.js";

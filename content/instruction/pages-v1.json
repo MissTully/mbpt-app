@@ -1,0 +1,1490 @@
+{
+  "version": "instruction-pages-v1",
+  "source": "Manual Blood Pressure Workbook (Encountive Clinical Training Series), adapted to lesson pages and written to an eighth-grade reading level",
+  "pages": [
+    {
+      "lesson": "L0.1",
+      "headline": "Meet your kit, and prove it can be trusted.",
+      "read_minutes": 4,
+      "you_will": [
+        "Name each part of a blood pressure set and say what it does",
+        "Check that your gauge rests on zero before you use it",
+        "Set up your sound so you can hear the recordings clearly"
+      ],
+      "blocks": [
+        {
+          "kind": "prose",
+          "text": "[[blood_pressure|Blood pressure]] is one of the [[vital_signs]] you will take every shift, and the manual method is the one the care team trusts most. It is a skill of the hands and the ears. Before you learn the steps, get to know the tools. A tool you have not checked is a guess you have not noticed yet.",
+          "activities": null
+        },
+        { "kind": "video", "video_id": "V-02", "note": "Watch this first if the parts are new to you.", "activities": null },
+        {
+          "kind": "keyterms",
+          "title": "Words in this lesson",
+          "terms": ["sphygmomanometer", "aneroid_gauge", "cuff", "bladder", "valve", "stethoscope", "diaphragm", "gauge_zero"],
+          "activities": null
+        },
+        {
+          "kind": "list",
+          "style": "bullet",
+          "title": "What is in the set",
+          "items": [
+            "The [[cuff]] — the wide band that wraps the arm. Inside it is the [[bladder]], the balloon that fills with air.",
+            "The bulb and the [[valve]] — one hand pumps, and the same hand lets the air out again.",
+            "The [[aneroid_gauge|dial]] — the round face with a needle that shows the pressure in [[mmhg]].",
+            "The [[stethoscope]] — earpieces, tubing, and the flat [[diaphragm]] you press over the artery.",
+            "All of it together has one long name: a [[sphygmomanometer]]."
+          ],
+          "activities": null
+        },
+        {
+          "kind": "steps",
+          "title": "The zero check, every time",
+          "items": [
+            { "do": "Let all the air out of the cuff and lay it flat.", "why": "Any air left inside will hold the needle off zero." },
+            { "do": "Hold the dial so you are looking straight at it, not from the side.", "why": "Looking from an angle shifts where the needle seems to point." },
+            { "do": "Check that the needle sits inside the zero mark.", "why": "The zero mark is your proof that every later number starts from the truth." },
+            { "do": "If the needle is off zero, set that gauge aside and report it.", "why": "A gauge that is 4 mmHg high at rest is 4 mmHg wrong at every reading you take with it." }
+          ],
+          "activities": ["A-0.1.1"]
+        },
+        {
+          "kind": "callout",
+          "variant": "linchpin",
+          "title": "So what?",
+          "text": "You are the last person who can catch a broken tool before it turns into a wrong number in a chart. Nobody downstream can tell a bad gauge from a sick resident. They only see the number you wrote.",
+          "activities": null
+        },
+        {
+          "kind": "callout",
+          "variant": "tip",
+          "title": "Sound check",
+          "text": "Use wired earbuds or headphones for the case recordings. The sounds are quiet on purpose, because real ones are. Set the volume where a whisper is clear but a tap does not hurt.",
+          "activities": ["A-0.1.2"]
+        },
+        {
+          "kind": "prose",
+          "text": "Last, pick your spot. Sit at a table with room for the cuff, the dial, and your phone. Keep the arm you practice on in the same place every time. Your hands learn faster when the setup does not move.",
+          "activities": ["A-0.1.3"]
+        },
+        {
+          "kind": "practice",
+          "title": "Build a practice arm tonight",
+          "i_do": "Watch how a roll of paper towels becomes an arm you can wrap, pump, and drill on for free.",
+          "we_do": "Unroll the towels until the roll measures about 13 inches around. Tape the end down. Draw one straight line along the roll with a marker. That line is your [[brachial_artery]].",
+          "you_do": "Wrap the cuff with the artery marker on your line, close the [[valve]], pump to 180, and let the air out slowly while you watch the needle. Do it five times.",
+          "say_aloud": [
+            "The needle rests at zero, so the gauge can be trusted.",
+            "Artery marker on the line, bottom edge one inch above the crease.",
+            "Valve closed, pumping now."
+          ],
+          "activities": null
+        },
+        { "kind": "video", "video_id": "V-18", "note": null, "activities": null },
+        {
+          "kind": "check",
+          "question": "Your cuff is fully deflated and the needle sits just below the zero mark. What do you do?",
+          "options": [
+            { "text": "Use it, and subtract the difference from your reading later.", "correct": false },
+            { "text": "Set the gauge aside, report it, and use a different one.", "correct": true },
+            { "text": "Tap the dial until the needle moves onto zero.", "correct": false },
+            { "text": "Use it, because the error is small.", "correct": false }
+          ],
+          "explain": "A gauge that is wrong at rest is wrong at every pressure. You cannot fix it with math at the bedside, and a small steady error is still an error in every chart it reaches.",
+          "activities": null
+        }
+      ]
+    },
+    {
+      "lesson": "L1.1",
+      "headline": "One procedure, fourteen steps, and a reason behind each one.",
+      "read_minutes": 7,
+      "you_will": [
+        "Put the whole procedure in the right order from memory",
+        "Say what each step protects",
+        "Spot a step that has been left out or done out of order"
+      ],
+      "blocks": [
+        {
+          "kind": "prose",
+          "text": "A blood pressure reading is decided long before the cuff is pumped up. Each step protects the steps that come after it. Move one step out of place and the number can be wrong no matter how well you listen.",
+          "activities": null
+        },
+        { "kind": "video", "video_id": "V-19", "note": "One take, nothing cut out. Watch it once before you read the steps, and once after.", "activities": ["A-1.1.1"] },
+        {
+          "kind": "steps",
+          "title": "The procedure, start to finish",
+          "items": [
+            { "do": "Wash your hands and gather your supplies.", "why": "[[hand_hygiene|Hand hygiene]] breaks the chain of infection between one [[resident]] and the next." },
+            { "do": "Knock, greet the resident, and introduce yourself.", "why": "A calm start lowers the fear that raises the number." },
+            { "do": "Check [[two_identifiers|two identifiers]], such as name and date of birth.", "why": "A perfect reading in the wrong chart is worse than no reading at all." },
+            { "do": "Explain what you are about to do, in plain words.", "why": "People who know what is coming hold still and stay relaxed." },
+            { "do": "Ask about coffee, smoking, exercise, and the bathroom.", "why": "All four move blood pressure for a short time. You need the person's real number, not their coffee's." },
+            { "do": "Look at both arms for any reason not to use them.", "why": "Some arms must never be squeezed. Checking takes seconds." },
+            { "do": "Position them: back supported, feet flat, legs uncrossed, arm supported at [[heart_level]], palm up.", "why": "Each part of this position removes a known error from the reading." },
+            { "do": "Give five quiet minutes of rest, with no talking during the measurement.", "why": "Rest lets the pressure settle to the person's true level." },
+            { "do": "Measure the upper arm and choose the cuff that fits it.", "why": "The wrong cuff gives a confident, precise, wrong answer." },
+            { "do": "Clean the earpieces and [[diaphragm]], wrap the cuff over the [[brachial_artery]] about an inch above the elbow crease, and close the [[valve]].", "why": "A clean, correctly placed cuff is what makes the sounds findable." },
+            { "do": "Feel the wrist pulse while you pump, and note where it disappears.", "why": "That point is a rough guess of the top number, and it tells you how high to go." },
+            { "do": "Pump about 30 mmHg above that point.", "why": "Starting above all the sounds is what keeps you from missing the real top number." },
+            { "do": "Let the air out slowly and steadily. Note the first sound and the last sound.", "why": "The first sound is [[systolic]]. The last sound is [[diastolic]]. Everything in between is rate control." },
+            { "do": "Let all the air out, remove the cuff, settle the resident, clean your equipment, wash your hands, and write it down.", "why": "The job is not done when you hear the numbers. It is done when they are recorded and reported." }
+          ],
+          "activities": ["A-1.1.1", "A-1.1.2"]
+        },
+        {
+          "kind": "callout",
+          "variant": "linchpin",
+          "title": "So what?",
+          "text": "Skip the rest period or forget to ask about smoking, and the high number you write down is real to everyone who reads it. A doctor may start medicine for a blood pressure the resident does not have. The small steps are the ones that protect people.",
+          "activities": null
+        },
+        {
+          "kind": "callout",
+          "variant": "myth",
+          "title": "Myth: machines made this skill optional",
+          "text": "Machines are fast, and they are fooled by movement, by uneven heartbeats, and by their own worn parts. When a machine's number does not match what you see in front of you, the manual reading settles it. That is why it is still the standard.",
+          "activities": null
+        },
+        { "kind": "video", "video_id": "V-01", "note": null, "activities": null },
+        {
+          "kind": "check",
+          "question": "A coworker positions the resident, wraps the cuff, and then asks if they had coffee this morning. What is wrong?",
+          "options": [
+            { "text": "Nothing. The question can be asked at any point.", "correct": false },
+            { "text": "The question came too late to protect the reading.", "correct": true },
+            { "text": "The question should not be asked at all.", "correct": false },
+            { "text": "The cuff should go on before positioning.", "correct": false }
+          ],
+          "explain": "Asking about coffee, smoking, exercise, and the bathroom is a screening step. It has to happen early enough to change the plan, such as waiting a while or coming back later. Asked after the cuff is on, it is just conversation.",
+          "activities": ["A-1.1.3"]
+        }
+      ]
+    },
+    {
+      "lesson": "L1.2",
+      "headline": "Some arms must not be used. Check before you wrap.",
+      "read_minutes": 5,
+      "you_will": [
+        "Name the reasons an arm must not be used",
+        "Choose the other arm, or stop and ask, when both are ruled out",
+        "Report what you found and why"
+      ],
+      "blocks": [
+        {
+          "kind": "prose",
+          "text": "A cuff squeezes an arm hard for about half a minute. On most arms that is harmless. On a few, it causes real damage or gives a number nobody can use. Your job is to know the difference before the cuff touches skin.",
+          "activities": null
+        },
+        {
+          "kind": "keyterms",
+          "title": "Words in this lesson",
+          "terms": ["contraindication", "av_fistula", "mastectomy", "edema", "iv_line"],
+          "activities": null
+        },
+        { "kind": "video", "video_id": "V-05", "note": null, "activities": ["A-1.2.1"] },
+        {
+          "kind": "list",
+          "style": "check",
+          "title": "Do not use this arm if it has",
+          "items": [
+            "An [[av_fistula|AV fistula]] or any dialysis access. Squeezing it can ruin the access the person depends on to stay alive.",
+            "An [[iv_line|IV line]] or any infusion running. The cuff can stop the flow or push fluid into the tissue.",
+            "Surgery on that side, such as a [[mastectomy]] with lymph nodes removed. Swelling can follow and be hard to reverse.",
+            "An injury, a burn, a rash, a wound, or a cast. Pressure over damaged skin causes pain and can cause harm.",
+            "Heavy [[edema|swelling]] or a known blood clot. The reading will not be reliable and the squeeze may hurt.",
+            "Paralysis or a limb that cannot be moved or supported, unless the care plan says it is fine."
+          ],
+          "activities": ["A-1.2.1", "A-1.2.2"]
+        },
+        {
+          "kind": "callout",
+          "variant": "safety",
+          "title": "When both arms are ruled out",
+          "text": "Do not improvise. Do not force a cuff onto an arm you just decided against. Stop, tell the [[licensed_nurse]] what you found on both sides, and ask what they want you to do. A missing reading with a clear reason is safe. A harmful reading is not.",
+          "activities": ["A-1.2.2"]
+        },
+        {
+          "kind": "prose",
+          "text": "Check both arms before you choose. Many residents have a note in the care plan telling you which side to use. Read it first, and still look at the arm yourself. Notes go out of date. Arms do not lie.",
+          "activities": null
+        },
+        {
+          "kind": "check",
+          "question": "The right arm has a dialysis fistula. The left arm has an IV running. What do you do?",
+          "options": [
+            { "text": "Use the left arm, because an IV is less serious than a fistula.", "correct": false },
+            { "text": "Use the right arm quickly and gently.", "correct": false },
+            { "text": "Take no reading yet, and ask the licensed nurse how to proceed.", "correct": true },
+            { "text": "Use a leg cuff on your own.", "correct": false }
+          ],
+          "explain": "Both arms are ruled out, so this is no longer your decision to make alone. Report what you found on each side and let the nurse decide. Choosing the least bad arm on your own is how people get hurt.",
+          "activities": ["A-1.2.2"]
+        }
+      ]
+    },
+    {
+      "lesson": "L1.3",
+      "headline": "Position moves the number. Know which way, and by how much.",
+      "read_minutes": 6,
+      "you_will": [
+        "Set up the correct seated position, part by part",
+        "Say which way each mistake pushes the reading",
+        "Fix a position before you take the reading, not after"
+      ],
+      "blocks": [
+        {
+          "kind": "prose",
+          "text": "Position is not politeness. Each part of it removes a known error. Get the position right and the number belongs to the resident. Get it wrong and part of the number belongs to the chair.",
+          "activities": null
+        },
+        { "kind": "video", "video_id": "V-04", "note": null, "activities": ["A-1.3.2"] },
+        {
+          "kind": "steps",
+          "title": "The correct seated position",
+          "items": [
+            { "do": "Back supported against the chair.", "why": "An unsupported back makes muscles work, and working muscles raise the reading." },
+            { "do": "Feet flat on the floor, legs uncrossed.", "why": "Crossed legs raise the top number by several points." },
+            { "do": "Arm supported on a table or your hand, at [[heart_level]].", "why": "An arm below the heart reads high. An arm above it reads low." },
+            { "do": "Palm facing up, elbow slightly bent.", "why": "This opens the inner elbow so you can reach the [[brachial_artery]]." },
+            { "do": "Sleeve fully removed, not rolled up.", "why": "A rolled sleeve acts like a second cuff and squeezes the arm above the first one." },
+            { "do": "No talking, by either of you, during the measurement.", "why": "Talking raises the reading while it is happening." }
+          ],
+          "activities": ["A-1.3.2", "A-1.3.3"]
+        },
+        {
+          "kind": "table",
+          "title": "Which way each mistake pushes the number",
+          "caption": null,
+          "headers": ["Mistake", "Effect on the reading", "Rough size"],
+          "rows": [
+            ["Arm hanging below heart level", "Falsely high", "up to about 10 mmHg"],
+            ["Arm held above heart level", "Falsely low", "up to about 10 mmHg"],
+            ["Arm held up by the resident, not supported", "Falsely high", "a few mmHg"],
+            ["Back not supported", "Falsely high", "up to about 6 mmHg"],
+            ["Legs crossed at the knee", "Falsely high", "about 3 to 8 mmHg"],
+            ["Talking during the measurement", "Falsely high", "up to about 10 mmHg"],
+            ["Sleeve rolled up tight", "Falsely high", "varies, and unpredictable"]
+          ],
+          "note": "These sizes are typical, not exact. The direction is the part you must know by heart.",
+          "activities": ["A-1.3.1"]
+        },
+        {
+          "kind": "callout",
+          "variant": "linchpin",
+          "title": "So what?",
+          "text": "Two or three small position errors can stack up to 20 mmHg. That is the difference between a normal reading and one that starts a new medicine. You cannot fix it afterward, because nobody reading the chart knows the arm was hanging.",
+          "activities": null
+        },
+        {
+          "kind": "practice",
+          "title": "Predict, then check",
+          "i_do": "Watch how a supported arm at heart level looks next to an arm hanging at the resident's side.",
+          "we_do": "Look at a photo of a person set up for a reading and name every fault you can see. Say which way each one pushes the number.",
+          "you_do": "Set up a partner, or a chair and a rolled towel, from memory. Then check yourself against the six steps above.",
+          "say_aloud": [
+            "Back supported, feet flat, legs uncrossed.",
+            "Arm supported at heart level, palm up.",
+            "Sleeve off, not rolled. No talking from here."
+          ],
+          "activities": ["A-1.3.1"]
+        },
+        {
+          "kind": "check",
+          "question": "A resident rests their cuffed arm in their lap while you listen. What happens to the reading?",
+          "options": [
+            { "text": "Nothing, as long as the arm is still.", "correct": false },
+            { "text": "It reads falsely low, because the arm is relaxed.", "correct": false },
+            { "text": "It reads falsely high, because the arm is below heart level.", "correct": true },
+            { "text": "Only the bottom number changes.", "correct": false }
+          ],
+          "explain": "An arm below the heart adds pressure from gravity, and both numbers rise. Lift the arm to heart level and support it before you start, not after you hear something you did not expect.",
+          "activities": ["A-1.3.3"]
+        }
+      ]
+    },
+    {
+      "lesson": "L1.4",
+      "headline": "Five quiet minutes are part of the measurement.",
+      "read_minutes": 5,
+      "you_will": [
+        "Explain the procedure in words a resident understands",
+        "Name what each preparation rule is protecting",
+        "Hold the rest period politely, even when you are busy"
+      ],
+      "blocks": [
+        {
+          "kind": "prose",
+          "text": "The rules below sound like courtesies. They are controls. Each one keeps something out of the number that does not belong there.",
+          "activities": null
+        },
+        {
+          "kind": "table",
+          "title": "What each rule protects",
+          "caption": null,
+          "headers": ["Rule", "What it keeps out of the number"],
+          "rows": [
+            ["Five minutes of quiet rest", "The walk down the hall, the stairs, the argument at breakfast"],
+            ["No coffee, tea, or energy drinks for 30 minutes", "A short caffeine rise of several points"],
+            ["No smoking for 30 minutes", "A sharp rise that fades within the hour"],
+            ["No exercise for 30 minutes", "A rise that can last much longer than people expect"],
+            ["Empty bladder", "A full bladder raises the reading, sometimes by 10 mmHg or more"],
+            ["Bare arm, sleeve fully off", "A rolled sleeve squeezing the arm above the cuff"],
+            ["No talking during the measurement", "A rise that happens while you are listening"]
+          ],
+          "note": null,
+          "activities": ["A-1.4.2"]
+        },
+        {
+          "kind": "callout",
+          "variant": "tip",
+          "title": "How to hold the rest period when you are behind",
+          "text": "Use the five minutes instead of waiting them out. Set up your kit, check the gauge, measure the arm, choose the cuff, and read the chart for their [[baseline]]. The rest happens while you work, and nobody feels rushed.",
+          "activities": ["A-1.4.2"]
+        },
+        {
+          "kind": "prose",
+          "text": "Then explain what you are about to do. Keep it short and concrete. \"I am going to check your blood pressure. The cuff will squeeze your arm and feel tight for about half a minute, then it will let go. I need you to sit quietly and not talk while I listen.\" Nerves raise blood pressure, and this is called [[white_coat_syndrome]]. A calm explanation is the cheapest fix there is.",
+          "activities": ["A-1.4.1"]
+        },
+        {
+          "kind": "practice",
+          "title": "Explain it out loud",
+          "i_do": "Listen to how a short, plain explanation sounds next to a rushed one.",
+          "we_do": "Write your own version in three sentences. Say what will happen, how it will feel, and what you need from them.",
+          "you_do": "Say it to a partner, a mirror, or your phone's recorder. Then listen back. If you would not understand it as a nervous 80-year-old, rewrite it.",
+          "say_aloud": [
+            "Good morning. I am here to check your blood pressure.",
+            "The cuff will feel tight for about half a minute, then it will let go.",
+            "Please rest your arm here and sit quietly while I listen."
+          ],
+          "activities": ["A-1.4.1"]
+        },
+        {
+          "kind": "check",
+          "question": "A resident just walked back from the dining room and sat down. You are running late. What is the correct move?",
+          "options": [
+            { "text": "Take the reading now and note that they had been walking.", "correct": false },
+            { "text": "Take the reading now, then repeat it later if it is high.", "correct": false },
+            { "text": "Set up your kit and let them rest five minutes, then measure.", "correct": true },
+            { "text": "Skip the reading and chart their usual number.", "correct": false }
+          ],
+          "explain": "A note in the chart does not undo a wrong number. The five minutes are part of the measurement, and you can use them to set up. Charting a number you did not take is falsifying a record.",
+          "activities": ["A-1.4.2"]
+        }
+      ]
+    },
+    {
+      "lesson": "L2.1",
+      "headline": "Cuff choice starts with a tape measure, not a guess.",
+      "read_minutes": 4,
+      "you_will": [
+        "Find the midpoint of the upper arm",
+        "Measure the arm all the way around, the same way every time",
+        "Say your measurement out loud in centimeters"
+      ],
+      "blocks": [
+        {
+          "kind": "prose",
+          "text": "Everything in the next lesson rests on one number: how big the arm is around. Eyes are bad at this. Two arms that look the same can be four centimeters apart, and four centimeters can change the cuff.",
+          "activities": null
+        },
+        {
+          "kind": "keyterms",
+          "title": "Words in this lesson",
+          "terms": ["arm_circumference", "body_habitus"],
+          "activities": null
+        },
+        { "kind": "video", "video_id": "V-06", "note": null, "activities": ["A-2.1.1"] },
+        {
+          "kind": "steps",
+          "title": "How to measure the arm",
+          "items": [
+            { "do": "Bare the whole upper arm and let it hang relaxed at the side.", "why": "A flexed muscle measures bigger than a resting one." },
+            { "do": "Find the point of the shoulder and the tip of the elbow.", "why": "These two bones are your landmarks, and they do not move." },
+            { "do": "Mark the halfway point between them.", "why": "The middle of the arm is where the cuff will sit, so it is where the size must be taken." },
+            { "do": "Wrap the tape around the arm at that mark, level all the way around.", "why": "A crooked tape reads long and pushes you toward a cuff that is too big." },
+            { "do": "Pull the tape snug but do not dent the skin. Read the number in centimeters.", "why": "A tight tape reads small, and a small reading points you to a cuff that reads high." },
+            { "do": "Say the number out loud and remember it.", "why": "Saying it makes it a fact you can act on, not a guess you half remember." }
+          ],
+          "activities": ["A-2.1.2", "A-2.1.3"]
+        },
+        {
+          "kind": "callout",
+          "variant": "tip",
+          "title": "Measure once, use all day",
+          "text": "An adult's [[arm_circumference]] does not change from shift to shift. Write it in the chart the first time you take it. The next person saves two minutes and picks the same cuff you did.",
+          "activities": null
+        },
+        {
+          "kind": "check",
+          "question": "Where do you wrap the tape to measure the arm?",
+          "options": [
+            { "text": "At the widest part of the arm, wherever that is.", "correct": false },
+            { "text": "Halfway between the shoulder point and the elbow tip.", "correct": true },
+            { "text": "Just above the elbow crease, where the cuff edge goes.", "correct": false },
+            { "text": "At the armpit, where the cuff top will sit.", "correct": false }
+          ],
+          "explain": "The midpoint is the standard, and standards are what make your number mean the same thing as everyone else's. It is also where the middle of the cuff will sit.",
+          "activities": ["A-2.1.3"]
+        }
+      ]
+    },
+    {
+      "lesson": "L2.2",
+      "headline": "With a measurement in hand, the cuff is a lookup, not an opinion.",
+      "read_minutes": 6,
+      "you_will": [
+        "Match an arm measurement to the right cuff size",
+        "Use the bladder width and length rules to check your choice",
+        "Say why the cuff you picked is the right one"
+      ],
+      "blocks": [
+        {
+          "kind": "prose",
+          "text": "Cuffs come in sizes for a reason. The [[bladder]] inside has to be big enough to squeeze the artery evenly, and small enough that it is squeezing the arm and not the room around it.",
+          "activities": null
+        },
+        {
+          "kind": "table",
+          "title": "Standard manual cuff sizes",
+          "caption": "Measure the mid-upper arm and match it to a row. Never force a cuff that does not fit.",
+          "headers": ["Cuff size", "Arm around (inches)", "Arm around (cm)"],
+          "rows": [
+            ["Infant", "5 to 7.5", "13 to 19"],
+            ["Child", "7.5 to 10.5", "19 to 26"],
+            ["Adult", "10 to 16", "25 to 40"],
+            ["Large adult", "13 to 20", "33 to 50"],
+            ["Thigh", "16 to 26", "40 to 66"]
+          ],
+          "note": "Ranges overlap on purpose. When an arm falls in two rows, the bladder rules below decide.",
+          "activities": ["A-2.2.1", "A-2.2.2"]
+        },
+        {
+          "kind": "list",
+          "style": "bullet",
+          "title": "The two bladder rules",
+          "items": [
+            "Width: the [[bladder]] should be about 40 percent of the way around the arm. On a 34 cm arm, that is a bladder about 13 to 14 cm wide.",
+            "Length: the bladder should wrap 80 to 100 percent of the way around the arm. Most cuffs print index lines on the inside so you can see if you landed in range."
+          ],
+          "activities": ["A-2.2.2"]
+        },
+        {
+          "kind": "callout",
+          "variant": "tip",
+          "title": "Read the lines inside the cuff",
+          "text": "Most adult cuffs have a range line and an index line printed inside. Wrap the cuff, and if the index line lands between the two range lines, the cuff fits this arm. If it lands outside them, change cuffs. It is the fastest check you have.",
+          "activities": ["A-2.2.2", "A-2.2.3"]
+        },
+        {
+          "kind": "callout",
+          "variant": "scope",
+          "title": "Use your program's chart",
+          "text": "Sizes and names differ between manufacturers and schools. Many programs split the adult range into small adult, adult, large adult, and extra large. Learn the chart your program tests you on, and use the same chart the cuffs on your cart were labeled with.",
+          "activities": null
+        },
+        {
+          "kind": "check",
+          "question": "You measure an arm at 36 cm. Which cuff should you reach for first?",
+          "options": [
+            { "text": "Child, because it is easier to wrap.", "correct": false },
+            { "text": "Large adult, and then check the index line.", "correct": true },
+            { "text": "Thigh, because the arm is large.", "correct": false },
+            { "text": "Whatever cuff is already on the machine.", "correct": false }
+          ],
+          "explain": "At 36 cm the arm sits in the large adult range. Wrapping it and checking the index line takes five seconds and turns a good guess into a checked fact.",
+          "activities": ["A-2.2.3"]
+        }
+      ]
+    },
+    {
+      "lesson": "L2.3",
+      "headline": "Too small reads high. Too large reads low. Know it cold.",
+      "read_minutes": 4,
+      "you_will": [
+        "Say which way each sizing mistake pushes the reading",
+        "Predict the error before you see the result",
+        "Ask the first smart question about someone else's reading"
+      ],
+      "blocks": [
+        {
+          "kind": "prose",
+          "text": "A cuff that is too small has to be pumped up harder to close the artery. The extra pressure shows on the dial, and the reading comes out too high. A cuff that is too large closes the artery too easily, and the reading comes out too low.",
+          "activities": null
+        },
+        {
+          "kind": "keyterms",
+          "title": "Words in this lesson",
+          "terms": ["false_high", "false_low"],
+          "activities": null
+        },
+        { "kind": "video", "video_id": "V-07", "note": "The same arm, three cuffs, three different answers.", "activities": ["A-2.3.1", "A-2.3.2"] },
+        {
+          "kind": "table",
+          "title": "Direction and rough size of the error",
+          "caption": null,
+          "headers": ["What you used", "What happens", "Rough size"],
+          "rows": [
+            ["Cuff too small for the arm", "[[false_high|Falsely high]]", "10 to 40 mmHg on a large arm"],
+            ["Cuff too large for the arm", "[[false_low|Falsely low]]", "10 to 30 mmHg on a small arm"],
+            ["Adult cuff on a child", "Falsely low, or no readable sounds", "large and unpredictable"],
+            ["Cuff wrapped loosely", "Falsely high", "varies with how loose it is"]
+          ],
+          "note": "Mis-sizing is one of the most common causes of a wrong manual reading. It is also one of the easiest to prevent.",
+          "activities": ["A-2.3.3"]
+        },
+        {
+          "kind": "callout",
+          "variant": "linchpin",
+          "title": "So what?",
+          "text": "A 30 mmHg false high can turn a healthy resident into someone starting blood pressure medicine. That medicine can drop them low enough to fall. The chain from your cuff choice to a broken hip is shorter than it looks.",
+          "activities": null
+        },
+        {
+          "kind": "callout",
+          "variant": "tip",
+          "title": "The first question to ask about any reading",
+          "text": "When you inherit a reading that looks wrong, ask: what cuff did they use? It is a better first question than \"are you sure?\", and it is one a professional asks without accusing anyone of anything.",
+          "activities": null
+        },
+        {
+          "kind": "check",
+          "question": "A large-armed resident was measured with a regular adult cuff. The reading was 158/94. What is most likely?",
+          "options": [
+            { "text": "The reading is accurate and should be reported as is.", "correct": false },
+            { "text": "The reading is probably falsely low.", "correct": false },
+            { "text": "The reading is probably falsely high, and should be repeated with a large cuff.", "correct": true },
+            { "text": "The cuff size only affects the bottom number.", "correct": false }
+          ],
+          "explain": "A cuff that is too small needs more pressure to close the artery, so both numbers read high. Repeat with the correct cuff and report both readings and both cuff sizes.",
+          "activities": ["A-2.3.3"]
+        }
+      ]
+    },
+    {
+      "lesson": "L2.4",
+      "headline": "Placement is precise. Learn the feel of right.",
+      "read_minutes": 5,
+      "you_will": [
+        "Find the brachial artery by feel",
+        "Line up the artery marker and the cuff edge correctly",
+        "Test snugness with the one-fingertip rule"
+      ],
+      "blocks": [
+        {
+          "kind": "prose",
+          "text": "The cuff has a job and a place. The [[bladder]] has to sit over the artery it is meant to squeeze. A cuff that is twisted, low, or loose changes the number as surely as the wrong size does.",
+          "activities": null
+        },
+        { "kind": "video", "video_id": "V-03", "note": null, "activities": ["A-2.4.1"] },
+        {
+          "kind": "steps",
+          "title": "Find the artery, then place the cuff",
+          "items": [
+            { "do": "Turn the palm up and look at the inner elbow, called the [[antecubital_space]].", "why": "The artery runs closer to the body than the middle of the crease." },
+            { "do": "Press gently with two fingertips just above the crease, on the inner side. Move slowly until you feel a pulse.", "why": "You are feeling the [[brachial_artery]]. This is the spot the diaphragm goes on later." },
+            { "do": "Line the cuff's artery marker up with that spot.", "why": "The marker shows where the middle of the bladder is." },
+            { "do": "Set the bottom edge of the cuff about 1 inch above the elbow crease.", "why": "Too low and the cuff sits on your stethoscope. Too high and it squeezes the wrong part of the arm." },
+            { "do": "Wrap it snug and even, with no twist and no bunching.", "why": "Uneven pressure squeezes some of the artery and not the rest." },
+            { "do": "Test it: one fingertip should slide under the edge, and no more.", "why": "Loose reads high. Too tight is painful and squeezes before you pump." }
+          ],
+          "activities": ["A-2.4.1", "A-2.4.2", "A-2.4.3"]
+        },
+        { "kind": "video", "video_id": "V-08", "note": null, "activities": ["A-2.4.2"] },
+        {
+          "kind": "callout",
+          "variant": "tip",
+          "title": "Cannot feel the pulse?",
+          "text": "Do not press harder, because hard pressure flattens the artery you are hunting for. Move your fingers slightly toward the body, wait through two or three heartbeats, and try again. Faint pulses are common in older residents, and patience finds more of them than force does.",
+          "activities": null
+        },
+        {
+          "kind": "practice",
+          "title": "Wrap it ten times",
+          "i_do": "Watch a full wrap in one take: marker on artery, edge an inch up, snug, no twist.",
+          "we_do": "Wrap your practice arm with the guide in front of you, checking each of the four things in order.",
+          "you_do": "Wrap it ten times from memory, taking the cuff fully off between tries. Speed is not the goal. The same result every time is the goal.",
+          "say_aloud": [
+            "Artery marker on the artery line.",
+            "Bottom edge one inch above the crease.",
+            "Snug, one fingertip, no twist."
+          ],
+          "activities": ["A-2.4.2"]
+        },
+        {
+          "kind": "check",
+          "question": "You can slide three fingers easily under the wrapped cuff. What will that do?",
+          "options": [
+            { "text": "Nothing, if you pump high enough.", "correct": false },
+            { "text": "Give a falsely high reading.", "correct": true },
+            { "text": "Give a falsely low reading.", "correct": false },
+            { "text": "Only make the resident more comfortable.", "correct": false }
+          ],
+          "explain": "A loose cuff wastes pressure on air instead of the arm, so it takes more pressure to close the artery. More pressure on the dial means a higher number. Re-wrap it snug and start again.",
+          "activities": ["A-2.4.3"]
+        }
+      ]
+    },
+    {
+      "lesson": "L2.5",
+      "headline": "Real arms do not read the size chart.",
+      "read_minutes": 5,
+      "you_will": [
+        "Make a defensible choice when an arm sits between two cuffs",
+        "Say what your choice leaves uncertain",
+        "Know what to do when no cuff fits"
+      ],
+      "blocks": [
+        {
+          "kind": "prose",
+          "text": "Some arms fall right on the line between two sizes. Some are cone shaped, wide at the top and narrow at the elbow, so no flat cuff sits evenly on them. These arms are not rare, and pretending they are is how bad numbers get written down with confidence.",
+          "activities": null
+        },
+        {
+          "kind": "keyterms",
+          "title": "Words in this lesson",
+          "terms": ["bariatric", "body_habitus"],
+          "activities": null
+        },
+        {
+          "kind": "list",
+          "style": "numbered",
+          "title": "When an arm sits between two sizes",
+          "items": [
+            "Wrap the smaller cuff and check the index line. If it lands inside the range marks, use it.",
+            "If it does not, move up a size and check again.",
+            "If both fit by the lines, choose the larger one and say why, because a slightly large cuff errs low and a slightly small one errs high by more.",
+            "Write down which cuff you used, every time. A reading without a cuff size cannot be compared to the next one."
+          ],
+          "activities": ["A-2.5.1", "A-2.5.2"]
+        },
+        {
+          "kind": "callout",
+          "variant": "scope",
+          "title": "Say the uncertainty out loud",
+          "text": "\"I used a large adult cuff on a cone-shaped arm. The cuff did not sit evenly at the lower edge, so this reading may run a little low.\" That sentence is not an excuse. It is information the [[licensed_nurse]] needs and cannot get anywhere else.",
+          "activities": ["A-2.5.2"]
+        },
+        {
+          "kind": "list",
+          "style": "bullet",
+          "title": "When no cuff fits the upper arm",
+          "items": [
+            "Check whether an extra large or [[bariatric]] cuff is available on another cart before you give up.",
+            "Ask the [[licensed_nurse]] about using the forearm with the wrist pulse, or a thigh cuff, if your program allows it.",
+            "Never stack two cuffs, and never pull one tight to make it reach.",
+            "Record what you tried and what you could not do. A missing reading with a reason is usable. A wrong reading is not."
+          ],
+          "activities": ["A-2.5.3"]
+        },
+        {
+          "kind": "check",
+          "question": "An arm measures 34 cm, right at the edge of two cuff sizes. Both cuffs wrap within their index lines. What is the strongest choice?",
+          "options": [
+            { "text": "The smaller cuff, because a snug fit is always better.", "correct": false },
+            { "text": "The larger cuff, and note the choice in the chart.", "correct": true },
+            { "text": "Either one, and there is no need to write it down.", "correct": false },
+            { "text": "Neither, and skip the reading.", "correct": false }
+          ],
+          "explain": "Both are defensible, but a slightly large cuff errs low by a little while a slightly small cuff errs high by more. Writing down which one you used is what lets tomorrow's reading be compared to today's.",
+          "activities": ["A-2.5.1"]
+        }
+      ]
+    },
+    {
+      "lesson": "L3.1",
+      "headline": "Feel first. It tells you how high to pump.",
+      "read_minutes": 5,
+      "you_will": [
+        "Find the wrist pulse and use it to estimate the top number",
+        "Pump to the right height for this person, not a habit number",
+        "Say what underpumping costs you"
+      ],
+      "blocks": [
+        {
+          "kind": "prose",
+          "text": "Before you listen, you feel. Hold the [[radial_pulse|wrist pulse]] while you pump. The point where that pulse disappears is close to the top number. That single fact tells you how high to go, and it protects you from the worst trap in this skill.",
+          "activities": null
+        },
+        {
+          "kind": "keyterms",
+          "title": "Words in this lesson",
+          "terms": ["radial_pulse", "palpate", "occlude", "inflate", "auscultatory_gap"],
+          "activities": null
+        },
+        { "kind": "video", "video_id": "V-09", "note": null, "activities": ["A-3.1.1"] },
+        {
+          "kind": "steps",
+          "title": "Palpate, then inflate",
+          "items": [
+            { "do": "Find the [[radial_pulse]] at the thumb side of the wrist on the cuffed arm.", "why": "You need a pulse you can feel while your other hand pumps." },
+            { "do": "Pump steadily and keep your fingers on the pulse.", "why": "You are waiting for the moment the cuff [[occlude|closes off]] the artery." },
+            { "do": "Note the number on the dial when the pulse disappears.", "why": "That is your felt estimate of [[systolic]], usually within about 10 mmHg." },
+            { "do": "Let all the air out and wait about 30 seconds.", "why": "The arm needs a moment to recover, or the next reading drifts." },
+            { "do": "Now pump about 30 mmHg above your felt estimate.", "why": "Starting above every sound is the only way to be sure you did not start in the middle of them." }
+          ],
+          "activities": ["A-3.1.1", "A-3.1.2", "A-3.1.3"]
+        },
+        {
+          "kind": "callout",
+          "variant": "safety",
+          "title": "Why underpumping is dangerous",
+          "text": "Some people have an [[auscultatory_gap]]: the sounds start, vanish for a stretch, then come back. If you begin listening inside that gap, the first sound you hear is not the top number at all. You can be 40 mmHg low and never know. Pumping 30 above what you felt keeps you above the trap.",
+          "activities": ["A-3.1.3"]
+        },
+        {
+          "kind": "callout",
+          "variant": "scope",
+          "title": "180, or 30 above? Both answers are right",
+          "text": "Many skills tests, including HOSA, ask you to pump to a fixed 180 mmHg so every student is graded the same way. At the bedside, 30 above your felt estimate is the clinical rule, because it fits the person in front of you and does not squeeze anyone harder than needed. Learn the fixed number for your test. Use the felt estimate for real care, unless your program says otherwise.",
+          "activities": null
+        },
+        {
+          "kind": "check",
+          "question": "You feel the wrist pulse disappear at 130. How high should you pump to listen?",
+          "options": [
+            { "text": "130, because that is the systolic pressure.", "correct": false },
+            { "text": "About 160, which is 30 above where the pulse went.", "correct": true },
+            { "text": "220, to be completely safe.", "correct": false },
+            { "text": "Whatever number you always use.", "correct": false }
+          ],
+          "explain": "Thirty above your felt estimate puts you safely above the first sound without squeezing the arm harder or longer than the reading needs. Pumping far higher is uncomfortable and can change the number.",
+          "activities": ["A-3.1.3"]
+        }
+      ]
+    },
+    {
+      "lesson": "L3.2",
+      "headline": "Slow and steady is not a style. It is the measurement.",
+      "read_minutes": 5,
+      "you_will": [
+        "Let air out at a steady 2 to 3 mmHg per second",
+        "Say what happens to the numbers when you go too fast",
+        "Hold the rate without thinking about it"
+      ],
+      "blocks": [
+        {
+          "kind": "prose",
+          "text": "This is the hardest motor skill in the whole procedure, and the one that separates a real reading from a rough one. Your thumb controls a valve, and the valve controls how much truth you get.",
+          "activities": null
+        },
+        {
+          "kind": "keyterms",
+          "title": "Words in this lesson",
+          "terms": ["deflation_rate", "valve"],
+          "activities": null
+        },
+        { "kind": "video", "video_id": "V-10", "note": "Watch the needle, not the hand. That fall is what you are copying.", "activities": ["A-3.2.1"] },
+        {
+          "kind": "list",
+          "style": "bullet",
+          "title": "The rate, in three ways of thinking about it",
+          "items": [
+            "About 2 to 3 mmHg per second. This app scores you against that band, and it shows you the band in every activity.",
+            "About one small mark on the dial per second. Most aneroid dials are marked every 2 mmHg.",
+            "About one heartbeat per mark on an average adult pulse. If you are dropping more than one mark between beats, you are too fast."
+          ],
+          "activities": ["A-3.2.1", "A-3.2.2"]
+        },
+        {
+          "kind": "callout",
+          "variant": "scope",
+          "title": "2 to 4 on the skills test",
+          "text": "Written standards, including the workbook this course is built from, usually state 2 to 4 mmHg per second. Aiming at 2 to 3 keeps you safely inside that range even on a nervous day, and it is the band this app measures.",
+          "activities": null
+        },
+        {
+          "kind": "table",
+          "title": "What a wrong rate does",
+          "caption": null,
+          "headers": ["What you did", "What happens to the numbers"],
+          "rows": [
+            ["Let air out too fast", "You hear the first sound late and the last sound early. The top number reads low and the bottom number reads high."],
+            ["Let air out too slowly", "The arm aches and fills with blood. The bottom number drifts and the resident stops holding still."],
+            ["Stopped and started, or bounced the valve", "The needle jumps, and any sound near a jump lands on a pressure you cannot trust."],
+            ["Slowed down near the end to catch diastolic", "You changed the measurement to get the answer you wanted. Keep the rate steady all the way down."]
+          ],
+          "note": null,
+          "activities": ["A-3.2.4"]
+        },
+        {
+          "kind": "practice",
+          "title": "Train the valve hand",
+          "i_do": "Watch a locked-off close-up of a thumb holding the needle at a steady fall for a full descent.",
+          "we_do": "Pump your practice arm to 180 and let it fall while the app's pacer shows you the band. Stay in the band, not just near it.",
+          "you_do": "Do ten descents with no pacer. Count seconds out loud and watch the marks. Then check your rate afterward and see how honest your counting was.",
+          "say_aloud": [
+            "One mark, two mark, three mark, four.",
+            "Steady. Do not chase the sound.",
+            "All the way to zero at the same speed."
+          ],
+          "activities": ["A-3.2.2", "A-3.2.3"]
+        },
+        {
+          "kind": "check",
+          "question": "You are letting the air out at about 8 mmHg per second. What is most likely to happen to your reading?",
+          "options": [
+            { "text": "Both numbers will be too high.", "correct": false },
+            { "text": "The top number will read low and the bottom number will read high.", "correct": true },
+            { "text": "Only the bottom number will change.", "correct": false },
+            { "text": "Nothing, as long as you hear the sounds.", "correct": false }
+          ],
+          "explain": "At 8 mmHg per second the dial falls faster than your ear and hand can respond, so the first sound gets marked after it started and the last gets marked before it ended. The gap between your two numbers gets narrower than the real one.",
+          "activities": ["A-3.2.3", "A-3.2.4"]
+        }
+      ]
+    },
+    {
+      "lesson": "L3.3",
+      "headline": "Five phases, two that you report.",
+      "read_minutes": 6,
+      "you_will": [
+        "Tell the Korotkoff phases apart by sound",
+        "Place the diaphragm where the sounds actually are",
+        "Keep your ears on the sound and your eyes on the dial"
+      ],
+      "blocks": [
+        {
+          "kind": "prose",
+          "text": "When the cuff is above the top number, the [[artery]] is squeezed shut and there is silence. As the pressure falls, blood starts forcing its way through, and that struggle makes sound. Those sounds are called [[korotkoff_sounds]], and they change in a set order as the pressure keeps dropping.",
+          "activities": null
+        },
+        {
+          "kind": "keyterms",
+          "title": "Words in this lesson",
+          "terms": ["korotkoff_sounds", "auscultation", "diaphragm", "brachial_artery"],
+          "activities": null
+        },
+        { "kind": "video", "video_id": "V-11", "note": "Headphones on. Each phase is played slowly and on its own.", "activities": ["A-3.3.1"] },
+        {
+          "kind": "table",
+          "title": "The five phases",
+          "caption": null,
+          "headers": ["Phase", "What you hear", "What it means"],
+          "rows": [
+            ["1", "The first clear tapping", "This pressure is [[systolic]]. Mark it."],
+            ["2", "Softer, swishing sounds", "Nothing to report. Hold your rate."],
+            ["3", "Crisper and louder again", "Still nothing to report. Keep going."],
+            ["4", "Suddenly muffled and dull", "Diastolic is close. Do not slow down to wait for it."],
+            ["5", "Silence", "The pressure where sound disappeared is [[diastolic]]. Mark it."]
+          ],
+          "note": "Adults are reported using phase 1 and phase 5. Some programs record phase 4 as well for children, or when sounds never fully stop.",
+          "activities": ["A-3.3.1"]
+        },
+        {
+          "kind": "steps",
+          "title": "Placing the stethoscope",
+          "items": [
+            { "do": "Put the earpieces in facing forward, angled toward your nose.", "why": "Ear canals point forward. Earpieces put in backward block most of the sound." },
+            { "do": "Place the [[diaphragm]] over the [[brachial_artery]] you felt earlier, just below the cuff edge.", "why": "A centimeter off the artery can cost you the quiet sounds entirely." },
+            { "do": "Hold it flat against the skin with light, even pressure.", "why": "Pressing hard makes noise of its own and can change the sounds." },
+            { "do": "Keep it out from under the cuff, and keep the tubing from rubbing anything.", "why": "Rubbing tubing sounds a lot like a Korotkoff sound to a tired ear." },
+            { "do": "Now look at the dial and keep looking at it.", "why": "The sound tells you when. The dial tells you what number. You need both at once." }
+          ],
+          "activities": ["A-3.3.2", "A-3.3.3"]
+        },
+        {
+          "kind": "callout",
+          "variant": "tip",
+          "title": "Ears and eyes at the same time",
+          "text": "Beginners look away from the dial when a sound surprises them, and then guess the number afterward. Practice the split: eyes stay on the needle for the whole descent, ears do the deciding. The app's sound-only activities exist to build exactly this.",
+          "activities": ["A-3.3.3"]
+        },
+        {
+          "kind": "check",
+          "question": "The sounds become muffled and dull, but they have not stopped. What is that?",
+          "options": [
+            { "text": "Phase 1, so mark the top number.", "correct": false },
+            { "text": "Phase 4, a warning that diastolic is close.", "correct": true },
+            { "text": "Phase 5, so mark the bottom number now.", "correct": false },
+            { "text": "Tubing noise, so ignore it.", "correct": false }
+          ],
+          "explain": "Muffling is phase 4. For adults, the bottom number is the pressure where sound disappears completely, which is phase 5. Keep your rate steady through the muffling and wait for the silence.",
+          "activities": ["A-3.3.3"]
+        }
+      ]
+    },
+    {
+      "lesson": "L3.4",
+      "headline": "First sound in, last sound out. This is the whole skill.",
+      "read_minutes": 5,
+      "you_will": [
+        "Mark systolic at the first clear sound",
+        "Mark diastolic where sound disappears",
+        "Do it at full speed without support"
+      ],
+      "blocks": [
+        {
+          "kind": "prose",
+          "text": "Everything so far has been getting ready. This is the measurement. The first clear tapping is [[systolic]]. The point where the tapping disappears is [[diastolic]]. Simple to say, and the entire job in the doing.",
+          "activities": null
+        },
+        { "kind": "video", "video_id": "V-12", "note": null, "activities": ["A-3.4.1"] },
+        {
+          "kind": "list",
+          "style": "numbered",
+          "title": "How support falls away in this lesson",
+          "items": [
+            "First you mark with the pressure shown on screen, so you can see what your ear just did.",
+            "Then you mark while reading the dial yourself, with the number hidden.",
+            "Then you mark with the dial covered, on sound alone, so your ear stops leaning on your eyes.",
+            "Then you do the whole thing unaided, and it counts."
+          ],
+          "activities": ["A-3.4.1", "A-3.4.2", "A-3.4.3", "A-3.4.4"]
+        },
+        {
+          "kind": "callout",
+          "variant": "linchpin",
+          "title": "The standard you are aiming at",
+          "text": "In a clinical program your reading is compared against a [[licensed_nurse]] taking the same measurement. Many programs require you to land within 2 mmHg on both numbers. That is a tight target, and it is reachable, because it is not about hearing better than other people. It is about a steady rate, a still arm, and eyes that stay on the dial.",
+          "activities": null
+        },
+        {
+          "kind": "callout",
+          "variant": "tip",
+          "title": "Do not go back and change a mark",
+          "text": "If you think you marked late, note it and finish the measurement. Then repeat the whole reading after a short wait. Adjusting a number after the fact turns a measurement into an opinion, and nobody reading the chart can tell which one they are looking at.",
+          "activities": ["A-3.4.4"]
+        },
+        {
+          "kind": "check",
+          "question": "You hear one faint tap, then nothing for several seconds, then clear tapping. Which one is systolic?",
+          "options": [
+            { "text": "The clear tapping, because the faint one was probably noise.", "correct": false },
+            { "text": "The first faint tap, if you are confident it was a real sound.", "correct": true },
+            { "text": "Neither. Start over immediately.", "correct": false },
+            { "text": "The midpoint between the two.", "correct": false }
+          ],
+          "explain": "Systolic is the first real sound, and a silent stretch after it is the classic pattern of an auscultatory gap. Report what you heard, including the gap, and repeat the reading if you are unsure. Marking the second run of sounds would put the top number far too low.",
+          "activities": ["A-3.4.4"]
+        }
+      ]
+    },
+    {
+      "lesson": "L3.5",
+      "headline": "Read the dial. Do not round it.",
+      "read_minutes": 4,
+      "you_will": [
+        "Read to the nearest 2 mmHg with your eye square to the dial",
+        "Recognize your own rounding habit",
+        "Say why zeros in a chart are a warning sign"
+      ],
+      "blocks": [
+        {
+          "kind": "prose",
+          "text": "Aneroid dials are marked every 2 mmHg. Readings are taken to the nearest mark, not to the nearest five or ten. Where you stand matters too: looking at the dial from an angle shifts the needle a mark or two, and that error is invisible to you.",
+          "activities": null
+        },
+        {
+          "kind": "keyterms",
+          "title": "Words in this lesson",
+          "terms": ["digit_preference", "aneroid_gauge"],
+          "activities": null
+        },
+        { "kind": "video", "video_id": "V-13", "note": null, "activities": ["A-3.5.1"] },
+        {
+          "kind": "prose",
+          "text": "Humans love round numbers. Left alone, most people record far more readings ending in 0 than nature ever produces. That habit has a name, [[digit_preference]], and it is easy to catch and easy to fix once you can see it.",
+          "activities": ["A-3.5.2"]
+        },
+        {
+          "kind": "callout",
+          "variant": "linchpin",
+          "title": "So what?",
+          "text": "Rounding 138 to 140 feels harmless. Do it across a year of readings and the small real changes disappear. Those small changes are exactly what a doctor watches to see if a medicine is working.",
+          "activities": ["A-3.5.2"]
+        },
+        {
+          "kind": "check",
+          "question": "The needle sits between the 124 and 126 marks, closer to 126. What do you record?",
+          "options": [
+            { "text": "125, splitting the difference.", "correct": false },
+            { "text": "126, the nearest mark.", "correct": true },
+            { "text": "130, rounding up.", "correct": false },
+            { "text": "124, always round down.", "correct": false }
+          ],
+          "explain": "Manual readings are recorded to the nearest 2 mmHg mark, so odd numbers such as 125 do not appear. Take the mark the needle is nearest to and record that.",
+          "activities": ["A-3.5.1"]
+        }
+      ]
+    },
+    {
+      "lesson": "L3.6",
+      "headline": "Not every arm behaves like the textbook.",
+      "read_minutes": 5,
+      "you_will": [
+        "Recognize an auscultatory gap and what it does to a reading",
+        "Know what to do when sounds are faint, absent, or never stop",
+        "Report an uneven rhythm accurately"
+      ],
+      "blocks": [
+        {
+          "kind": "prose",
+          "text": "Most readings go the way the last four lessons described. Some do not. These are the cases that separate someone who follows steps from someone who understands what the steps are for.",
+          "activities": null
+        },
+        {
+          "kind": "keyterms",
+          "title": "Words in this lesson",
+          "terms": ["auscultatory_gap", "arrhythmia", "hypotension"],
+          "activities": null
+        },
+        { "kind": "video", "video_id": "V-14", "note": null, "activities": ["A-3.6.1", "A-3.6.3"] },
+        {
+          "kind": "table",
+          "title": "What to do when the sounds surprise you",
+          "caption": null,
+          "headers": ["What you notice", "What it may be", "What you do"],
+          "rows": [
+            ["Sounds start, stop, then return", "An [[auscultatory_gap]]", "Take the first sound as systolic. Note the gap. Feel first next time and pump higher."],
+            ["Sounds are very faint from the start", "Poor placement, a weak pulse, or noise in the room", "Re-check the diaphragm position, quiet the room, and raise the arm briefly before re-inflating."],
+            ["No sounds at all", "Wrong spot, wrong cuff, or the artery is not under the bladder", "Deflate fully, wait 30 seconds, re-find the artery, re-wrap, and try once more."],
+            ["Sounds never disappear, all the way to zero", "Common in children, pregnancy, and after exercise", "Record the muffling point as the bottom number, say that you did, and tell the nurse."],
+            ["Beats are uneven or the tapping skips", "An [[arrhythmia]]", "Take the reading, take a second one, note that the rhythm was uneven, and report it."]
+          ],
+          "note": null,
+          "activities": ["A-3.6.1", "A-3.6.2", "A-3.6.3", "A-3.6.4"]
+        },
+        {
+          "kind": "callout",
+          "variant": "safety",
+          "title": "Two tries, then hand it up",
+          "text": "If you cannot get a reading you believe after two careful attempts, stop. Wait, let the arm rest, and ask the [[licensed_nurse]] to take it. Repeated pumping on the same arm is uncomfortable and makes each new reading less accurate than the last.",
+          "activities": ["A-3.6.4"]
+        },
+        {
+          "kind": "callout",
+          "variant": "scope",
+          "title": "Coming in the next release",
+          "text": "Recognizing gaps, uneven rhythms, and phase 4 endings needs real clinical recordings, and those lessons arrive in the next release. They are listed here now so you can see that the skill does not end at the ordinary case.",
+          "activities": null
+        },
+        {
+          "kind": "check",
+          "question": "You hear tapping from 190 down to 170, then silence, then tapping again from 150 to 96. What is the systolic pressure?",
+          "options": [
+            { "text": "150, where the clear run of sounds began.", "correct": false },
+            { "text": "190, where the first sound was heard.", "correct": true },
+            { "text": "170, where the first run stopped.", "correct": false },
+            { "text": "It cannot be reported at all.", "correct": false }
+          ],
+          "explain": "The first sound is systolic, even when a silent gap follows it. Someone who started listening at 160 would have recorded 150 and been 40 mmHg low. This is exactly why you feel the pulse first and pump above it.",
+          "activities": ["A-3.6.5"]
+        }
+      ]
+    },
+    {
+      "lesson": "L4.1",
+      "headline": "A number is not finished until it is classified and written down.",
+      "read_minutes": 7,
+      "you_will": [
+        "Say which category an adult reading falls in",
+        "Know that child readings are judged differently",
+        "Document a reading with nothing missing"
+      ],
+      "blocks": [
+        {
+          "kind": "prose",
+          "text": "You measure and you report. A [[licensed_nurse]] or a provider decides what it means for treatment. Knowing the categories is still your job, because it tells you how fast the number needs to travel.",
+          "activities": null
+        },
+        {
+          "kind": "keyterms",
+          "title": "Words in this lesson",
+          "terms": ["hypertension", "hypotension", "hypertensive_crisis", "baseline", "documentation", "percentile", "pediatric", "neonate"],
+          "activities": null
+        },
+        { "kind": "video", "video_id": "V-15", "note": null, "activities": ["A-4.1.1"] },
+        {
+          "kind": "table",
+          "title": "Adult categories",
+          "caption": "For adults aged 13 and over.",
+          "headers": ["Category", "Top number", "Bottom number"],
+          "rows": [
+            ["Normal", "under 120", "and under 80"],
+            ["Elevated", "120 to 129", "and under 80"],
+            ["High, stage 1", "130 to 139", "or 80 to 89"],
+            ["High, stage 2", "140 or more", "or 90 or more"],
+            ["[[hypertensive_crisis|Crisis]]", "180 or more", "or 120 or more"],
+            ["Low", "under 90", "or under 60"]
+          ],
+          "note": "Read the two numbers separately and take the worse of the two. A reading of 135/95 is stage 2, not stage 1.",
+          "activities": ["A-4.1.1", "A-4.1.2"]
+        },
+        {
+          "kind": "callout",
+          "variant": "linchpin",
+          "title": "Compare to the person, not just the chart",
+          "text": "A reading of 148 may be ordinary for one resident and alarming for another. Look up their [[baseline]] before you decide how worried to be. A number that is normal for the population but far from normal for this person still needs reporting.",
+          "activities": null
+        },
+        {
+          "kind": "prose",
+          "text": "Children are different. Their normal values depend on age, sex, and height, so there is no single number like 120 over 80. Child readings are compared to a [[percentile]] chart that licensed clinicians use. Your job with children is the same as with adults: correct cuff, correct technique, accurate number, prompt report.",
+          "activities": null
+        },
+        {
+          "kind": "table",
+          "title": "Child screening values that need a second look",
+          "caption": "Roughly the 90th percentile at average height. At or above these numbers, repeat the reading and tell the nurse.",
+          "headers": ["Age", "Boys, top / bottom", "Girls, top / bottom"],
+          "rows": [
+            ["1", "98 / 52", "98 / 54"],
+            ["2", "100 / 55", "101 / 58"],
+            ["3", "101 / 58", "102 / 60"],
+            ["4", "102 / 60", "103 / 62"],
+            ["5", "103 / 63", "104 / 64"],
+            ["6", "105 / 66", "105 / 67"],
+            ["7", "106 / 68", "106 / 68"],
+            ["8", "107 / 69", "107 / 69"],
+            ["9", "107 / 70", "108 / 71"],
+            ["10", "108 / 72", "109 / 72"],
+            ["11", "110 / 74", "111 / 74"],
+            ["12", "113 / 75", "114 / 75"],
+            ["13 and over", "120 / 80", "120 / 80"]
+          ],
+          "note": "This is a screening aid, not a diagnosis. Full age, sex, and height charts belong to the licensed clinician.",
+          "activities": null
+        },
+        {
+          "kind": "list",
+          "style": "bullet",
+          "title": "Low blood pressure in children, report at once",
+          "items": [
+            "[[neonate|Newborn]]: top number under 60",
+            "Infant, 1 to 12 months: top number under 70",
+            "Child 1 to 10 years: top number under 70 plus twice their age in years",
+            "Child over 10: top number under 90"
+          ],
+          "activities": null
+        },
+        {
+          "kind": "steps",
+          "title": "Document it completely",
+          "items": [
+            { "do": "Write the date and the time.", "why": "Blood pressure changes through the day. A reading without a time cannot be compared." },
+            { "do": "Write both numbers as one value, such as 122/78.", "why": "This is the format every reader expects." },
+            { "do": "Write which arm you used and the position the resident was in.", "why": "Arms differ from each other, and position changes the number." },
+            { "do": "Write the cuff size you used.", "why": "It is the first thing anyone checks when a reading looks surprising." },
+            { "do": "Note anything unusual: uneven beats, a silent gap, faint sounds, a resident who could not sit still.", "why": "Your note is the only record of what the number does not show." },
+            { "do": "Initial the entry, and record it in the right chart.", "why": "[[documentation|If you did not document it, legally it did not happen.]]" }
+          ],
+          "activities": ["A-4.1.2"]
+        },
+        {
+          "kind": "practice",
+          "title": "Chart a reading",
+          "i_do": "Read this entry: 10/24/2026, 0900, 122/78, right arm, seated, adult cuff, resting quietly, no recent activity.",
+          "we_do": "Take that entry apart. Name each piece and say what would be lost if it were missing.",
+          "you_do": "Chart your own practice reading with all six pieces, then hand it to someone else and ask what they still do not know.",
+          "say_aloud": [
+            "One twenty-two over seventy-eight, right arm, seated.",
+            "Adult cuff, resting five minutes, nothing unusual heard."
+          ],
+          "activities": ["A-4.1.2"]
+        },
+        {
+          "kind": "check",
+          "question": "You measure 136/92 on a 70-year-old resident. How is that classified?",
+          "options": [
+            { "text": "Elevated, because the top number is under 140.", "correct": false },
+            { "text": "High, stage 1, because 136 is in the 130s.", "correct": false },
+            { "text": "High, stage 2, because the bottom number is 90 or more.", "correct": true },
+            { "text": "Normal for that age.", "correct": false }
+          ],
+          "explain": "Take the worse of the two numbers. The bottom number of 92 lands in stage 2 on its own, so the reading is stage 2. Report it and compare it to the resident's baseline.",
+          "activities": ["A-4.1.2"]
+        }
+      ]
+    },
+    {
+      "lesson": "L4.2",
+      "headline": "Some numbers are messages that must be delivered now.",
+      "read_minutes": 5,
+      "you_will": [
+        "Recognize a reading that needs the nurse immediately",
+        "Report it clearly and without delay",
+        "Stay inside your scope while doing it"
+      ],
+      "blocks": [
+        {
+          "kind": "prose",
+          "text": "Most readings go in the chart and wait to be read. A few have to be carried to a person, out loud, right away. Knowing which is which is a skill, and it is one you are expected to have.",
+          "activities": null
+        },
+        {
+          "kind": "keyterms",
+          "title": "Words in this lesson",
+          "terms": ["escalate", "scope_of_practice", "licensed_nurse", "hypertensive_crisis"],
+          "activities": null
+        },
+        {
+          "kind": "list",
+          "style": "check",
+          "title": "Tell the nurse now, not at the end of your round",
+          "items": [
+            "Top number 180 or more, or bottom number 120 or more. This is a [[hypertensive_crisis]].",
+            "Top number under 90, or a reading far below this resident's usual.",
+            "Any reading that is very different from their [[baseline]], in either direction.",
+            "Any reading paired with symptoms: chest pain, trouble breathing, a bad headache, confusion, blurred vision, or weakness.",
+            "Any resident who looks unwell, whatever the number says."
+          ],
+          "activities": ["A-4.2.1", "A-4.2.2"]
+        },
+        {
+          "kind": "callout",
+          "variant": "safety",
+          "title": "Stay with the person",
+          "text": "For a crisis value or a resident who looks unwell, do not leave them alone to go find someone. Use the call light or call out. Staying is part of the response, not a delay in it.",
+          "activities": ["A-4.2.1"]
+        },
+        { "kind": "video", "video_id": "V-16", "note": null, "activities": ["A-4.2.1"] },
+        {
+          "kind": "steps",
+          "title": "How to report it",
+          "items": [
+            { "do": "Say who and where: the resident's name and room.", "why": "The nurse cannot act on a number without a person attached to it." },
+            { "do": "Say the numbers, the arm, and the position.", "why": "These three things let the nurse judge how much to trust the reading." },
+            { "do": "Say what you saw and heard, including how the resident looks.", "why": "Your eyes at the bedside are information nobody else has." },
+            { "do": "Say what you already did, such as repeating the reading on the other arm.", "why": "It saves the nurse repeating work you have done." },
+            { "do": "Stop there and wait for direction.", "why": "Deciding what it means and what to do about it is the nurse's job, not yours." }
+          ],
+          "activities": ["A-4.2.1"]
+        },
+        {
+          "kind": "callout",
+          "variant": "scope",
+          "title": "What is yours and what is not",
+          "text": "Yours: measuring accurately, repeating when something looks wrong, describing what you observed, reporting fast, and writing it down. Not yours: naming a diagnosis, deciding a number is fine, holding a medicine, or waiting to see if the next reading is better.",
+          "activities": null
+        },
+        {
+          "kind": "check",
+          "question": "You measure 184/118 on a resident who says they feel fine. What do you do?",
+          "options": [
+            { "text": "Recheck in an hour, since they feel fine.", "correct": false },
+            { "text": "Chart it and mention it at the end of your round.", "correct": false },
+            { "text": "Stay with them, call for the nurse now, and report the numbers.", "correct": true },
+            { "text": "Ask them if they took their medicine and decide from there.", "correct": false }
+          ],
+          "explain": "A top number of 180 or more is a crisis value whether or not the person feels it, and most people do not feel it. Feeling fine is not reassurance. It is why the number matters.",
+          "activities": ["A-4.2.1"]
+        }
+      ]
+    },
+    {
+      "lesson": "L4.3",
+      "headline": "One reading is a data point, not a verdict.",
+      "read_minutes": 5,
+      "you_will": [
+        "Know when to repeat a reading",
+        "Repeat it correctly instead of quickly",
+        "Treat a surprising number as a question"
+      ],
+      "blocks": [
+        {
+          "kind": "prose",
+          "text": "Blood pressure moves all day long. One reading catches one moment. That is why a single high number is never [[hypertension]] on its own, and why repeating is a normal part of the job rather than an admission that you failed.",
+          "activities": null
+        },
+        { "kind": "video", "video_id": "V-17", "note": null, "activities": ["A-4.3.1"] },
+        {
+          "kind": "list",
+          "style": "bullet",
+          "title": "Repeat the reading when",
+          "items": [
+            "The number is far from what you felt at the wrist while pumping.",
+            "The number is far from this resident's usual, in either direction.",
+            "You know the technique was imperfect: the arm slipped, they talked, the rate ran away from you.",
+            "The reading is high enough to change what happens next.",
+            "You were not sure what you heard."
+          ],
+          "activities": ["A-4.3.1", "A-4.3.3", "A-4.3.4"]
+        },
+        {
+          "kind": "steps",
+          "title": "How to repeat properly",
+          "items": [
+            { "do": "Let all the air out and take the cuff off, or at least loosen it.", "why": "A cuff left partly inflated makes the next reading wrong." },
+            { "do": "Wait at least one minute, and two is better.", "why": "The arm needs time to refill. Repeating too fast reads low." },
+            { "do": "Fix whatever was wrong the first time before you start again.", "why": "Repeating the same mistake twice gives you two wrong numbers, not a second opinion." },
+            { "do": "Record both readings, not just the better one.", "why": "The pattern is information. Hiding the first number hides it." },
+            { "do": "If both readings disagree with the chart, report that, in those words.", "why": "Two careful readings that disagree with the record is something a nurse needs to hear." }
+          ],
+          "activities": ["A-4.3.1", "A-4.3.2"]
+        },
+        {
+          "kind": "callout",
+          "variant": "myth",
+          "title": "Myth: repeating looks unprofessional",
+          "text": "The opposite is true. Taking one reading and defending it is what beginners do. Noticing that a number does not fit, saying so, and checking again is what experienced staff do all day. Nobody has ever been in trouble for a careful second reading.",
+          "activities": null
+        },
+        {
+          "kind": "check",
+          "question": "You felt the wrist pulse disappear near 130, but you heard your first sound at 168. What is the right response?",
+          "options": [
+            { "text": "Chart 168, because listening beats feeling.", "correct": false },
+            { "text": "Chart 130, because you felt it first.", "correct": false },
+            { "text": "Chart the average of the two.", "correct": false },
+            { "text": "Repeat the reading after a short wait, then report both attempts.", "correct": true }
+          ],
+          "explain": "Neither number should be charted alone and the two should never be averaged. A gap that large means something went wrong, most often in placement or rate. Wait, repeat carefully, and report both attempts to the nurse.",
+          "activities": ["A-4.3.3"]
+        }
+      ]
+    },
+    {
+      "lesson": "L5.1",
+      "headline": "Name the error, and it becomes fixable.",
+      "read_minutes": 4,
+      "you_will": [
+        "Replay your own attempt and see where each mark landed",
+        "Describe an error in terms of what you did",
+        "Stop grading yourself and start diagnosing yourself"
+      ],
+      "blocks": [
+        {
+          "kind": "prose",
+          "text": "Experts are not people who never make errors. They are people who catch their own. Every attempt you make leaves a record: each mark, the pressure it landed on, and how it compares to the case's true value.",
+          "activities": null
+        },
+        { "kind": "video", "video_id": "V-20", "note": null, "activities": ["A-5.1.1"] },
+        {
+          "kind": "table",
+          "title": "Vague, and useful",
+          "caption": null,
+          "headers": ["What beginners say", "What it should sound like"],
+          "rows": [
+            ["I got it wrong.", "I marked systolic about 6 mmHg late, after the first tap had already passed."],
+            ["I am bad at the bottom number.", "My diastolic marks land early on quiet cases and are fine on loud ones."],
+            ["I rushed.", "My rate ran above the band in the last third of the descent, every time."],
+            ["The sounds were hard.", "I could not tell phase 4 from phase 5 when the sounds faded slowly."]
+          ],
+          "note": "Only a named error can be practiced away. \"I got it wrong\" has no next step inside it.",
+          "activities": ["A-5.1.1", "A-5.1.2"]
+        },
+        {
+          "kind": "callout",
+          "variant": "tip",
+          "title": "Look for the pattern, not the bad day",
+          "text": "One late mark is noise. Late marks in six attempts out of eight is a habit, and a habit has a cause you can find. Look across your attempts before you conclude anything about a single one.",
+          "activities": ["A-5.1.2"]
+        },
+        {
+          "kind": "check",
+          "question": "Which of these is a usable error statement?",
+          "options": [
+            { "text": "My readings are usually a bit off.", "correct": false },
+            { "text": "I marked diastolic at the muffling instead of the silence, in four of five cases.", "correct": true },
+            { "text": "I need to concentrate harder.", "correct": false },
+            { "text": "That case was unfair.", "correct": false }
+          ],
+          "explain": "It names what you did, where, and how often. That statement points straight at a drill: phase 4 against phase 5, on quiet cases, until the difference is obvious.",
+          "activities": ["A-5.1.2"]
+        }
+      ]
+    },
+    {
+      "lesson": "L5.2",
+      "headline": "A hand problem and an ear problem look the same on paper.",
+      "read_minutes": 4,
+      "you_will": [
+        "Tell a technique error from a perception error",
+        "Choose the drill that matches the error",
+        "Stop practicing the wrong thing"
+      ],
+      "blocks": [
+        {
+          "kind": "prose",
+          "text": "Two very different failures produce the same wrong number. One is a hand problem, and one is an ear problem. They need different practice, so guessing wrong costs you weeks.",
+          "activities": null
+        },
+        {
+          "kind": "table",
+          "title": "Which kind is it?",
+          "caption": null,
+          "headers": ["Sign", "Likely kind", "What to drill"],
+          "rows": [
+            ["Rate drifts out of the band", "Technique, your hand", "Valve control on the practice arm, with no sound at all"],
+            ["Marks are late by a steady amount", "Perception, your ear", "Sound-only marking, slow cases first"],
+            ["Cuff placement is off, reading to reading", "Technique", "Ten wraps from memory, checked each time"],
+            ["Quiet cases are wrong and loud cases are right", "Perception", "Faint-sound cases with headphones, volume unchanged"],
+            ["Rate is fine and both marks are still off", "Perception", "Phase discrimination, phase 1 and phase 5"],
+            ["Everything is worse when you are being watched", "Neither. Nerves.", "More reps, shorter sessions, and a routine you say out loud"]
+          ],
+          "note": null,
+          "activities": ["A-5.2.1"]
+        },
+        {
+          "kind": "callout",
+          "variant": "linchpin",
+          "title": "So what?",
+          "text": "Someone who marks late does not need more equipment practice, and someone whose valve hand is jumpy will not fix it by listening harder. Matching the drill to the error is the whole reason for this lesson.",
+          "activities": null
+        },
+        {
+          "kind": "check",
+          "question": "Your rate is steady and inside the band, and your systolic marks still land 8 mmHg late. Which kind of error is it?",
+          "options": [
+            { "text": "Technique, because 8 mmHg is a lot.", "correct": false },
+            { "text": "Perception, because the hand was doing its job.", "correct": true },
+            { "text": "Neither, because rate is the only thing that matters.", "correct": false },
+            { "text": "Impossible to tell from that information.", "correct": false }
+          ],
+          "explain": "A steady rate rules out the hand. The delay is in hearing and deciding, so the drill is sound-only marking, starting with slower cases and working up.",
+          "activities": ["A-5.2.1"]
+        }
+      ]
+    },
+    {
+      "lesson": "L5.3",
+      "headline": "Now you do the instructor's job.",
+      "read_minutes": 3,
+      "you_will": [
+        "Read your own mastery picture",
+        "Choose the next thing to practice, and say why",
+        "Keep the habit after the course ends"
+      ],
+      "blocks": [
+        {
+          "kind": "prose",
+          "text": "The course ends by handing you the instructor's job. Look at what is secure, what is shaky, and where your errors cluster. Then choose one thing to practice next, and say why you chose it.",
+          "activities": null
+        },
+        {
+          "kind": "steps",
+          "title": "Plan your next session",
+          "items": [
+            { "do": "Find your weakest objective, not your least favorite one.", "why": "The two are often different, and only one of them is holding you back." },
+            { "do": "Name the error in one sentence, the way lesson 5.1 taught you.", "why": "A named error tells you which drill to pick." },
+            { "do": "Choose one drill and set a small number, such as ten repetitions.", "why": "A number turns an intention into something you either did or did not do." },
+            { "do": "Practice twice this week, not once for twice as long.", "why": "Hands and ears learn by coming back, not by sitting still longer." },
+            { "do": "Check the same objective again next week.", "why": "If it did not move, change the drill instead of repeating it harder." }
+          ],
+          "activities": ["A-5.3.1"]
+        },
+        {
+          "kind": "callout",
+          "variant": "linchpin",
+          "title": "You are the linchpin",
+          "text": "The care team's picture of a resident is built out of numbers other people take. You are one of those people. A reading taken carefully, written down completely, and reported promptly is a small act, and it is what the whole thing rests on.",
+          "activities": null
+        },
+        {
+          "kind": "check",
+          "question": "Your marking is solid and your rate drifts high near the end of every descent. What should you practice next?",
+          "options": [
+            { "text": "More full measurements, because practice is practice.", "correct": false },
+            { "text": "Valve control alone, on the practice arm, with no sound.", "correct": true },
+            { "text": "Sound-only marking, to sharpen your ear further.", "correct": false },
+            { "text": "Nothing. The marks are what get scored.", "correct": false }
+          ],
+          "explain": "The error is in the hand, so drill the hand on its own. Taking the sound away removes the distraction and lets you watch only the thing that is going wrong.",
+          "activities": ["A-5.3.1"]
+        }
+      ]
+    }
+  ]
+}

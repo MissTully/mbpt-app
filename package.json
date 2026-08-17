@@ -11,8 +11,9 @@
     "tools"
   ],
   "scripts": {
-    "test": "npm run test -w core -w perception && npm run boundary && npm run golden && npm run crosswalk && npm run cases",
+    "test": "npm run test -w core -w perception && npm run boundary && npm run golden && npm run crosswalk && npm run cases && npm run readability",
     "cases": "npm run build:node && node tools/dist/case-check/src/check.js",
+    "readability": "npm run build:node && node tools/dist/readability-check/src/check.js",
     "test:core": "npm run test -w core",
     "typecheck": "tsc -b core perception tools && npm run typecheck -w app",
     "boundary": "node tools/boundary-check/check.mjs",

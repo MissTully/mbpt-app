@@ -1,8 +1,12 @@
-import { activities, lessonTextOf, moduleTextOf } from "../content.js";
+import { activities, instructionPageOf, lessonTextOf, moduleTextOf } from "../content.js";
+import { InstructionPageView } from "../components/Instruction.js";
 import type { ActivityDefinition } from "@mbpt/core";
 
-// The lesson screen: what the learner reads before doing. Introduction text
-// from content/learner-text, then the lesson's activities in order.
+// The lesson screen: what the learner reads before doing, then what they do.
+// Introduction text from content/learner-text, the teaching page from
+// content/instruction, then the lesson's activities in order. Reading is
+// never a gate — a learner who already knows this can scroll past it — but
+// it is on the same screen, so nobody has to go looking for the teaching.
 
 // Spatially-dependent objectives cannot be assessed on a phone; activities
 // whose surface is authored G are runnable in a reduced form and say so.
@@ -19,6 +23,7 @@ export function Lesson({ lessonId }: { lessonId: string }) {
 
   const moduleText = moduleTextOf(first.module);
   const lessonText = lessonTextOf(lessonId);
+  const page = instructionPageOf(lessonId);
   const minutes = lessonActivities.reduce((s, a) => s + a.minutes, 0);
 
   // The lesson after this one, in catalog order, for the footer link.
@@ -37,7 +42,15 @@ export function Lesson({ lessonId }: { lessonId: string }) {
       <h1>{lessonText.title}</h1>
       <p className="prose">{lessonText.intro}</p>
 
-      <h2>Activities</h2>
+      {page && <InstructionPageView page={page} />}
+
+      <div className="section-rule">
+        <span>Now do it</span>
+      </div>
+      <p className="sub">
+        Reading builds the map. These activities build the hands and the ears — start at the top and
+        work down.
+      </p>
       {lessonActivities.map((activity) => {
         const note = surfaceNote(activity);
         const blocked = activity.release === "Spring";

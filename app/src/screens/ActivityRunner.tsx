@@ -19,10 +19,12 @@ import {
   caseById,
   caseLibrary,
   config,
+  instructionBlocksFor,
   promptsForActivity,
   PROMPT_TEXT,
   type CasePackage,
 } from "../content.js";
+import { Blocks } from "../components/Instruction.js";
 import { GATE_SCENARIOS, type GateScenario } from "../runner/demoGates.js";
 import { buildAttempt, learnerId, scaffoldStateOf, scoreAndStore, scoredHistory } from "../runner/attempt.js";
 import { attemptStore } from "../adapters/store.js";
@@ -46,6 +48,10 @@ export function ActivityRunner({ activityId }: { activityId: string }) {
 
 function PresentActivity({ activity }: { activity: ActivityDefinition }) {
   // Teaches. No performance demanded, no scoring, no timer, no failure state.
+  // The teaching blocks its lesson page tagged for this activity are shown
+  // here in full, so a Present activity is a lesson rather than a description
+  // of one. Untagged pages fall back to the whole page, never to nothing.
+  const teaching = instructionBlocksFor(activity);
   return (
     <div>
       <Header activity={activity} />
@@ -54,7 +60,22 @@ function PresentActivity({ activity }: { activity: ActivityDefinition }) {
         <p>{activity.learner_action}</p>
         <p className="sub">{activity.system_response}</p>
       </div>
-      <button onClick={() => (location.hash = `#/lesson/${activity.lesson}`)}>Done</button>
+      {teaching && (
+        <>
+          <Blocks blocks={teaching.blocks} />
+          {teaching.scoped && (
+            <div className="sub" style={{ marginTop: 14 }}>
+              <a href={`#/lesson/${activity.lesson}`}>Read the whole lesson →</a>
+            </div>
+          )}
+        </>
+      )}
+      <button
+        onClick={() => (location.hash = `#/lesson/${activity.lesson}`)}
+        style={{ width: "100%", marginTop: 12 }}
+      >
+        Done
+      </button>
     </div>
   );
 }
