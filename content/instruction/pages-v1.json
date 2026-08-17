@@ -72,7 +72,7 @@
           "title": "Build a practice arm tonight",
           "i_do": "Watch how a roll of paper towels becomes an arm you can wrap, pump, and drill on for free.",
           "we_do": "Unroll the towels until the roll measures about 13 inches around. Tape the end down. Draw one straight line along the roll with a marker. That line is your [[brachial_artery]].",
-          "you_do": "Wrap the cuff with the artery marker on your line, close the [[valve]], pump to 180, and let the air out slowly while you watch the needle. Do it five times.",
+          "you_do": "Wrap the cuff with the artery marker on your line, close the [[valve]], and pump to 160 — the target you would use for a felt estimate of 130. Let the air out slowly while you watch the needle. Do it five times.",
           "say_aloud": [
             "The needle rests at zero, so the gauge can be trusted.",
             "Artery marker on the line, bottom edge one inch above the crease.",
@@ -124,7 +124,7 @@
             { "do": "Position them: back supported, feet flat, legs uncrossed, arm supported at [[heart_level]], palm up.", "why": "Each part of this position removes a known error from the reading." },
             { "do": "Give five quiet minutes of rest, with no talking during the measurement.", "why": "Rest lets the pressure settle to the person's true level." },
             { "do": "Measure the upper arm and choose the cuff that fits it.", "why": "The wrong cuff gives a confident, precise, wrong answer." },
-            { "do": "Clean the earpieces and [[diaphragm]], wrap the cuff over the [[brachial_artery]] about an inch above the elbow crease, and close the [[valve]].", "why": "A clean, correctly placed cuff is what makes the sounds findable." },
+            { "do": "Clean the earpieces and [[diaphragm]], wrap the cuff over the [[brachial_artery]] 2 to 3 cm above the elbow crease, and close the [[valve]].", "why": "A clean, correctly placed cuff is what makes the sounds findable." },
             { "do": "Feel the wrist pulse while you pump, and note where it disappears.", "why": "That point is a rough guess of the top number, and it tells you how high to go." },
             { "do": "Pump about 30 mmHg above that point.", "why": "Starting above all the sounds is what keeps you from missing the real top number." },
             { "do": "Let the air out slowly and steadily. Note the first sound and the last sound.", "why": "The first sound is [[systolic]]. The last sound is [[diastolic]]. Everything in between is rate control." },
@@ -585,7 +585,7 @@
             { "do": "Turn the palm up and look at the inner elbow, called the [[antecubital_space]].", "why": "The artery runs closer to the body than the middle of the crease." },
             { "do": "Press gently with two fingertips just above the crease, on the inner side. Move slowly until you feel a pulse.", "why": "You are feeling the [[brachial_artery]]. This is the spot the diaphragm goes on later." },
             { "do": "Line the cuff's artery marker up with that spot.", "why": "The marker shows where the middle of the bladder is." },
-            { "do": "Set the bottom edge of the cuff about 1 inch above the elbow crease.", "why": "Too low and the cuff sits on your stethoscope. Too high and it squeezes the wrong part of the arm." },
+            { "do": "Set the bottom edge of the cuff 2 to 3 cm above the elbow crease — about 1 inch.", "why": "Too low and the cuff sits on your stethoscope. Too high and it squeezes the wrong part of the arm. This is the range the app measures your placement against." },
             { "do": "Wrap it snug and even, with no twist and no bunching.", "why": "Uneven pressure squeezes some of the artery and not the rest." },
             { "do": "Test it: one fingertip should slide under the edge, and no more.", "why": "Loose reads high. Too tight is painful and squeezes before you pump." }
           ],
@@ -735,10 +735,10 @@
         },
         {
           "kind": "callout",
-          "variant": "scope",
-          "title": "180, or 30 above? Both answers are right",
-          "text": "Many skills tests, including HOSA, ask you to pump to a fixed 180 mmHg so every student is graded the same way. At the bedside, 30 above your felt estimate is the clinical rule, because it fits the person in front of you and does not squeeze anyone harder than needed. Learn the fixed number for your test. Use the felt estimate for real care, unless your program says otherwise.",
-          "activities": null
+          "variant": "tip",
+          "title": "Thirty above what you felt, never a habit number",
+          "text": "The target is not a number you always use. It is a number this arm gave you, plus 30. Pump to a fixed high number every time and you squeeze people harder and longer than the reading needs. Pump to a fixed low one and you will eventually start below someone's first sound. Feeling first is what makes the target fit the person.",
+          "activities": ["A-3.1.2"]
         },
         {
           "kind": "check",
@@ -781,7 +781,7 @@
           "style": "bullet",
           "title": "The rate, in three ways of thinking about it",
           "items": [
-            "About 2 to 3 mmHg per second. This app scores you against that band, and it shows you the band in every activity.",
+            "About 2 to 3 mmHg per second. That is the rate you are learning, and it is the band this app scores you against and shows you in every activity.",
             "About one small mark on the dial per second. Most aneroid dials are marked every 2 mmHg.",
             "About one heartbeat per mark on an average adult pulse. If you are dropping more than one mark between beats, you are too fast."
           ],
@@ -789,10 +789,10 @@
         },
         {
           "kind": "callout",
-          "variant": "scope",
-          "title": "2 to 4 on the skills test",
-          "text": "Written standards, including the workbook this course is built from, usually state 2 to 4 mmHg per second. Aiming at 2 to 3 keeps you safely inside that range even on a nervous day, and it is the band this app measures.",
-          "activities": null
+          "variant": "tip",
+          "title": "Why not a little faster?",
+          "text": "An average adult heart beats about once a second, and each beat is one chance to hear a sound. Fall faster than 3 mmHg per second and the pressure moves several points between beats, so the sound you are waiting for lands somewhere in a gap you cannot see. Two to three keeps a beat on every mark.",
+          "activities": ["A-3.2.4"]
         },
         {
           "kind": "table",
@@ -812,7 +812,7 @@
           "kind": "practice",
           "title": "Train the valve hand",
           "i_do": "Watch a locked-off close-up of a thumb holding the needle at a steady fall for a full descent.",
-          "we_do": "Pump your practice arm to 180 and let it fall while the app's pacer shows you the band. Stay in the band, not just near it.",
+          "we_do": "Pump your practice arm to 160 and let it fall while the app's pacer shows you the band. Stay in the band, not just near it.",
           "you_do": "Do ten descents with no pacer. Count seconds out loud and watch the marks. Then check your rate afterward and see how honest your counting was.",
           "say_aloud": [
             "One mark, two mark, three mark, four.",
@@ -937,7 +937,7 @@
           "kind": "callout",
           "variant": "linchpin",
           "title": "The standard you are aiming at",
-          "text": "In a clinical program your reading is compared against a [[licensed_nurse]] taking the same measurement. Many programs require you to land within 2 mmHg on both numbers. That is a tight target, and it is reachable, because it is not about hearing better than other people. It is about a steady rate, a still arm, and eyes that stay on the dial.",
+          "text": "In a clinical program your reading is compared against a [[licensed_nurse]] taking the same measurement. Many programs require you to land within 2 mmHg of theirs, on both numbers. Aim for that. The app shows you its own tolerance in every activity — treat 2 mmHg as the target you practise toward, not a looser pass mark to settle for. It is reachable, because it is not about hearing better than other people. It is about a steady rate, a still arm, and eyes that stay on the dial.",
           "activities": null
         },
         {
@@ -1144,7 +1144,7 @@
             ["12", "113 / 75", "114 / 75"],
             ["13 and over", "120 / 80", "120 / 80"]
           ],
-          "note": "This is a screening aid, not a diagnosis. Full age, sex, and height charts belong to the licensed clinician.",
+          "note": "From the 2017 American Academy of Pediatrics guideline. This is a screening aid, not a diagnosis. Full age, sex, and height charts belong to the licensed clinician.",
           "activities": null
         },
         {
@@ -1157,6 +1157,11 @@
             "Child 1 to 10 years: top number under 70 plus twice their age in years",
             "Child over 10: top number under 90"
           ],
+          "activities": null
+        },
+        {
+          "kind": "prose",
+          "text": "These low-pressure limits follow [[pals]], the standard rules for emergency care of children. They are lower than most people expect, because a child holds a normal blood pressure until they are very sick, and then drops fast. A child at these numbers is not borderline. Get help now.",
           "activities": null
         },
         {

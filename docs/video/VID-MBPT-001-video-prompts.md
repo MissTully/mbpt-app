@@ -665,9 +665,9 @@ same night.
 > Draw one straight line along the length of it. That line is the brachial
 > artery, and from now on your cuff's artery marker lines up with it every single
 > time.
-> Wedge it somewhere it cannot roll. Now wrap, close the valve, pump to 180, and
-> let it fall while you watch the needle. Your ears train on the recordings. Your
-> hands train here.
+> Wedge it somewhere it cannot roll. Now wrap, close the valve, and pump to 160 —
+> the target you would use on an arm whose pulse faded at 130. Let it fall while
+> you watch the needle. Your ears train on the recordings. Your hands train here.
 > What the roll cannot teach you is people — a real pulse, a real arm, a person
 > in a chair. Bring those to a partner. Bring everything else to the roll.
 
@@ -675,7 +675,8 @@ same night.
 1. 0–25s — The roll unwrapped and measured to 13 inches, tape applied.
 2. 25–40s — The artery line drawn in one stroke.
 3. 40–55s — The roll wedged at a table edge.
-4. 55–85s — A full wrap-inflate-deflate cycle on the roll, real time.
+4. 55–85s — A full wrap-inflate-deflate cycle on the roll, real time, the
+   needle falling at 2 to 3 mmHg per second.
 5. 85–100s — The roll beside a real arm, honest about the difference.
 
 **Generation prompt.** *A roll of white paper towels standing upright on a

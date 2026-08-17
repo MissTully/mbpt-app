@@ -30,12 +30,15 @@ definition opens in place. A term with no glossary entry throws at load —
 there is no such thing as a highlighted word with nothing behind it. A
 glossary entry no lesson uses throws too, so the glossary cannot silt up.
 
-**A number that also lives in configuration is quoted, never restated as
-law.** Deflation rate, inflation margin and marking tolerance come from
-`content/config/`. Where a lesson names one, it says what the app measures
-and, where they differ, what written standards say — the workbook's 2 to 4
-mmHg per second beside the app's 2 to 3, for instance. If the configuration
-changes, search this directory before shipping it.
+**One number per rule, and it is the one the app scores.** Deflation rate,
+inflation margin and marking tolerance come from `content/config/`. The
+lessons teach those values and no others: **2 to 3 mmHg per second**, and
+**30 above the palpated estimate**. Where a written standard is looser — the
+source workbook allows 2 to 4, and skills tests often use a fixed 180 mmHg —
+the course does not teach the alternative alongside it. A learner practising
+against two targets is practising against neither, and the tighter rule
+satisfies the looser one anyway. If the configuration changes, search this
+directory before shipping it.
 
 **Knowledge checks teach; they never assess.** Nothing on a lesson page is
 recorded, scored, or counted toward mastery. Only attempts are scored
@@ -67,16 +70,28 @@ versions are not.
 Twenty-two lesson pages, one per lesson in the activity catalog. Fifty-two
 glossary terms. Twenty video briefs, all `planned`.
 
-Two places where the source workbook and the shipped configuration disagree,
-and how each is handled in the copy:
+Two places where the source workbook is looser than what this course teaches.
+The decision (2026-08-17) is that the course teaches one target in each case,
+matching `content/config/config-v1.json`:
 
-- **Deflation rate.** The workbook states 2 to 4 mmHg per second; the app
-  scores against 2 to 3. Lesson L3.2 teaches 2 to 3 as the target and names
-  the wider written standard in a scope callout, so a learner meeting either
-  number is not confused by the other.
-- **Inflation level.** The workbook uses a fixed 180 mmHg, as skills tests
-  do; the curriculum teaches 30 above a palpated estimate. Lesson L3.1
-  teaches both and says plainly which belongs where.
+- **Deflation rate — 2 to 3 mmHg per second.** The workbook states 2 to 4.
+  The course does not mention 2 to 4 anywhere: L3.2 teaches 2 to 3, the
+  glossary defines it as 2 to 3, and the callout that used to reconcile the
+  two now explains *why* 3 is the ceiling — an average pulse gives about one
+  beat per second, so a faster fall moves several mmHg between the beats you
+  are listening for. Practising to the tighter band satisfies the looser
+  standard automatically.
+- **Inflation — 30 above the palpated estimate.** The workbook, like most
+  skills tests, uses a fixed 180 mmHg. The course teaches only the palpated
+  target: L3.1's callout now says why a habit number is wrong in both
+  directions, and the practice-arm drills pump to 160 (the target for a
+  felt estimate of 130) rather than to 180, so no drill rehearses a number
+  the course does not teach.
+
+**Pediatric content is clinically reviewed (2026-08-17).** The screening
+values in L4.1 follow the 2017 American Academy of Pediatrics guideline, and
+the low-blood-pressure thresholds are checked against PALS. Lesson L4.1 names
+both sources so a learner or an instructor can trace any number in the table.
 
 The cuff sizing table is reproduced from the workbook. `cuff_bladder_fit_standard`
 is still `null` in configuration (open decision, INSTR 11.2), so lesson L2.2

@@ -173,7 +173,7 @@
       "term_id": "deflation_rate",
       "term": "Deflation rate",
       "say_it": null,
-      "plain": "How fast you let air out of the cuff, measured in mmHg per second. Aim for 2 to 3 mmHg per second. Written standards usually allow 2 to 4.",
+      "plain": "How fast you let air out of the cuff, measured in mmHg per second. The rate you are learning is 2 to 3 mmHg per second, which is about one small mark on the dial each second.",
       "also_called": "How fast the needle falls",
       "matters": "Let air out too fast and the sounds fly past your ears, so both numbers come out low. Too slow and the arm aches and the numbers drift."
     },
@@ -183,7 +183,7 @@
       "say_it": "an-tee-KYOO-bit-ul",
       "plain": "The bend on the inner side of the elbow.",
       "also_called": "Elbow crease, inner elbow",
-      "matters": "The bottom edge of the cuff goes about 1 inch above this crease, so the cuff does not sit on top of your stethoscope."
+      "matters": "The bottom edge of the cuff goes 2 to 3 cm above this crease — about 1 inch — so the cuff does not sit on top of your stethoscope."
     },
     {
       "term_id": "arm_circumference",
@@ -408,6 +408,14 @@
       "plain": "The written record of what you did and what you found, entered in the chart.",
       "also_called": "Charting",
       "matters": "If you did not document it, then legally it did not happen."
+    },
+    {
+      "term_id": "pals",
+      "term": "PALS",
+      "say_it": "say the letters: P-A-L-S",
+      "plain": "Pediatric Advanced Life Support. It is the standard set of rules for caring for a very sick child.",
+      "also_called": "Pediatric Advanced Life Support",
+      "matters": "PALS sets the low blood pressure limits that mean a child needs help right now."
     },
     {
       "term_id": "resident",
