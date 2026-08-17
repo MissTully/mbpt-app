@@ -50,6 +50,9 @@ h2 { font-size: 1.05rem; margin: 18px 0 6px; }
 .badge.present { color: var(--accent); border-color: var(--accent); }
 .badge.reflect { color: var(--warn); border-color: var(--warn); }
 .badge.blocked { color: var(--muted); border-style: dashed; }
+/* Surface and release notes are sentences rather than labels. Let them wrap:
+   held on one line they push the whole lesson screen sideways. */
+.badge.blocked { white-space: normal; }
 
 /* The scaffold banner: always present, always words (UXS section 4). */
 .scaffold-banner {
@@ -228,3 +231,301 @@ th { color: var(--muted); font-weight: 500; }
 .chartbar .bar { flex: 1; background: var(--accent); border-radius: 3px 3px 0 0; min-height: 2px; }
 .chartbar .bar.hot { background: var(--bad); }
 .bar-label { font-size: 0.7rem; color: var(--muted); text-align: center; }
+
+/* ------------------------------------------------------------------
+   Instructional content and scaffolding
+   ------------------------------------------------------------------
+   The teaching layer has one job on a phone: let a learner find the
+   shape they are looking for without reading everything again. Steps,
+   consequences, warnings, drills, checks and definitions each look
+   different from a distance. Colour is never the only signal — every
+   block carries a word as well.  */
+
+.instruction { margin-top: 4px; }
+
+.lesson-headline {
+  font-size: 1.02rem;
+  line-height: 1.45;
+  color: var(--text);
+  margin: 12px 0 4px;
+  padding-left: 12px;
+  border-left: 3px solid var(--accent);
+}
+
+.card.outcomes { background: var(--panel-2); }
+.outcome-list { margin: 8px 0 0; padding-left: 18px; }
+.outcome-list li { margin: 5px 0; font-size: 0.92rem; line-height: 1.45; }
+.outcome-list li::marker { color: var(--accent); }
+
+.block-title {
+  font-size: 0.95rem;
+  margin: 20px 0 6px;
+  letter-spacing: 0.01em;
+}
+
+/* A glossary word. Underlined with dots rather than coloured alone, so it
+   reads as tappable in greyscale and to a colour-blind learner. */
+.term {
+  display: inline;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  min-height: 0;
+  font: inherit;
+  color: var(--accent);
+  font-weight: 600;
+  border-bottom: 1px dotted var(--accent);
+  cursor: pointer;
+  text-align: left;
+}
+.term:hover, .term:focus-visible { background: rgba(79, 163, 209, 0.16); border-radius: 3px; }
+.term-sample {
+  color: var(--accent);
+  font-weight: 600;
+  border-bottom: 1px dotted var(--accent);
+}
+
+/* Key-term chips: the words this lesson is about, before it uses them. */
+.keyterms {
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin: 12px 0;
+}
+.keyterms-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.keyterms .term {
+  border: 1px solid var(--accent);
+  border-radius: 99px;
+  padding: 4px 11px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* The definition sheet: one per application, opened from any highlighted
+   word, closed with Escape, a tap outside, or the button. */
+.sheet-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 7, 10, 0.68);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 50;
+}
+.sheet {
+  width: 100%;
+  max-width: 640px;
+  max-height: 82vh;
+  overflow-y: auto;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-bottom: none;
+  border-radius: 16px 16px 0 0;
+  padding: 10px 18px calc(20px + env(safe-area-inset-bottom));
+  animation: sheet-rise 160ms ease-out;
+}
+.sheet:focus { outline: none; }
+@keyframes sheet-rise { from { transform: translateY(14px); opacity: 0.6; } to { transform: none; opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .sheet { animation: none; } }
+.sheet-grip {
+  width: 40px; height: 4px; border-radius: 2px;
+  background: var(--border);
+  margin: 2px auto 12px;
+}
+.definition-term { font-size: 1.1rem; margin: 0; }
+.definition-say { color: var(--muted); font-size: 0.85rem; font-style: italic; margin: 2px 0 8px; }
+.definition-plain { font-size: 0.98rem; line-height: 1.55; margin: 6px 0; }
+.definition-also { font-size: 0.88rem; color: var(--muted); margin: 8px 0 0; }
+.definition-also strong { color: var(--text); font-weight: 600; }
+.definition-matters {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--panel-2);
+  border-left: 3px solid var(--warn);
+}
+.definition-matters strong { color: var(--warn); font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; }
+.definition-matters p { margin: 4px 0 0; font-size: 0.9rem; line-height: 1.5; }
+.glossary-entry .definition-term { font-size: 1rem; }
+
+/* Teaching lists. The check style is for rules a learner runs down at the
+   bedside; the bullet style is for everything else. */
+.teaching-list { margin: 6px 0 12px; padding-left: 20px; }
+.teaching-list li { margin: 7px 0; font-size: 0.93rem; line-height: 1.5; }
+.teaching-list li::marker { color: var(--accent); }
+.teaching-list.check { list-style: none; padding-left: 4px; }
+.teaching-list.check li { position: relative; padding-left: 26px; }
+.teaching-list.check li::before {
+  content: "✓";
+  position: absolute;
+  left: 2px;
+  color: var(--ok);
+  font-weight: 700;
+}
+
+/* Procedure steps: what to do, and what it protects. */
+.steps { margin: 6px 0 4px; }
+.step-do { font-size: 0.94rem; line-height: 1.45; }
+.step-why { margin: 6px 0 0; font-size: 0.85rem; color: var(--muted); line-height: 1.45; }
+.why-label { color: var(--accent); font-weight: 600; }
+
+/* Callouts. Each variant has a distinct colour, a distinct mark, and a
+   heading in words — never colour alone. */
+.callout {
+  border: 1px solid var(--border);
+  border-left-width: 3px;
+  border-radius: 8px;
+  padding: 11px 13px;
+  margin: 14px 0;
+  background: var(--panel);
+}
+.callout-head { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; }
+.callout-head strong { font-size: 0.92rem; }
+.callout-icon {
+  flex: none;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.75rem; font-weight: 700;
+  border: 1px solid currentColor;
+}
+.callout p { margin: 0; font-size: 0.9rem; line-height: 1.5; color: var(--text); }
+.callout.linchpin { border-left-color: var(--accent); }
+.callout.linchpin .callout-head { color: var(--accent); }
+.callout.safety { border-left-color: var(--bad); background: rgba(209, 106, 79, 0.07); }
+.callout.safety .callout-head { color: var(--bad); }
+.callout.tip { border-left-color: var(--ok); }
+.callout.tip .callout-head { color: var(--ok); }
+.callout.scope { border-left-color: var(--warn); }
+.callout.scope .callout-head { color: var(--warn); }
+.callout.myth { border-left-color: var(--muted); }
+.callout.myth .callout-head { color: var(--muted); }
+
+/* Tables scroll inside themselves; the page never scrolls sideways. */
+.table-block { margin: 14px 0; }
+.table-caption { font-size: 0.85rem; color: var(--muted); margin: 0 0 6px; line-height: 1.45; }
+.table-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  -webkit-overflow-scrolling: touch;
+}
+.table-scroll table { min-width: 100%; }
+.table-scroll th, .table-scroll td { padding: 8px 10px; vertical-align: top; }
+.table-scroll tbody tr:last-child td { border-bottom: none; }
+.cell-key { font-weight: 600; }
+.table-note { font-size: 0.82rem; color: var(--muted); margin: 6px 2px 0; line-height: 1.45; }
+
+/* Knowledge checks. Teaching, not assessment: nothing here is recorded. */
+.card.check { border-color: var(--panel-2); }
+.check-question { font-size: 0.95rem; line-height: 1.5; margin: 8px 0 10px; }
+.check-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+  text-align: left;
+  margin: 6px 0;
+  padding: 10px 12px;
+  background: var(--panel-2);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-weight: 400;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+.check-option:disabled { opacity: 1; }
+.check-letter {
+  flex: none;
+  width: 20px; height: 20px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.72rem; font-weight: 700;
+}
+.check-option.right { border-color: var(--ok); }
+.check-option.right .check-letter { border-color: var(--ok); color: var(--ok); }
+.check-option.wrong { border-color: var(--bad); }
+.check-option.wrong .check-letter { border-color: var(--bad); color: var(--bad); }
+.check-option.dim { opacity: 0.5; }
+.check-explain {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--panel-2);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  border-left: 3px solid var(--ok);
+}
+.check-explain.wrong { border-left-color: var(--bad); }
+.check-explain strong { display: inline; }
+
+/* Scaffolded practice: I do, we do, you do. */
+.card.practice { border-color: var(--ok); }
+.practice-move { display: flex; gap: 10px; margin-top: 10px; }
+.practice-label {
+  flex: none;
+  width: 58px;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ok);
+  font-weight: 700;
+  padding-top: 3px;
+}
+.practice-move p { margin: 0; font-size: 0.9rem; line-height: 1.5; }
+.say-aloud {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--panel-2);
+}
+.say-aloud-label {
+  font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 6px;
+}
+.say-aloud-line { margin: 5px 0; font-size: 0.9rem; font-style: italic; line-height: 1.45; }
+
+/* Video cards. A planned film says so; it never pretends to be a player. */
+.card.video-card { display: flex; gap: 12px; align-items: flex-start; }
+.video-thumb {
+  flex: none;
+  width: 44px; height: 44px;
+  border-radius: 8px;
+  background: var(--panel-2);
+  color: var(--accent);
+  display: flex; align-items: center; justify-content: center;
+}
+.video-body { flex: 1; min-width: 0; }
+.video-summary { margin: 5px 0 0; font-size: 0.88rem; line-height: 1.5; color: var(--text); }
+.video-status { margin: 8px 0 0; font-size: 0.78rem; color: var(--muted); line-height: 1.45; }
+.video-note { margin: 8px 0 0; font-size: 0.85rem; color: var(--muted); line-height: 1.45; }
+.video-player { width: 100%; margin-top: 10px; border-radius: 8px; background: #05070a; }
+.card.video-card.planned .video-thumb { color: var(--muted); }
+
+/* The line between reading and doing. */
+.section-rule {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 26px 0 6px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.section-rule::before, .section-rule::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}

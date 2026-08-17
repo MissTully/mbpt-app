@@ -1,0 +1,205 @@
+{
+  "version": "instruction-videos-v1",
+  "videos": [
+    {
+      "video_id": "V-01",
+      "title": "Why the manual reading still wins",
+      "kind": "topic",
+      "summary": "Where machines get blood pressure wrong, and why the cuff in your hands is the check the care team trusts.",
+      "seconds": 90,
+      "status": "planned",
+      "src": null,
+      "prompt_ref": "docs/video/VID-MBPT-001-video-prompts.md#v-01"
+    },
+    {
+      "video_id": "V-02",
+      "title": "Know your kit, and zero the gauge",
+      "kind": "demonstration",
+      "summary": "Every part of a manual blood pressure set, named and shown, ending with the zero check you do before you trust the dial.",
+      "seconds": 120,
+      "status": "planned",
+      "src": null,
+      "prompt_ref": "docs/video/VID-MBPT-001-video-prompts.md#v-02"
+    },
+    {
+      "video_id": "V-03",
+      "title": "Find the brachial artery",
+      "kind": "demonstration",
+      "summary": "Close-up of fingertips locating the pulse on the inner elbow, on three different arms.",
+      "seconds": 75,
+      "status": "planned",
+      "src": null,
+      "prompt_ref": "docs/video/VID-MBPT-001-video-prompts.md#v-03"
+    },
+    {
+      "video_id": "V-04",
+      "title": "Set up the person, not just the cuff",
+      "kind": "demonstration",
+      "summary": "Greeting, identity check, questions about coffee and smoking, five quiet minutes, and the seated position that protects the number.",
+      "seconds": 150,
+      "status": "planned",
+      "src": null,
+      "prompt_ref": "docs/video/VID-MBPT-001-video-prompts.md#v-04"
+    },
+    {
+      "video_id": "V-05",
+      "title": "Arms you must not use",
+      "kind": "topic",
+      "summary": "Dialysis access, IV lines, swelling, injury, and surgery on that side, and what to do when both arms are ruled out.",
+      "seconds": 90,
+      "status": "planned",
+      "src": null,
+      "prompt_ref": "docs/video/VID-MBPT-001-video-prompts.md#v-05"
+    },
+    {
+      "video_id": "V-06",
+      "title": "Measure the arm, then pick the cuff",
+      "kind": "demonstration",
+      "summary": "A tape measure at the mid-upper arm, the number read out loud, and the cuff chosen from the size chart.",
+      "seconds": 120,
+      "status": "planned",
+      "src": null,
+      "prompt_ref": "docs/video/VID-MBPT-001-video-prompts.md#v-06"
+    },
+    {
+      "video_id": "V-07",
+      "title": "Wrong cuff, wrong number",
+      "kind": "topic",
+      "summary": "The same arm measured three times with a small, a correct, and a large cuff, with the three readings side by side.",
+      "seconds": 90,
+      "status": "planned",
+      "src": null,
+      "prompt_ref": "docs/video/VID-MBPT-001-video-prompts.md#v-07"
+    },
+    {
+      "video_id": "V-08",
+      "title": "Wrap it right",
+      "kind": "demonstration",
+      "summary": "Artery marker on the artery, bottom edge an inch above the elbow crease, and the one-fingertip snugness test.",
+      "seconds": 100,
+      "status": "planned",
+      "src": null,
+      "prompt_ref": "docs/video/VID-MBPT-001-video-prompts.md#v-08"
+    },
+    {
+      "video_id": "V-09",
+      "title": "Feel first, then pump",
+      "kind": "demonstration",
+      "summary": "Feeling the wrist pulse while inflating, noting where it disappears, and pumping 30 above that point.",
+      "seconds": 110,
+      "status": "planned",
+      "src": null,
+      "prompt_ref": "docs/video/VID-MBPT-001-video-prompts.md#v-09"
+    },
+    {
+      "video_id": "V-10",
+      "title": "The valve hand",
+      "kind": "demonstration",
+      "summary": "A locked-off close-up of thumb and valve holding the needle at 2 to 3 mmHg per second, with a counter on screen.",
+      "seconds": 120,
+      "status": "planned",
+      "src": null,
+      "prompt_ref": "docs/video/VID-MBPT-001-video-prompts.md#v-10"
+    },
+    {
+      "video_id": "V-11",
+      "title": "What the sounds really sound like",
+      "kind": "topic",
+      "summary": "The Korotkoff phases played one at a time, loud and slow, so your ear learns the difference before it has to work at speed.",
+      "seconds": 150,
+      "status": "planned",
+      "src": null,
+      "prompt_ref": "docs/video/VID-MBPT-001-video-prompts.md#v-11"
+    },
+    {
+      "video_id": "V-12",
+      "title": "Mark the first sound, mark the last",
+      "kind": "walkthrough",
+      "summary": "One measurement scored on screen, showing where a mark lands early, late, and on time.",
+      "seconds": 120,
+      "status": "planned",
+      "src": null,
+      "prompt_ref": "docs/video/VID-MBPT-001-video-prompts.md#v-12"
+    },
+    {
+      "video_id": "V-13",
+      "title": "Read the dial, do not round it",
+      "kind": "topic",
+      "summary": "Reading to the nearest 2 mmHg with your eye square to the dial, and how rounding to zeros hides real change.",
+      "seconds": 80,
+      "status": "planned",
+      "src": null,
+      "prompt_ref": "docs/video/VID-MBPT-001-video-prompts.md#v-13"
+    },
+    {
+      "video_id": "V-14",
+      "title": "The silent gap, and other surprises",
+      "kind": "topic",
+      "summary": "What an auscultatory gap does to a reading, plus faint sounds, sounds that never stop, and uneven beats.",
+      "seconds": 110,
+      "status": "planned",
+      "src": null,
+      "prompt_ref": "docs/video/VID-MBPT-001-video-prompts.md#v-14"
+    },
+    {
+      "video_id": "V-15",
+      "title": "What the numbers mean",
+      "kind": "topic",
+      "summary": "Adult categories, child percentiles, and the line between measuring a number and judging it.",
+      "seconds": 120,
+      "status": "planned",
+      "src": null,
+      "prompt_ref": "docs/video/VID-MBPT-001-video-prompts.md#v-15"
+    },
+    {
+      "video_id": "V-16",
+      "title": "Say it out loud: reporting to the nurse",
+      "kind": "walkthrough",
+      "summary": "Three short handoffs, two done well and one done badly, so the shape of a good report is obvious.",
+      "seconds": 90,
+      "status": "planned",
+      "src": null,
+      "prompt_ref": "docs/video/VID-MBPT-001-video-prompts.md#v-16"
+    },
+    {
+      "video_id": "V-17",
+      "title": "When not to trust your own reading",
+      "kind": "topic",
+      "summary": "The four moments that should make you stop, wait, and measure again before you write anything down.",
+      "seconds": 100,
+      "status": "planned",
+      "src": null,
+      "prompt_ref": "docs/video/VID-MBPT-001-video-prompts.md#v-17"
+    },
+    {
+      "video_id": "V-18",
+      "title": "Build the paper towel arm",
+      "kind": "walkthrough",
+      "summary": "Turning a roll of paper towels into a practice arm you can drill on tonight, for free.",
+      "seconds": 100,
+      "status": "planned",
+      "src": null,
+      "prompt_ref": "docs/video/VID-MBPT-001-video-prompts.md#v-18"
+    },
+    {
+      "video_id": "V-19",
+      "title": "The whole skill, start to finish",
+      "kind": "demonstration",
+      "summary": "One unbroken take of a complete manual blood pressure, from hand washing to charting, with nothing edited out.",
+      "seconds": 240,
+      "status": "planned",
+      "src": null,
+      "prompt_ref": "docs/video/VID-MBPT-001-video-prompts.md#v-19"
+    },
+    {
+      "video_id": "V-20",
+      "title": "Read your own error pattern",
+      "kind": "walkthrough",
+      "summary": "Reading a practice history to tell a hand problem from an ear problem, and choosing what to drill next.",
+      "seconds": 110,
+      "status": "planned",
+      "src": null,
+      "prompt_ref": "docs/video/VID-MBPT-001-video-prompts.md#v-20"
+    }
+  ]
+}

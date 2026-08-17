@@ -6,11 +6,13 @@
 import {
   ActivityCatalog,
   ResponseSetLibrary,
+  buildInstructionPack,
   loadConfig,
   validateCaseManifest,
   validateVideoManifest,
   type ActivityDefinition,
   type CaseManifest,
+  type InstructionPack,
   type VideoManifest,
   type ExpectedResponseSet,
   type ThresholdConfig,
@@ -21,6 +23,9 @@ import rawActivities from "../../content/activities.json";
 import rawResponseSets from "../../content/response-sets/response-sets-v1.json";
 import rawTemplates from "../../content/feedback/templates-v1.json";
 import rawLearnerText from "../../content/learner-text/learner-text-v1.json";
+import rawGlossary from "../../content/instruction/glossary-v1.json";
+import rawInstructionVideos from "../../content/instruction/videos-v1.json";
+import rawInstructionPages from "../../content/instruction/pages-v1.json";
 import rawSynthCase from "../../cases/C000-SYNTH/case.json";
 
 export const config: ThresholdConfig = loadConfig(rawConfig);
@@ -179,6 +184,56 @@ export function lessonTextOf(lessonId: string): LessonText {
   const text = learnerText.lessons[lessonId];
   if (!text) throw new Error(`learner-text: no lesson text for ${lessonId}`);
   return text;
+}
+
+// The instruction pack: lesson teaching pages, the glossary behind every
+// highlighted word, and the video register. Assembled and cross-checked by
+// the core (an unresolved term or an unregistered video throws), then checked
+// once more here against the activity catalog — the pack cannot see the
+// catalog, and a block tagged for an activity that no longer exists would
+// otherwise go quietly missing from the screen that needed it.
+export const instruction: InstructionPack = buildInstructionPack({
+  glossary: rawGlossary,
+  videos: rawInstructionVideos,
+  pages: rawInstructionPages,
+});
+
+{
+  const lessonIds = new Set(activities.map((a) => a.lesson));
+  const activityIds = new Set(activities.map((a) => a.activity_id));
+  for (const page of instruction.pages) {
+    if (!lessonIds.has(page.lesson)) {
+      throw new Error(`instruction: page for ${page.lesson}, which is not a lesson in the activity catalog`);
+    }
+    for (const block of page.blocks) {
+      for (const activityId of block.activities ?? []) {
+        if (!activityIds.has(activityId)) {
+          throw new Error(`instruction: ${page.lesson} tags a block for ${activityId}, which is not in the catalog`);
+        }
+      }
+    }
+  }
+  for (const lessonId of lessonIds) {
+    if (!instruction.pageOf(lessonId)) {
+      throw new Error(`instruction: no teaching page for ${lessonId}`);
+    }
+  }
+}
+
+/** The teaching page for a lesson. Present for every lesson in the catalog;
+ * the check above is what makes that a fact rather than a hope. */
+export function instructionPageOf(lessonId: string) {
+  return instruction.pageOf(lessonId);
+}
+
+/** The blocks a Present activity owns: those tagged with its identifier. An
+ * activity with no tagged blocks reads the whole lesson page instead, which
+ * is the right fallback — teaching content is never withheld. */
+export function instructionBlocksFor(activity: ActivityDefinition) {
+  const page = instruction.pageOf(activity.lesson);
+  if (!page) return null;
+  const owned = page.blocks.filter((block) => block.activities?.includes(activity.activity_id));
+  return { page, blocks: owned.length > 0 ? owned : page.blocks, scoped: owned.length > 0 };
 }
 
 export const APP_VERSION = "0.1.0";
